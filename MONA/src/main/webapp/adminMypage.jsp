@@ -18,9 +18,7 @@
 
 </style>
 <body>
- <% List<ProductVO> vo = (new ProductDAO()).showProduct();%>  
-         
-          
+ <% List<ProductVO> vo = (new ProductDAO()).showProduct(); %>  
        
     <div class="header">   
         <div class="header-logo">
@@ -116,17 +114,17 @@
                   <div class="managercontents-list-reveiw">
                  <form action="adminCheckCon" method="post">
                   <input hidden name="adminCheck" value="<%=vo.get(i).getProd_num()%>">
-                  <input hidden name="adminCheck" value="<%=vo.get(i).getProd_cate()%>">
+                  <input hidden name="prod_cate" value="<%=vo.get(i).getProd_cate()%>"> 
                   <input type="submit" value="승인">
                   </form>     
    
                   <form action="#">
                   <input type="submit" value="거부">
                   </form> 
-                  <%}%>  
+                   
             </div>
         </div>
-  
+  		<%}%> 
     
     </div>
         

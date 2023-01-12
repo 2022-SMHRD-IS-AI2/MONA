@@ -17,7 +17,7 @@
        <!-- Q17. 게시글 목록 조회 기능 
          		: web_baord 테이블에 있는 모든 게시글 출력
          		: select * from web_baord-->
-         	  <% List<BoardVO> vo = (new BoardDAO()).showBoard(); %>  
+         	  <% List<BoardVO> vo = (new BoardDAO()).showBoard(); %>         
          	
          	
          <!-- Q18. 게시글 목록 세부페이지 기능(제목을 클릭하면 세부페이지 BoardDetail.jsp로 이동)-->
