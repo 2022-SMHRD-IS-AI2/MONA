@@ -15,7 +15,9 @@ public class adminCheckCon extends HttpServlet {
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 	int shop_check = Integer.parseInt(request.getParameter("adminCheck"));
+	request.getParameter("prod_cate");
 	System.out.println(shop_check);
 
 	ProductDAO dao = new ProductDAO();
