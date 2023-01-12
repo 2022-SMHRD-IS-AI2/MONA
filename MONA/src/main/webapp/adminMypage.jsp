@@ -87,43 +87,40 @@
             </div>
 
         </div>
-       
+       <div>
         <%for(int i =0; i<vo.size(); i++){ %>
         <div class="ordercontents-date">
             <span><%=vo.get(i).getProd_regdt()%> </span>
         </div>
+        
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
             <img  width="250px" height="150px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
             </div>    
+            
             <div class="managercontents-list-title">
-            	<span>상호명</span>
+            	
                 <span><%=vo.get(i).getShop_name()%></span>
-                 </div> 
-                 
-                  <div class="managercontents-list-title">
-            	<span>상품명</span>
+                
                 <span><%=vo.get(i).getProd_name()%></span>
-                 </div>  
-                 
-                  <div class="managercontents-list-title">
-            	<span>가격</span>
-                <span><%=vo.get(i).getProd_price()%></span>
-                 </div>  
-                 
+                
+                <span>가격    <%=vo.get(i).getProd_price()%></span>
+              </div> 
+        
                   <div class="managercontents-list-reveiw">
                  <form action="adminCheckCon" method="post">
                   <input hidden name="adminCheck" value="<%=vo.get(i).getProd_num()%>">
+                  
                   <input type="submit" value="승인">
                   </form>     
-        
+   
                   <form action="#">
                   <input type="submit" value="거부">
                   </form> 
-                  <%} %>  
+                   
             </div>
         </div>
-  
+  		<%}%> 
     
     </div>
         
