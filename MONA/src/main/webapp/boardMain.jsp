@@ -61,27 +61,12 @@
 				</div>
 				<%} %>
 			
-			<div class="board_page">
-				<a href="#" class="bt first"></a> <a href="#" class="bt prev"></a> <a
-					href="#" class="num on">1</a> <a href="#" class="num">2</a> <a
-					href="#" class="num">3</a> <a href="#" class="num">4</a> <a
-					href="#" class="num">5</a> <a href="#" class="bt next">></a> <a
-					href="#" class="bt last">>></a>
-			</div>
 			<div class="bt_wrap">
+				<a href="main.jsp" clss="on">홈으로가기</a>
 				<a href="boardWrite2.jsp" class="on">등록</a>
 				<!--<a href="#">수정</a>-->
 			</div>
-		</div>
-	</div>
-
-
-	<a href="./main.jsp"><button id="writer">홈으로가기</button></a>
-	<a href="./boardWrite2.jsp">
-		<button id="write">작성하러가기</button>
-	</a>
-
-	</div>
+	
 
 
 </body>
