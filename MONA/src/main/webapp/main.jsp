@@ -20,7 +20,7 @@
 <body>
   <div class="header">   
         <div class="header-logo">
-            <a href="index.html">MonA</a>
+            <a href="main.html">MonA</a>
         </div>
         <div class="header-serch" >
             <input type="text" name="" id="">
