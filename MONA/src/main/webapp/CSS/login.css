@@ -1,0 +1,136 @@
+.header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.header-logo{
+    width: 1440px;
+    height: 55px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 100px 0 100px;
+    border-bottom: solid 1px whitesmoke;
+    align-items: center;
+
+}
+.header-logo a{
+    margin-left: 80px;
+    font-weight: bold;
+    font-size: 30px;
+    color:orange;
+}
+.header-sign{
+    display: flex;    
+    align-items: center;
+}
+.header-sign li:first-child{
+    padding-right: 25px;
+    
+}
+.header-sign li{
+ 
+    color: rgba(0,0,0,.84) ;
+    font-size: 15px;
+    font-weight: 550;
+    
+}
+.loginform{
+    width: 100%;
+    height: auto;
+   
+
+}
+.loginform-con{
+    width: 400px;
+    height: 760px;
+    margin: 0 auto;
+    padding: 80px 16px 40px;
+    color:black;    
+}
+
+.loginform-con>h2{
+    width: 368px;
+    height: 44px;
+    font-size: 35px;
+    margin-bottom: 12px ;
+}
+.input>h3{
+    font-size: 15px;
+    font-weight: 350px;
+    color: rgb(150, 149, 149);
+    text-align: left;
+}
+
+.inputlogin{
+    width: 360px;
+    height: 48px;
+    border: solid 1px whitesmoke;
+    margin-top: 10px;
+    margin-bottom: 12px;
+       
+}
+
+.input{
+    width: 360px;
+    height: 224px;
+    margin-top: 24px;
+    border:none;
+    
+}
+.inputspan{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.inputspan span{
+    color: rgba(0,0,0,.54);
+}
+.inputsubmit{
+    width: 368px;
+    height: 48px;
+    background-color: whitesmoke;
+    margin-top: 32px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+.inputspan>span{
+    font-size: 12px;
+}
+.kana{
+    margin-top: 55px;
+    width: 368px;
+    height: 224px;
+}
+.kana button{
+    width: 368px;
+    height: 48px;
+    margin-top: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.kana button:nth-child(1){
+    background-color: rgb(241, 241, 10);
+    color: black;
+}
+.kana button:nth-child(2){
+    background-color:rgb(52, 204, 52);
+    color: black;
+    
+}
+.signUp{
+    height: 56px;
+    margin-top: 46px;
+    display: flex;
+    justify-content: center;
+}
+.signUp-p{
+    font-size: 13px;
+}
+.signUp-p a{
+    margin-left: 5px;
+    color: darkblue;
+    text-decoration:underline
+}

@@ -1,0 +1,40 @@
+.signform{
+    width: 100%;
+    height: auto;
+   
+
+}
+.signform-con{
+    
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
+    padding: 80px 16px 40px;
+    
+}
+.signform-con h2{
+    width: 368px;
+    height: 44px;
+    font-size: 35px;
+    margin-bottom: 12px ;
+}
+
+.input2{
+    width: 368px;
+    height: auto;
+    margin-top: 24px;
+
+}
+.input2 span{
+    display: block;
+    width: 120px;
+    height: 42px;
+    margin-top: 20px;
+}
+.inputs{width: 368px;height: 42px; display: flex; justify-content: center;}
+.inputs input{width: 368px;height: 42px;background-color: white;border: solid 2px whitesmoke;}
+.inputs.id{display: flex; justify-content: flex-start;}
+.inputs.id input{width: 300px;height: 42px;}
+.inputs.id button{width: 60px;height: 42px;margin-left: 6px;border-radius: 5px;margin-top: 3px;}
+.inputs.id button:active{outline:1px solid rgb(47, 46, 46);}
+.inputs signUp{margin-top: 15px;}

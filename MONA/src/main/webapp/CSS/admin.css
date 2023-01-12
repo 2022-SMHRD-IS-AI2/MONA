@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.managercontents-list-title{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 200px;
+    margin-top: 15px;
+}
+.accept{
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    
+}
+.reject{ 
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+}
+.managercontents-list-reveiw button{margin-right:30px;}
+.managercontents-list-reveiw{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    margin-left: 300px;
+
+} 

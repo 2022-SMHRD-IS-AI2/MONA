@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+.mypage-container{
+    width: 70%;
+    height: 800px;
+    margin: 0 auto;
+}
+.logininfo{
+    display: flex;
+    justify-content: space-around;
+    height: 160px;
+    background-color: antiquewhite;
+    margin-top: 50px;
+}
+.logininfo-order-h2{
+    display: flex;
+    padding: 20px;
+    font-size: larger;
+    margin-top: 15px;
+}
+.logininfo-order-number{
+    margin: 40px;
+}
+.logininfo-order-review{
+    margin: 40px;
+}
+.button {
+    margin-top: 30px;
+}
+
+.button button{
+    width: 150px;
+    height: 60px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: gainsboro;
+    border: 1px solid rgb(245, 245, 245,2.0);
+  
+    
+}
+.button>a:first-child button{
+    background-color: white;    
+}
+
+.ordercontents-date{
+    margin-top: 50px;
+    width: 100%;
+    height: 30px;
+    border-top: 1px solid whitesmoke;
+    background-color: rgb(128, 128, 128,0.3);
+}
+.ordercontents-list{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    border: 1px solid whitesmoke;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.ordercontents-list-img{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    
+}
+.ordercontents-list-title{
+    
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 200px;
+    margin-top: 15px;
+    
+}
+.ordercontents-list-title span{margin-top: 15px;}
+.ordercontents-list-quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    border: 1px solid whitesmoke;
+    
+}
+.ordercontents-list-state{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    border: 1px solid whitesmoke;
+}
+.ordercontents-list-reveiw{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    
+
+}
+

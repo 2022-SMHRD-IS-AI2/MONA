@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\smhrd\git\MONA\MONA\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1680562402.index
+3153750173.index
+1180208199.index
+3833856981.index
+1630469580.index
+2435745412.index

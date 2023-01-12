@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.model.CommentDAO">
+	
+	<!-- 댓글입력 -->
+	<insert id="insertCmt" parameterType = "com.smhrd.model.CommentVO">
+	insert into tb_comment values(TB_COMMENT_seq.nextval, #{B_NUM}, #{CMT_CONTENT}, sysdate, #{U_Id}, 0)
+	</insert>
+
+	<!-- 댓글조회 -->
+	<select id="showCmt" resultType="com.smhrd.model.CommentVO" parameterType = "com.smhrd.model.CommentVO">
+	select * from tb_comment where b_num=${B_NUM}
+	order by cmt_regdt desc
+	</select>
+
+</mapper>

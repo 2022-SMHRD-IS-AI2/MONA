@@ -1,0 +1,1 @@
+ console.log($.ui.version, jQuery.fn.jquery);		 

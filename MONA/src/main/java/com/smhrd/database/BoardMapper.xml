@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.model.BoardDAO">
+	<insert id="upload2" parameterType = "com.smhrd.model.BoardVO">
+	insert into TB_BOARD values(
+	TB_BOARD_SEQ.nextval,#{title}, #{content},#{file}, sysdate,#{id}, '0')	
+	</insert>
+
+	<select id="showBoard" resultType="com.smhrd.model.BoardVO">
+		select * from TB_BOARD
+	</select>
+	
+	<select id="detailBoard" parameterType="int" resultType="com.smhrd.model.BoardVO">
+		select * from TB_BOARD where b_num=#{b_num}
+	</select>
+
+</mapper>

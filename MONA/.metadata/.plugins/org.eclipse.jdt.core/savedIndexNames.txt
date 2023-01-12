@@ -1,0 +1,12 @@
+INDEX VERSION 1.131+C:\Users\smhrd\git\MONA\MONA\.metadata\.plugins\org.eclipse.jdt.core
+4017319201.index
+266387519.index
+3992894118.index
+1865797976.index
+3317727437.index
+3382486756.index
+211279006.index
+3802251778.index
+125433102.index
+3875331136.index
+1180208199.index
