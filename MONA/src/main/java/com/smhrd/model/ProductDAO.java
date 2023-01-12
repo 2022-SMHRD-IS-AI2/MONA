@@ -61,14 +61,14 @@ public class ProductDAO {
 	
 	
 	// 각 카테고리 별 상품 등록
-	public ProductVO showCate(String prod_cate) {
+	public List<ProductVO> showCate(String prod_cate) {
 		
-		ProductVO cate  = sqlSession.selectOne("com.smhrd.model.ProductDAO.showCate",prod_cate);
+		List<ProductVO> cate  = sqlSession.selectOne("com.smhrd.model.ProductDAO.showCate",prod_cate);
 		sqlSession.close();
 	
 		return cate;
 	}
 		
-	
+
 	
  }

@@ -10,10 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <%
-	String prod_cate = request.getParameter("prod_cate");
-	ProductVO vo = new ProductDAO().showCate(prod_cate);
-	%> 
+  
 
 
 	

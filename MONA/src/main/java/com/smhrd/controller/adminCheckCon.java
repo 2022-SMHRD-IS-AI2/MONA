@@ -23,15 +23,15 @@ public class adminCheckCon extends HttpServlet {
 	int shop_check = Integer.parseInt(request.getParameter("adminCheck"));
 	String prod_Cate = request.getParameter("prod_cate");
 	
-	//System.out.println(shop_check);
-	//System.out.println(prod_Cate);
+	System.out.println(shop_check);
+	System.out.println(prod_Cate);
 
 	ProductDAO dao = new ProductDAO();
 	int cnt =dao.updateAdminCheck(shop_check);
 	
-	ProductVO cate = dao.showCate(prod_Cate);
+	List<ProductVO> cate = dao.showCate(prod_Cate);
 	
-	if(cnt>0) {
+	if(cnt>0) {     
 		System.out.println("승인여부 업데이트 성공");
 		response.sendRedirect("adminMypage.jsp");
 	}else {
