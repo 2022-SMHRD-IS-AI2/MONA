@@ -8,6 +8,13 @@
       <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
+      
+   <% String loginUser = (String) session.getAttribute("loginUser_id");
+	  if(loginUser != null){
+	  System.out.print(loginUser);}
+	%>
+      
+      
          
         <div class="header">   
         <div class="header-logo">
@@ -50,7 +57,7 @@
                 <div class="info">
                     <dl>
                         <dt>ID</dt>
-                        <dd>로그인된  ID</dd>
+                        <dd><%=loginUser%></dd>
                     </dl>
                     <dl>
                         <dt>사진첨부</dt>
