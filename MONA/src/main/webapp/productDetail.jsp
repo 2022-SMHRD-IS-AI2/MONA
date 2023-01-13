@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ProductDAO"%>
+<%@page import="com.smhrd.model.ProductVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,7 +19,12 @@
 	}
 	
 	%>
-
+	
+	<%
+   int prod_num = Integer.parseInt(request.getParameter("prod_num"));
+   ProductVO vo = new ProductDAO().showProdDetail(prod_num);
+   %>
+   
 <body>
   <div class="header">
         <div class="header-logo">
@@ -57,67 +64,21 @@
 
     <div class="productdetail">
         <div class="productdetail-content">
-            <img src="./img/반려동물의류/강아지 고양이 방울 케이프.jpg" alt="">
+            <img src="./prod/<%=vo.getProd_thumb()%>" alt="">
            
             <div class="shipping c">
                 <button type="button" class="shipping-a" href="">상품정보</button >
                 <button type="button" class="shipping-a" href="">구매후기</button >
                 <button type="button" class="shipping-a" href="">댓글</button >
             </div>
-            <div><img src="./img/반려동물의류/강아지 고양이 방울 케이프.jpg" alt=""></div>
+            <div><img src="./prod/<%=vo.getProd_img()%>" alt=""></div>
             
             <div class="ProductDetailDescription__textItem1">
                 <span>
-                    <br>
-                    릿찌Rritzy를 좋아하는 작가[♥️]로 추가하시고
-                    <br>
-                    이벤트와 신상업데이트를 실시간으로 받아보세요!<br><br><br><br><br>
-                    💗베어폼폼 패딩💗<br><br><br>목까지 올라오는 누빔패딩입니다.<br><br><br>
-                    안감으로는 요즘 대세인<br>
-                    곰돌이 패턴의 뽀글이 원단을 사용했어요.<br><br>
-                    잘 뭉치지 않는 원단으로, 뒤집어서 입히실 수도 있어요🤍<br><br>
-                    크게 유행하지 않는 디자인이라<br>
-                    매년 겨울 꺼내서 입히실 수 있을거에요 :)<br><br>
+                <%=vo.getProd_desc()%> 
+                </span>
+            </div>
 
-                    소형견, 중형견, 대형견까지 사이즈 모두 있어<br>
-                    모든 크기의 댕댕이들 개플룩 가능해요!💖       
-                </span>
-            </div>
-            <div class="ProductDetailDescription__textItem2">
-                <span>
-                    🎈컬러🎈<br>
-                    -옐로우💛<br>
-                    -민트💚<br>
-                    -바이올렛💜<br><br><br><br>
-                    
-                    
-                    🎈사이즈🎈<br>
-                    XS , S , M , L , XL , 2XL , 3XL , 4XL<br>
-                    사이즈표 참고하여 선택해주세요.<br>
-                    (핸드메이드 제품으로 약간의 오차가 있을 수 있습니다.)<br><br><br><br>
-                    
-                    
-                    🎈원단🎈<br>
-                    -겉감 : 면 100% + 4온스 솜<br>
-                    -안감 : 폴리에스터<br><br><br><br>
-                    
-                    
-                    🎈세탁방법🎈<br>
-                    -빨래망에 넣어 물세탁해주세요.<br>
-                    (건조기 사용시 줄어들 수 있으므로<br>
-                    건조기는 사용하지 말아주세요)<br><br><br>
-                    
-                    
-                    📦A/S 및 교환 안내📦<br>
-                    -발송되는 모든 상품 검수 후 발송됩니다.<br>
-                    -교환 반품 전에는 반드시 먼저 연락 주시기 바랍니다.<br>
-                    -수령 후 7일 이내에 제품 결함 발생은 메시지로<br>
-                    문의 부탁드립니다.<br>
-                    무상으로 A/S 진행해 드립니다.<br>
-                    (택배비 본인부담) 
-                </span>
-                
-            </div>
             <div class="feedback">
                 <h2>구매후기(3)</h2>
                 <a href="">구매후기 작성하기</a>
@@ -162,12 +123,12 @@
         </div>
         
         <div class="productdetail-description">
-            <h2 class="productdetail-description-title">[맞춤가능] 베어폼폼 패딩 | 소형견부터 대형견까지</h2>
+            <h2 class="productdetail-description-title"><%=vo.getProd_name()%> </h2>
         
             <div class ="productdetail-info">
                 <div class="productdetail-description-price" >
                     <span class="productdetail-description-price-span">
-                        <strong>50000</strong>원
+                        <strong><%=vo.getProd_price()%></strong>원
                     </span>
                     <div class="price_tag-detail ">
                         
@@ -197,8 +158,9 @@
                                         수량
                                     </td>
                                     <td>
-                                   <input type="number" min="1" max="9999" name="count" >
+                                  <input type="number" min="1" max="9999" name="count" >
                                     </td>
+                                
                                 </tr>
                             </table>
                         </div>
