@@ -278,8 +278,30 @@ img { display: block; margin: 20px auto; }
     height: 30px;
 }
 
-.board_view_ripple{
+.board_view_ripplea{
 	width: 1000px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #d9d9d9;
+    padding-top: 10px;
+    
+}   
+.board_view_ripplea span{
+	font-size: 12px;
+}
+	
+
+.board_view_ripplecomenta{
+	width: 1000px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.board_view_ripple{
+	width: 560px;
     height: 60px;
     display: flex;
     flex-direction: column;
@@ -293,13 +315,15 @@ img { display: block; margin: 20px auto; }
 	
 
 .board_view_ripplecoment{
-	width: 1000px;
+	width: 560px;
     height: 39px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     
 }
+
+
 .board_view_ripplecoment p:first-child{
 	font-size: 14px;
 }

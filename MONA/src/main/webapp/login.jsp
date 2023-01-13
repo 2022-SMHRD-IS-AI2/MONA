@@ -43,7 +43,7 @@
             </form>
             <div class="kana">
                 <button>
-                    <a href="#">Kakao Login</a>
+                    <a href="kakaoLogin.jsp">kakao Login</a>
                 </button>
                 <button>
                     <a href="#">Naver Login</a>
