@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html >
 <head>
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
@@ -10,8 +10,13 @@
     <script>
         var IMP = window.IMP; 
         IMP.init("imp57011454"); 
-      
-        
+      	
+        var today = new Date();   
+        var hours = today.getHours(); // 시
+        var minutes = today.getMinutes();  // 분
+        var seconds = today.getSeconds();  // 초
+        var milliseconds = today.getMilliseconds();
+        var makeMerchantUid = hours +  minutes + seconds + milliseconds;
         
 
         function requestPay() {
