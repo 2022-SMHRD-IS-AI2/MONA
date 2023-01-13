@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.model.BucketDAO">
+
+<!-- 장바구니 전체조회  -->
+<select id = "showBk" resultType="com.smhrd.model.BucketVo">
+	select * from TB_BUCKET
+</select>
+
+<!-- 선택된 장바구니  -->
+<select id = "detialBucket" parameterType="int" resultType="com.smhrd.model.BucketVO">
+		select * from TB_BUCKET where BUCKET_NUM=#{BUCKET_NUM}
+		order by cmt_regdt desc
+</select>
+
+
+</mapper>

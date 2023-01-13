@@ -21,7 +21,10 @@
   <div class="header">
         <div class="header-logo">
             <a href="main.jsp">MonA</a>
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI2/MONA.git
         </div>
         <div class="header-serch" >
             <input type="text" name="" id="">

@@ -24,9 +24,9 @@
         <div class="header-menu" >
             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
             <a href="#">마이페이지</a>
-            <a href="#">게시판</a>
-            <a href="#">로그인</a>
-            <a href="#">회원가입</a>            
+            <a href="board.jsp">게시판</a>
+            <a href="login.jsp">로그인</a>
+            <a href="join.jsp">회원가입</a>            
         </div>
     </div>
     <div class="header2">   
