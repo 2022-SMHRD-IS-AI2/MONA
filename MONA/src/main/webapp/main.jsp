@@ -18,7 +18,7 @@
 	%>
 
 <body>
-  <div class="header">   
+  <div class="header">
         <div class="header-logo">
             <a href="main.jsp">MonA</a>
 
