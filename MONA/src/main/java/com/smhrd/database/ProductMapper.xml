@@ -23,8 +23,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	 <!--상품 등록 요청건 관리자마이페이지에 보내기  -->
-	<select id="showCate" resultType="com.smhrd.model.ProductVO" parameterType="String">
-		select * from TB_PRODUCT where shop_check='Y' and prod_cate=#{prod_cate}
+	<select id="showCate" resultType="com.smhrd.model.ProductVO">
+		select * from TB_PRODUCT where shop_check='Y' 
 	</select>
 	
 
