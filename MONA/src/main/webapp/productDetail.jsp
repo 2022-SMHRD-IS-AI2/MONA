@@ -101,21 +101,30 @@
                         <span class="reviewer-date">2023년 1월 11일</span>
                     </div>
                     <div class="reviewer-grade" >
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                 </div>
                 <div class="review-body">
-                    <div class="review-thumbnail">
-                        <img src="/img/반려동물의류/리뷰/리뷰.jpg" alt="">
-                    </div>
-                    
-      
                     <div class="review-contents">어떡해요... 너무 사이즈도 꼭맞고 이뻐서 심장마비 올거같아요 ㅠㅠㅠㅠㅠㅜㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
                         이뿌게 해주셔서 감사합니다</div>
-
                 </div>
             </a>
             
+             <a href="">
+                <div class="reviewer-info-header">
+                    <div class="reviewer-info">
+                        <span class="reviewer-name">김준연</span>
+                        <span class="reviewer-date">2023년 1월 11일</span>
+                    </div>
+                    <div class="reviewer-grade" >
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <div class="review-contents">어떡해요... 너무 사이즈도 꼭맞고 이뻐서 심장마비 올거같아요 ㅠㅠㅠㅠㅠㅜㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+                        이뿌게 해주셔서 감사합니다</div>
+                </div>
+            </a>
             <div class="comment1">
                 <h2>댓글</h2>
             </div>
@@ -201,7 +210,7 @@
                                         수량
                                     </td>
                                     <td>
-                                   <input type="number" min="1" max="9999" name="count" >
+                                     <input type="number" min="1" max="9999" name="count" >
                                     </td>
                                 
                                 </tr>
@@ -213,8 +222,8 @@
             <div class="productdetailbox">
        
             <div class="productdetail-description-sum" >
-                <h2>총금액</h2>
-                <h2>0원</h2>
+                <h3>총금액</h3>
+                <h3>0원</h3>
             </div>  
             <div class="productdetail-description-buy" >
                 <button type="submit" class="pd-btn cart">장바구니</button>

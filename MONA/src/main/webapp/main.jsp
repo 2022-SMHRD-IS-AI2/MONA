@@ -60,10 +60,11 @@
 
    <div class="head-title" >
     <h1>인기제품</h1>
-    <div class="head-title-Enrollment"> 
-        <a href="product.jsp">상품등록</a>
-    </div>
    </div>
+   
+       <div class="head-title-Enrollment"> 
+        <h3><a href="product.jsp">상품등록</a></h3>
+    </div>
 
     <div class="contents">
         <div class="contents-child">

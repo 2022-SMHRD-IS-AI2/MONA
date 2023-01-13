@@ -3,6 +3,7 @@
 @import "css.css";
 @import "productDetail.css";
 @import "shopping.css";
+@import "media.css";
 
 
 .header{
@@ -51,7 +52,7 @@ align-items: center;
 }
 .header-menu a{
     margin-left: 20px;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .header2{
     width: 80%;
@@ -65,7 +66,7 @@ align-items: center;
 }
 .header2 a{
     margin: 50px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .header2 a:first-child{
     margin-left: 500px;
@@ -133,11 +134,13 @@ align-items: center;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid whitesmoke;
+    margin-left:750px;
 }
 .head-title-Enrollment{
     display: flex;
     align-items: flex-end;
     padding-bottom: 10px;
+    padding-left:1350px;
 }
 .contents-child{
     border: 1px solid whitesmoke;
@@ -194,6 +197,10 @@ align-items: center;
     height: 300px;
    border-top: 1px solid bisque;
     
+}
+
+.head-title:a{
+	margin-left: 500px;
 }
 
 

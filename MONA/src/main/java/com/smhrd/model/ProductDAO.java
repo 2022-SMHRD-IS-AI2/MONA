@@ -29,6 +29,7 @@ public class ProductDAO {
 		
 		List<ProductVO> vo = sqlSession.selectList("com.smhrd.model.ProductDAO.showProduct");
 		sqlSession.close();
+		System.out.println("jsp" + vo);
 	
 		return vo;
 	}
