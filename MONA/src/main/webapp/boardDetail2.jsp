@@ -88,7 +88,7 @@
          for (int j = 0; j < lvo.size(); j++) {
          %>
       
-         <div class="board_view_ripple">
+         <div class="board_view_ripplea">
             <%
          for (int i = j; i <= j; i++) {
          %>
@@ -100,7 +100,7 @@
          <%
          for (int i = j; i <= j; i++) {
          %>
-            <div class="board_view_ripplecoment">
+            <div class="board_view_ripplecomenta">
                <p><%=lvo.get(j).getCMT_CONTENT()%></p>
                <p><%=lvo.get(j).getCMT_REGDT()%></p>
             </div>

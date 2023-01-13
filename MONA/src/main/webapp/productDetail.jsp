@@ -1,3 +1,7 @@
+<%@page import="com.smhrd.model.CommentVO"%>
+<%@page import="com.smhrd.model.RequestDAO"%>
+<%@page import="com.smhrd.model.RequestVO"%>
+<%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.ProductDAO"%>
 <%@page import="com.smhrd.model.ProductVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -7,6 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+ 
  <link rel="stylesheet" href="./CSS/main.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
@@ -23,6 +28,12 @@
 	<%
    int prod_num = Integer.parseInt(request.getParameter("prod_num"));
    ProductVO vo = new ProductDAO().showProdDetail(prod_num);
+   %>
+   
+   <%
+   RequestVO rvo = new RequestVO(prod_num);
+   System.out.print(rvo);
+   List<RequestVO> lvo = new RequestDAO().showRequest(rvo);
    %>
    
 <body>
@@ -109,17 +120,49 @@
                 <h2>댓글</h2>
             </div>
             
+                  <%
+         for (int j = 0; j < lvo.size(); j++) {
+         %>
+      
+         <div class="board_view_ripple">
+            <%
+         for (int i = j; i <= j; i++) {
+         %>
+            <span><%=lvo.get(j).getU_Id()%>
+            </span>
+            <%
+         }
+         %>
+         <%
+         for (int i = j; i <= j; i++) {
+         %>
+            <div class="board_view_ripplecoment">
+               <p><%=lvo.get(j).getREQ_CONTENT()%></p>
+               <p><%=lvo.get(j).getREQ_REGDT()%></p>
+            </div>
+            
+            <%
+         }
+         %>
+         </div>
+
+         <%
+         }
+         %>
+            
             
             
             <div class="comment2">
                 <div class="comment-input">
-                    <input type="text" placeholder="댓글을 입력하세요">
+                <form class="board_view_commform" method="post" action="RequestCon">
+                <input hidden name="prod_num" value="<%=prod_num%>">
+                    <input type="text" placeholder="댓글을 입력하세요" name="commentText">
                 </div>
                 <div class="comment-btn">
-                    <button type="submit">등록</button>
+                    <input type="submit" value="등록">
                 </div>
             </div>
-            
+            </form>
         </div>
         
         <div class="productdetail-description">
