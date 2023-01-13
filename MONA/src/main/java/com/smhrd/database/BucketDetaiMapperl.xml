@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 장바구니 전체조회  -->
 <select id = "showBk" resultType="com.smhrd.model.BucketVo">
-	select * from TB_BUCKET
+	select * from TB_BUCKET where U_id=#{}
 </select>
 
 <!-- 선택된 장바구니  -->

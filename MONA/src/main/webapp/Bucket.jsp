@@ -54,6 +54,8 @@
         <a href="goods.jsp">굿즈</a>
     </div>
 	
+
+	
 	
 	
 </body>

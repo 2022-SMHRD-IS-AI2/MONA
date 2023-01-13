@@ -23,27 +23,25 @@ public class bucketCon extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 
-		int B_num = Integer.parseInt(request.getParameter("BUCKET_NUM"));
-		System.out.println("BUCKET_NUM" +"="+ B_num);
-
 		HttpSession session = request.getSession();
-		String U_ID = (String) session.getAttribute("U_ID");
-		System.out.println(U_ID);
+        String loginUser = (String) session.getAttribute("loginUser_id");
+        
+        System.out.println(loginUser);
 		
-		String Prod_num = request.getParameter("PROD_NUM");
-		System.out.println(Prod_num);
+		//String Prod_num = request.getParameter("PROD_NUM");
+		//System.out.println(Prod_num);
 		
-		BucketVO vo = new BucketVO(null, Prod_num, null, U_ID);	
+		//BucketVO vo = new BucketVO(Prod_num,U_ID);	
 		
-		List<BucketVO> cnt = new BucketDAO().showBk(vo);
+		//List<BucketVO> cnt = new BucketDAO().showBk(vo);
 		
-		if (cnt.size() > 0) {
-			System.out.println("장바구니 내역이 없습니다");
-		}else {
-			System.out.println("장바구니 내역 성공");
-		}
+		//if (cnt.size() > 0) {
+		//	System.out.println("장바구니 내역이 없습니다");
+		//}else {
+		//	System.out.println("장바구니 내역 성공");
+		//}
 	
-		response.sendRedirect("Bucket.jsp");
+		//response.sendRedirect("Bucket.jsp");
 	}
 
 	

@@ -174,6 +174,7 @@
                 <h2>0원</h2>
             </div>  
             <div class="productdetail-description-buy" >
+            
                 <button type="submit" class="pd-btn cart">장바구니</button>
                 
                 <button type="submit" class="pd-btn buy">구매하기</button>
