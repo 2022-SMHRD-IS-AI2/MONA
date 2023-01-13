@@ -26,10 +26,8 @@ public class CommentVO {
 	private String U_Id;
 	private int SUPER_CMT_NUM;
 
-	
 	public CommentVO(int num) {
 		this.B_NUM = num;
 	}
 
 }
-

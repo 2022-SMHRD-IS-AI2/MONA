@@ -113,6 +113,8 @@
 							class="form-control" placeholder="상대방을 존중하는 댓글을 남깁시다."
 							name="commentText"></td>
 						<td><br>
+						
+						
 						<br>
 						<input type="submit" class="btn-primary pull" value="댓글 작성"></td>
 					</tr>

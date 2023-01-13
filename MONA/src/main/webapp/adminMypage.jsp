@@ -1,4 +1,6 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+
+.
+..................<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.ProductDAO"%>
 <%@page import="com.smhrd.model.ProductVO"%>
 <%@page import="java.util.List"%>

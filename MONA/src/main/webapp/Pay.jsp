@@ -27,7 +27,7 @@
           
             function requestPay() {
                 IMP.request_pay({
-                    pg : 'html5_inicis.INIpayTest',
+                    pg : 'html5_inicis.MonA',
                     pay_method : 'card',
                     merchant_uid: "IMP"+makeMerchantUid, 
                     name : '당근 10kg',
