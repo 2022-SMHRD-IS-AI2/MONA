@@ -89,7 +89,7 @@
                 </div>
             </div> <br><br>
 
-		
+
 <%
 	for(int j=0; j < lvo.size(); j++){%>
 		
@@ -117,14 +117,14 @@
 		<br>
 	<% } %>
 
-
 	<!--댓글 -->
 						
 			<div class="board_view_comment">
                 <div class="board_view_commtitle">
                     <h3>댓글</h3>
                 </div>
-                <form method="post" action="CommentCon">
+                
+                <form class="board_view_commform" method="post" action="CommentCon">
                 <input hidden name="b_num" value="<%=b_num%>">
                 <div class="board_view_comminput">
                     <input type="text"; placeholder="댓글을 입력하세요!" name="commentText">
@@ -133,6 +133,7 @@
                         <input type="submit" value="등록">
                 </div>
                 </form>
+                
             </div>
 	
 

@@ -278,6 +278,13 @@ img { display: block; margin: 20px auto; }
     height: 30px;
 }
 
+.board_view_commform{
+	display: flex;
+	width:620px;
+	height:64px;
+	align-items: center;
+	justify-content: space-between;
+}
 
 
 .board_write {
