@@ -80,7 +80,15 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.bucketCon</servlet-class>
 	</servlet>
-
+	<servlet>
+		<servlet-name>ReviewCon</servlet-name>
+		<display-name>ReviewCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.ReviewCon</servlet-class>
+	</servlet>
+	
+	
+	
 	<servlet-mapping>
 		<servlet-name>UserVO</servlet-name>
 		<url-pattern>/UserVO</url-pattern>
@@ -131,9 +139,12 @@
 		<servlet-name>bucketCon</servlet-name>
 		<url-pattern>/bucketCon</url-pattern>
 	</servlet-mapping>
-
-
-
+	<servlet-mapping>
+		<servlet-name>ReviewCon</servlet-name>
+		<url-pattern>/ReviewCon</url-pattern>
+	</servlet-mapping>
+	
+	
 
 
 </web-app>
