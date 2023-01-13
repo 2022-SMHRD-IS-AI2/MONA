@@ -80,17 +80,14 @@
                 </div>
                 <div class="cartBag-itemlist-optioninfo">
                     <div class="cartBag-itemlist-optionlist">
+                         <div class="cartBag-itemlist-optionlist-price">
+                             <h2>10000원</h2>
+                        </div>
+                        
                         <div class="cartBag-itemlist-optionlist-cnt">
-                            <label class="NumberCounter" for="">
-                                <button>-</button>
-                                <input type="text">
-                                <button>+</button>
-                            </label>
+                            <input type="number" min="1" max="9999" name="count" >
                         </div>
-                        <div class="cartBag-itemlist-optionlist-price">
-                            <p>9000</p>
-                            <p>원</p>
-                        </div>
+                   
                         <div class="cartBag-itemlist-optionlist-btn">
                             <button class="cartBag-itemlist-optionlist-btn">
                                 <i class="fa-solid fa-xmark"></i>
@@ -104,25 +101,19 @@
     
             </div>
             <div class="cartBag-itemlist-section">
-                <div class="cartBag-itemlist-sectiondiv">상품가격</div>
+                <div class="cartBag-itemlist-sectiondiv"><h2>상품가격</h2></div>
                 <div class="cartBag-itemlist-section-price">
-                    <span>9900</span>
-                    <span>원</span>
+                  <h2>10000원</h2>
                 </div>  
             </div>
-        
- 
-     
-     
-
-
     </div>
-    <div class="cartList">
-   
-        
-        
-        
-        
+
+
+    
+
+
+        <!--주문탭 -->
+        <div class="cartList">
         <div class="cartList-content">
             <div class="cartList-content-item">
                 <div class="cartList-content-item-label">상품금액</div>
