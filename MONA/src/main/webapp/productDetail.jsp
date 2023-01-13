@@ -158,7 +158,7 @@
                                         수량
                                     </td>
                                     <td>
-                                  <input type="number" min="1" max="9999" name="count" >
+                                   <input type="number" min="1" max="9999" name="count" >
                                     </td>
                                 
                                 </tr>
