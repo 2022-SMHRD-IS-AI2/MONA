@@ -76,20 +76,21 @@
              <a href="productDetail.jsp?prod_num=<%=vo.get(i).getProd_num()%>">
                <img src="./prod/<%=vo.get(i).getProd_thumb()%>" alt="">
              </a>
+         
             </div>
             <div class="contents-child-title" >
                 <span><%=vo.get(i).getShop_name()%></span>
-                <a href="#"><span><%=vo.get(i).getProd_name()%></span></a>
+                <a href="productDetail.jsp"><span><%=vo.get(i).getProd_name()%></span></a>
                  <span>가격    <%=vo.get(i).getProd_price()%>   원</span>
             </div>
-            <div class="contents-child-star">
+               <div class="contents-child-star">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-            
-        </div>
+                
+            </div>
    <%}%>
    
    <%}%>
