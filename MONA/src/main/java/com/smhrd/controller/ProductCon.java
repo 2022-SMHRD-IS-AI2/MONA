@@ -61,14 +61,14 @@ public class ProductCon extends HttpServlet {
 		String prod_Img= multi.getFilesystemName("prodImg");		//이미지(제작과정 이미지 파일?)
 		String prod_Desc= multi.getParameter("prodDesc");    //상품설명
 		
-		System.out.println(shop_Name);
-		System.out.println(prod_Name);
-		System.out.println(prod_Cate);
-		System.out.println(prod_Price);
-		System.out.println(prod_Thumb);
-		System.out.println(prod_Img);
-		System.out.println(shop_Name);
-		System.out.println(prod_Desc);
+//		System.out.println(shop_Name);
+//		System.out.println(prod_Name);
+//		System.out.println(prod_Cate);
+//		System.out.println(prod_Price);
+//		System.out.println(prod_Thumb);
+//		System.out.println(prod_Img);
+//		System.out.println(shop_Name);
+//		System.out.println(prod_Desc);
 		
 
 		ProductVO vo= new ProductVO(prod_Name,prod_Cate,prod_Price,prod_Thumb,prod_Img,prod_Desc,sellerId,shop_Name); 

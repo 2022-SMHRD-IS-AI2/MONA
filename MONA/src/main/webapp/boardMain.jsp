@@ -1,5 +1,3 @@
-
-
 <%@page import="com.smhrd.model.ProductDAO"%>
 <%@page import="com.smhrd.model.ProductVO"%>
 <%@page import="com.smhrd.model.BoardVO"%>
@@ -7,48 +5,69 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-      
+<link rel="stylesheet" href="./CSS/css.css">
+<link rel="stylesheet" href="./CSS/main.css">
 </head>
-<body>      
-       <!-- Q17. 게시글 목록 조회 기능 
-         		: web_baord 테이블에 있는 모든 게시글 출력
-         		: select * from web_baord-->
-         	  <% List<BoardVO> vo = (new BoardDAO()).showBoard(); %>  
-         	
-         	
-         <!-- Q18. 게시글 목록 세부페이지 기능(제목을 클릭하면 세부페이지 BoardDetail.jsp로 이동)-->
-         <div id="board">
-            <table id = "list">
-               <tr> 
-                  <td>번호</td>
-                  <td>제목</td>
-                  <td>작성자</td>
-                  <td>시간</td>
-                </tr>
-            
-             	<%for(int i =0; i< vo.size();i++){ %>
-            		<tr> 	
-                  		<td><%=i+1 %></td>
-                  		<td><a href="boardDetail2.jsp?b_num=<%=vo.get(i).getNum() %>"><%=vo.get(i).getTitle() %></a></td>
- 		                <td><%=vo.get(i).getId() %></td>
-        		        <td><%=vo.get(i).getRegdt().toString() %></td>
-               </tr>
-            
-            
-            	<%} %>  
-            </table>
-            
-            <a href="./main.jsp"><button id="writer">홈으로가기</button></a>
-            <a href="./boardWrite2.jsp">
-            <button id="write">작성하러가기</button>
-            </a>
-            
-         </div>
+<body>
 
-        
+   <div class="header">
+      <div class="header-logo">
+         <a href="main.jsp">MonA</a>
+      </div>
+      <div class="header-serch">
+         <input type="text" name="" id=""> <a href=""><i
+            class="fa-solid fa-magnifying-glass"></i></a>
+      </div>
+      <div class="header-menu">
+         <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> <a
+            href="/boad.html">마이페이지</a> <a href="#">게시판</a> <a href="#">로그인</a>
+         <a href="#">회원가입</a>
+      </div>
+   </div>
+   <div class="header2">
+      <a href="">ALL</a> <a href="">식품</a> <a href="">의류</a> <a href="">장난감</a>
+      <a href="">굿즈</a>
+   </div>
+
+   <div class="board_wrap">
+      <div class="board_title">
+         <strong>게시판</strong>
+         <p>* 묻고 답하고 소통하는 공간 *</p>
+      </div>
+      <div class="board_list_wrap">
+         <div class="board_list">
+            <div class="top">
+               <div class="num">번호</div>
+               <div class="title">제목</div>
+               <div class="writer">작성자</div>
+               <div class="date">작성일</div>
+               <div class="count">조회</div>
+            </div>
+            
+            <% List<BoardVO> vo = (new BoardDAO()).showBoard(); %>
+            
+            <%for(int i =0; i< vo.size();i++){ %>
+            <div>
+               <div class="num"><%=i+1 %></div>
+               <div class="title">
+                  <a href="boardDetail2.jsp?b_num=<%=vo.get(i).getNum() %>"><%=vo.get(i).getTitle() %></a>
+               </div>
+               <div class="writer"><%=vo.get(i).getId() %></div>
+               <div class="date"><%=vo.get(i).getRegdt().toString() %></div>
+            </div>
+            <%} %>
+         
+         <div class="bt_wrap">
+            <a href="main.jsp" clss="on">홈으로가기</a>
+            <a href="boardWrite2.jsp" class="on">등록</a>
+            <!--<a href="#">수정</a>-->
+         </div>
+   
+
+
 </body>
 </html>

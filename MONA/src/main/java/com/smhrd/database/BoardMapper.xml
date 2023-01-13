@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 
 	<select id="showBoard" resultType="com.smhrd.model.BoardVO">
-		select * from TB_BOARD
+		select * from TB_BOARD order by B_REGDT desc
 	</select>
 	
 	<select id="detailBoard" parameterType="int" resultType="com.smhrd.model.BoardVO">

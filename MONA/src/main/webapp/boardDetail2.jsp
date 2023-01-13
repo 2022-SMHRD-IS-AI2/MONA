@@ -8,6 +8,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<link rel="stylesheet" href="./CSS/css.css">
+<link rel="stylesheet" href="./CSS/main.css">
 <head>
       <title>Forty by HTML5 UP</title>
       <meta charset="utf-8" />
@@ -20,118 +22,146 @@
       
 </head>
 <body>      
-        <!-- Q19. 게시글 세부내용 조회 기능 
-               : select * from web_baord where num= 선택한 게시글의 num -->
+    
+   <%
+   int b_num = Integer.parseInt(request.getParameter("b_num"));
+   BoardVO vo = new BoardDAO().detailBoard(b_num);
+   %>
+   
+   <%
+   CommentVO cvo = new CommentVO(b_num);
+   List <CommentVO> lvo = new CommentDAO().showCmt(cvo);
+   %>
+   
+<div class="header">   
+        <div class="header-logo">
+            <a href="main.jsp">MonA</a>
+        </div>
+        <div class="header-serch" >
+            <input type="text" name="" id="">
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+        <div class="header-menu" >
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
+            <a href="/boad.html">마이페이지</a>
+            <a href="#">게시판</a>
+            <a href="#">로그인</a>
+            <a href="#">회원가입</a>            
+        </div>
+    </div>
+    <div class="header2">   
+        <a href="">ALL</a>
+        <a href="">식품</a>
+        <a href="">의류</a>
+        <a href="">장난감</a>
+        <a href="">굿즈</a>
+    </div>
 
-	<%
-	int b_num = Integer.parseInt(request.getParameter("b_num"));
-	BoardVO vo = new BoardDAO().detailBoard(b_num);
-	%>
-	
-	<%
-	CommentVO cvo = new CommentVO(b_num);
-	List <CommentVO> lvo = new CommentDAO().showCmt(cvo);
-	%>
-	
-	<!-- Q18. 게시글 목록 세부페이지 기능(제목을 클릭하면 세부페이지 BoardDetail.jsp로 이동)-->
-	<div id="board">
-		<table id="list">
-			<tr>
-				<td>제목</td>
-				<td><%=vo.getTitle()%></td>
-			</tr>
-			<tr>
-				<td>작성자</td>
-				<td><%=vo.getId()%></td>
-			</tr>
-			<tr>
-				<td>다운로드</td>
-				<td><a href="./file2/<%=vo.getFile()%>" download>다운로드</a></td>
-			</tr>
-			<tr>
-				<td colspan="2">내용</td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<h3><%=vo.getContent()%></h3> <img
-					src="./file2/<%=vo.getFile()%>">
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2"><a href="boardMain.jsp"><button>뒤로가기</button></a></td>
-			</tr>
-		</table>
-	</div>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>게시판</strong>
+            <p>* 묻고 답하고 소통하는 공간 *</p>
+        </div>
+        <div class="board_view_wrap">
+            <div class="board_view">
+                <div class="title">
+                    <%=vo.getTitle()%>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>번호</dt>
+                        <dd>1</dd>
+                    </dl>
+                    <dl>
+                        <dt>작성자</dt>
+                        <dd><%=vo.getId()%></dd>
+                    </dl>
+                    <dl>
+                        <dt>작성일</dt>
+                        <dd><%=vo.getRegdt().toString() %></dd>
+                    </dl>
 
+                </div>
+                <div class="cont">
+                    <%=vo.getContent()%>
+                    <br>
+                    <img src="./file2/<%=vo.getFile()%>">
+                </div>
+            </div> <br><br>
 
-	<h3>댓글
-	<br>
-	<%
-	
-	for(int j=0; j < lvo.size(); j++){%>
-		
-		<% for(int i=j; i <= j; i++) { %>
-	    <td><%=
-	    lvo.get(j).getU_Id()
-	    %></td>
-	    <hr>
-	    <%}%>
-		
-		<% for(int i=j; i <= j; i++) { %>
-	    <td><%=
-	    lvo.get(j).getCMT_CONTENT()
-	    %></td>
-	    <%}%>
-		
-		<% for(int i=j; i <= j; i++) { %>
-	    <td><%=
-	    lvo.get(j).getCMT_REGDT()
-	    %></td>
-	    <hr>
-	    <%}%>
-	    
-		</tr>
-		<br>
-	<% } %>
-	
-	
-	</h3>
-	
-	<hr>
-	
-	<div class="container">
-		<div class="form-group">
-			<form method="post" action="CommentCon">
-				<table class="table table-striped"
-					style="text-align: center; border: 1px solid #dddddd">
-					<tr>
-						<td style="border-bottom: none;" valign="middle"><br>
-						
-						</td>
-						<input hidden name="b_num" value="<%=b_num%>">
-						<td><input type="text" style="height: 100px;"
-							class="form-control" placeholder="상대방을 존중하는 댓글을 남깁시다."
-							name="commentText"></td>
-						<td><br>
-						
-						
-						<br>
-						<input type="submit" class="btn-primary pull" value="댓글 작성"></td>
-					</tr>
-				</table>
-			</form>
-		</div>
-	</div>
+      
+<%
+   for(int j=0; j < lvo.size(); j++){%>
+      
+      <% for(int i=j; i <= j; i++) { %>
+       <td><%=
+       lvo.get(j).getU_Id()
+       %></td>
+       <hr>
+       <%}%>
+      
+      <% for(int i=j; i <= j; i++) { %>
+       <td><%=
+       lvo.get(j).getCMT_CONTENT()
+       %></td>
+       <%}%>
+      
+      <% for(int i=j; i <= j; i++) { %>
+       <td><%=
+       lvo.get(j).getCMT_REGDT()
+       %></td>
+       <hr>
+       <%}%>
+       
+      </tr>
+      <br>
+   <% } %>
 
 
+   <!--댓글 -->
+                  
+         <div class="board_view_comment">
+                <div class="board_view_commtitle">
+                    <h3>댓글</h3>
+                </div>
+                <form method="post" action="CommentCon">
+                <input hidden name="b_num" value="<%=b_num%>">
+                <div class="board_view_comminput">
+                    <input type="text"; placeholder="댓글을 입력하세요!" name="commentText">
+                </div>
+                <div class="board_view_commsubmit">
+                        <input type="submit" value="등록">
+                </div>
+                </form>
+            </div>
+   
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- Scripts -->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/jquery.scrolly.min.js"></script>
+   <script src="assets/js/jquery.scrollex.min.js"></script>
+   <script src="assets/js/skel.min.js"></script>
+   <script src="assets/js/util.js"></script>
+   <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+   <script src="assets/js/main.js"></script>
 </body>
 </html>
