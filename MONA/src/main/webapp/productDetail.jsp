@@ -9,9 +9,20 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
-  <div class="header">   
+ <%
+  	String loginUser = (String) session.getAttribute("loginUser_id");
+	
+	if(loginUser != null){
+		System.out.print(loginUser);
+	}
+	
+	%>
+
+<body>
+  <div class="header">
         <div class="header-logo">
-            <a href="index.html">MonA</a>
+            <a href="main.jsp">MonA</a>
+
         </div>
         <div class="header-serch" >
             <input type="text" name="" id="">
@@ -19,44 +30,41 @@
         </div>
         <div class="header-menu" >
             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
-            <a href="/boad.html">마이페이지</a>
-            <a href="#">게시판</a>
-            <a href="#">로그인</a>
-            <a href="#">회원가입</a>            
+            	<%
+			if(loginUser == null){%>
+					<!--로그인 안했을 경우  -->
+				<a href="login.jsp"></a>
+			<% }else {%>
+				<% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
+				if(loginUser.equals("admin")){%>
+					  <a href="adminMypage.jsp">마이페이지</a>	
+            <%}else {%>
+                        <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
+				 <a href="Mypage.jsp">마이페이지</a>
+            <%}%> 
+			<%} %>
+            <a href="boardMain.jsp">게시판</a>
+            <a href="login.jsp">로그인</a>
+            <a href="join.jsp">회원가입</a>            
         </div>
     </div>
     <div class="header2">   
-        <a href="">ALL</a>
-        <a href="">식품</a>
-        <a href="">의류</a>
-        <a href="">장난감</a>
-        <a href="">굿즈</a>
+        <a href="food.jsp">식품</a>
+        <a href="clothes.jsp">의류</a>
+        <a href="toy.jsp">장난감</a>
+        <a href="goods.jsp">굿즈</a>
     </div>
 
     <div class="productdetail">
         <div class="productdetail-content">
-            <img src="/img/반려동물의류/[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지.jpg" alt="">
+            <img src="./img/반려동물의류/강아지 고양이 방울 케이프.jpg" alt="">
            
-            <div class="shipping a">
-                <span class="shipping-title">배송시작</span>
-                <span>
-                    <span>당일</span>
-                    <span>/</span>
-                    <span>최대 14일 이내</span>
-                </span>
-            </div>
-            <div class="shipping b">
-                <span class="shipping-title">수량</span>
-                <span>
-                    <span>주문시 제작</span>   
-                </span>
-            </div>
             <div class="shipping c">
                 <button type="button" class="shipping-a" href="">상품정보</button >
                 <button type="button" class="shipping-a" href="">구매후기</button >
                 <button type="button" class="shipping-a" href="">댓글</button >
             </div>
-            <div><img src="/img/반려동물의류/[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지1.jpg" alt=""></div>
+            <div><img src="./img/반려동물의류/강아지 고양이 방울 케이프.jpg" alt=""></div>
             
             <div class="ProductDetailDescription__textItem1">
                 <span>
@@ -151,60 +159,7 @@
                 </div>
             </div>
             
-            
-            
-            
-            
-
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         </div>
-        
-       
         
         <div class="productdetail-description">
             <h2 class="productdetail-description-title">[맞춤가능] 베어폼폼 패딩 | 소형견부터 대형견까지</h2>
@@ -219,16 +174,7 @@
                     </div>
                     
                         <div class="data-row">
-                            <table>
-                                <tr>
-                                    <td class="data-row__title">
-                                        적립금
-                                    </td>
-                                    <td>
-                                        최대 550p
-                                    </td>
-                                </tr>
-                            </table>
+                        
                         </div>
                         <div class="data-row">
                             <table>
@@ -242,30 +188,8 @@
                                 </tr>
                             </table>
                         </div>
-                        <div class="data-row">
-                            <table>
-                                <tr>
-                                    <td class="data-row__title">
-                                        배송비
-                                    </td>
-                                    <td>
-                                        3,000 원
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="data-row">
-                            <table>
-                                <tr>
-                                    <td class="data-row__title">
-                                        배송 시작
-                                    </td>
-                                    <td>
-                                        최대 14일 이내
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                      
+                    
                         <div class="data-row">
                             <table>
                                 <tr>
@@ -273,7 +197,7 @@
                                         수량
                                     </td>
                                     <td>
-                                        주문시 제작
+                                   <input type="number" min="1" max="9999" name="count" >
                                     </td>
                                 </tr>
                             </table>
@@ -282,34 +206,10 @@
                 </div>   
             </div> 
             <div class="productdetailbox">
-                <span>옵션 선택</span>
-            
-            <div class="productdetail-option">
-                <div class="productdetail-option-name">
-                    <span>색상</span>
-                </div>
-                <select class="form-select" aria-label="Default select example" name="mType">
-                    <option disabled>색상</option>
-                    <option value="핑크">핑크</option>
-                    <option value="스카이">스카이</option>
-                    
-                </select>
-            </div>
-            <div class="productdetail-option">
-                <div class="productdetail-option-name">
-                    <span>사이즈</span>
-                </div>
-                <select class="form-select" aria-label="Default select example" name="mType">
-                    <option disabled>사이즈</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                </select>
-            </div>
+       
             <div class="productdetail-description-sum" >
-                <span>총금액</span>
-                <span>0원</span>
+                <h2>총금액</h2>
+                <h2>0원</h2>
             </div>  
             <div class="productdetail-description-buy" >
                 <button type="submit" class="pd-btn cart">장바구니</button>
