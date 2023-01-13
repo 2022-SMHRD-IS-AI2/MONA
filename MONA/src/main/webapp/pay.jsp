@@ -1,7 +1,6 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- jQuery -->
@@ -10,19 +9,14 @@
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     <script>
         var IMP = window.IMP; 
-        IMP.init("imp43566622"); 
+        IMP.init("imp57011454"); 
       
-        var today = new Date();   
-        var hours = today.getHours(); // 시
-        var minutes = today.getMinutes();  // 분
-        var seconds = today.getSeconds();  // 초
-        var milliseconds = today.getMilliseconds();
-        var makeMerchantUid = hours +  minutes + seconds + milliseconds;
+        
         
 
         function requestPay() {
             IMP.request_pay({
-                pg : 'kcp.Monatest',
+                pg : 'html5_inicis.INIpayTest',
                 pay_method : 'card',
                 merchant_uid: "IMP"+makeMerchantUid, 
                 name : '당근 10kg',
@@ -46,5 +40,6 @@
 </head>
 <body>
     <button onclick="requestPay()">결제하기</button> <!-- 결제하기 버튼 생성 -->
+   
 </body>
 </html>
