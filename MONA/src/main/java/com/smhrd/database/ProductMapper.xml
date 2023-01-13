@@ -22,4 +22,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update TB_PRODUCT set shop_check='Y' where prod_num=#{shop_check}
 	</update>
 	
+	 <!--상품 등록 요청건 관리자마이페이지에 보내기  -->
+	<select id="showCate" resultType="com.smhrd.model.ProductVO">
+		select * from TB_PRODUCT where shop_check='Y' 
+	</select>
+	
+
+	
 </mapper>

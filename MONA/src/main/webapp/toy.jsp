@@ -64,11 +64,11 @@
     </div>
 
    <div class="head-title" >
-    <h1>식품</h1>
+    <h1>장난감</h1>
    </div>
    <%for(int i=0; i<vo.size(); i++){%>
    
-   <%if(vo.get(i).getProd_cate().equals("식품")){%>
+   <%if(vo.get(i).getProd_cate().equals("장난감")){%>
    
        <div class="contents">
         <div class="contents-child">

@@ -64,11 +64,11 @@
     </div>
 
    <div class="head-title" >
-    <h1>식품</h1>
+    <h1>의류</h1>
    </div>
    <%for(int i=0; i<vo.size(); i++){%>
    
-   <%if(vo.get(i).getProd_cate().equals("식품")){%>
+   <%if(vo.get(i).getProd_cate().equals("의류")){%>
    
        <div class="contents">
         <div class="contents-child">
@@ -80,7 +80,7 @@
             <div class="contents-child-title" >
                 <span><%=vo.get(i).getShop_name()%></span>
                 <a href="#"><span><%=vo.get(i).getProd_name()%></span></a>
-                 <span>가격    <%=vo.get(i).getProd_price()%>   원</span>
+                  <span>가격    <%=vo.get(i).getProd_price()%>   원</span>
             </div>
             <div class="contents-child-star">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">

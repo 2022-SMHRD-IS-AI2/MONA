@@ -20,7 +20,8 @@
 <body>
   <div class="header">   
         <div class="header-logo">
-            <a href="index.html">MonA</a>
+            <a href="main.jsp">MonA</a>
+
         </div>
         <div class="header-serch" >
             <input type="text" name="" id="">
@@ -47,11 +48,10 @@
         </div>
     </div>
     <div class="header2">   
-        <a href="">ALL</a>
-        <a href="">식품</a>
-        <a href="">의류</a>
-        <a href="">장난감</a>
-        <a href="">굿즈</a>
+        <a href="food.jsp">식품</a>
+        <a href="clothes.jsp">의류</a>
+        <a href="toy.jsp">장난감</a>
+        <a href="goods.jsp">굿즈</a>
     </div>
     <div class="banner">
     
@@ -75,7 +75,10 @@
             <div class="contents-child-title" >
                 <span>베어폼폼 패딩</span>
                 <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
+                <span>기여워용</span>
             </div>
+            
+
             <div class="contents-child-star">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
@@ -84,9 +87,7 @@
                 <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 
             </div>
-            <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
+         
             
         </div>
         <div class="contents-child">
