@@ -1,6 +1,9 @@
 @import "product.css";
 @import "reset.css";
 @import "css.css";
+@import "productDetail.css";
+@import "bucket.css";
+
 
 .header{
 width: 80%;
