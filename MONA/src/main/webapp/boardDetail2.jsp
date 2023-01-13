@@ -85,7 +85,7 @@
                 <div class="cont">
                     <%=vo.getContent()%>
                     <br>
-                    <img src="./file2/<%=vo.getFile()%>">
+                    <img src="./file/<%=vo.getFile()%>">
                 </div>
             </div> <br><br>
 
@@ -134,34 +134,22 @@
                 </div>
                 </form>
             </div>
-   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- Scripts -->
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/jquery.scrolly.min.js"></script>
-   <script src="assets/js/jquery.scrollex.min.js"></script>
-   <script src="assets/js/skel.min.js"></script>
-   <script src="assets/js/util.js"></script>
-   <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-   <script src="assets/js/main.js"></script>
+	
+			<div class="bt_wrap">
+                <a href="boardMain.jsp" class="on">목록</a>
+                <!-- <a href="edit.html">수정</a> -->
+            </div>
+        </div>
+        
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI2/MONA.git
 </body>
 </html>
