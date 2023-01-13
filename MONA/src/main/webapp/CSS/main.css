@@ -1,6 +1,9 @@
 @import "product.css";
 @import "reset.css";
 @import "css.css";
+@import "productDetail.css";
+@import "bucket.css";
+
 
 .header{
 width: 80%;
@@ -48,6 +51,7 @@ align-items: center;
 }
 .header-menu a{
     margin-left: 20px;
+    font-size: 1.5rem;
 }
 .header2{
     width: 80%;
@@ -61,6 +65,7 @@ align-items: center;
 }
 .header2 a{
     margin: 50px;
+    font-size: 1.5rem;
 }
 .header2 a:first-child{
     margin-left: 500px;

@@ -1,4 +1,4 @@
-<%@page import="com.smhrd.model.CommentDAO"%>
+ <%@page import="com.smhrd.model.CommentDAO"%>
 <%@page import="com.smhrd.model.CommentVO"%>
 <%@page import="com.smhrd.model.BoardVO"%>
 <%@page import="com.smhrd.model.BoardDAO"%>
