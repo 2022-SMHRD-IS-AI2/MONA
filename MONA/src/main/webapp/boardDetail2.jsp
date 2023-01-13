@@ -84,38 +84,36 @@
 			</div>
 
 			
-			
-			<%
-			for (int j = 0; j < lvo.size(); j++) {
-			%>
+		<%
+         for (int j = 0; j < lvo.size(); j++) {
+         %>
+      
+         <div class="board_view_ripple">
+            <%
+         for (int i = j; i <= j; i++) {
+         %>
+            <span><%=lvo.get(j).getU_Id()%>
+            </span>
+            <%
+         }
+         %>
+         <%
+         for (int i = j; i <= j; i++) {
+         %>
+            <div class="board_view_ripplecoment">
+               <p><%=lvo.get(j).getCMT_CONTENT()%></p>
+               <p><%=lvo.get(j).getCMT_REGDT()%></p>
+            </div>
+            
+            <%
+         }
+         %>
+         </div>
+
+         <%
+         }
+         %>
 		
-			<div class="board_view_ripple">
-				<%
-			for (int i = j; i <= j; i++) {
-			%>
-				<span><%=lvo.get(j).getU_Id()%>
-				</span>
-				<%
-			}
-			%>
-			<%
-			for (int i = j; i <= j; i++) {
-			%>
-				<div class="board_view_ripplecoment">
-					<p><%=lvo.get(j).getCMT_CONTENT()%></p>
-					<p><%=lvo.get(j).getCMT_REGDT()%></p>
-				</div>
-				
-				<%
-			}
-			%>
-			</div>
-
-			<%
-			}
-			%>
-
-
 			<!--댓글 -->
 
 			<div class="board_view_comment">
