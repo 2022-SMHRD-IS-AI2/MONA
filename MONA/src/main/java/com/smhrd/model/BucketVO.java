@@ -19,10 +19,10 @@ import lombok.Setter;
 @Setter //setter 메소드
 public class BucketVO {
 
-	@NonNull
+	
 	private BigDecimal BUCKET_NUM;
 	@NonNull
-	private int PROD_NUM;
+	private String PROD_NUM;
 	
 	private Timestamp BUCKET_REGDT;
 	@NonNull
