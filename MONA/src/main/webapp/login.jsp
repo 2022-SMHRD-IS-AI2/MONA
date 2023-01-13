@@ -31,7 +31,7 @@
                 </div>
                 <h3>Password</h3>
                 <div class="inputlogin">
-                    <input type="text" style="border: none; background-color: transparent;" maxlength="15" name="pw">
+                    <input type="password" style="border: none; background-color: transparent;" maxlength="15" name="pw">
                     <!-- input type="text" style="border: none; background: transparent;" -->
                 </div>
                 <div class="inputspan">
