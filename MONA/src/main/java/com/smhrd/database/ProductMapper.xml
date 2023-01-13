@@ -27,6 +27,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from TB_PRODUCT where shop_check='Y' 
 	</select>
 	
+     <!--특정상품 클릭시 선택한 상품 상세정보페이지 띄우기-->
+	<select id="showProdDetail" resultType="com.smhrd.model.ProductVO" parameterType="int">
+		select * from TB_PRODUCT where prod_num=#{prod_num}
+	</select>
+	
 
 	
 </mapper>

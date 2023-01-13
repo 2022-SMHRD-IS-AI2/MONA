@@ -81,10 +81,10 @@
 
             <div class="contents-child-star">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
+                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
+                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
+                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
+                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 
             </div>
          

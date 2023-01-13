@@ -73,9 +73,9 @@
        <div class="contents">
         <div class="contents-child">
             <div class="contents-child-img">
-                <a href="#">
-                    <img src="./prod/<%=vo.get(i).getProd_thumb()%>" alt="">
-                </a>
+             <a href="productDetail.jsp?prod_num=<%=vo.get(i).getProd_num()%>">
+               <img src="./prod/<%=vo.get(i).getProd_thumb()%>" alt="">
+             </a>
             </div>
             <div class="contents-child-title" >
                 <span><%=vo.get(i).getShop_name()%></span>
