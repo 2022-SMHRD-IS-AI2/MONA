@@ -14,7 +14,10 @@
  
  <link rel="stylesheet" href="./CSS/main.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
 </head>
+
 <body>
  <%
   	String loginUser = (String) session.getAttribute("loginUser_id");
@@ -23,6 +26,7 @@
 		System.out.print(loginUser);
 	}
 	
+
 	%>
 	
 	<%
@@ -36,41 +40,53 @@
    List<RequestVO> lvo = new RequestDAO().showRequest(rvo);
    %>
    
-<body>
-  <div class="header">
+    <script>
+      $( document ).ready( function() {
+        $( '#quantity' ).change( function() {
+          let a = $( '#quantity' ).val();
+          let ab = (a * <%=vo.getProd_price()%>) + " 원";
+          $( '#totalPrice' ).text( ab );
+        } );
+      } );
+    </script>
+    
+    <div class="header">
         <div class="header-logo">
-            <a href="main.jsp">MonA</a>
-
-        </div>
-        <div class="header-serch" >
+   
+            <a href="main.jsp"><h2>MonA</h2></a>
+    <div class="header-serch" >
             <input type="text" name="" id="">
-            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            
         </div>
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    
         <div class="header-menu" >
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
-            	<%
-			if(loginUser == null){%>
-					<!--로그인 안했을 경우  -->
-				<a href="login.jsp"></a>
-			<% }else {%>
-				<% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
-				if(loginUser.equals("admin")){%>
-					  <a href="adminMypage.jsp">마이페이지</a>	
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
+           
+               <%
+         if(loginUser == null){%>
+               <!--로그인 안했을 경우  -->
+            <a href="login.jsp"></a>
+         <% }else {%>
+            <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
+            if(loginUser.equals("admin")){%>
+                 <a href="adminMypage.jsp">마이페이지</a>   
             <%}else {%>
                         <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
-				 <a href="Mypage.jsp">마이페이지</a>
+             <a href="Mypage.jsp">마이페이지</a>
             <%}%> 
-			<%} %>
+         <%} %>
             <a href="boardMain.jsp">게시판</a>
             <a href="login.jsp">로그인</a>
             <a href="join.jsp">회원가입</a>            
         </div>
     </div>
     <div class="header2">   
-        <a href="food.jsp">식품</a>
-        <a href="clothes.jsp">의류</a>
-        <a href="toy.jsp">장난감</a>
-        <a href="goods.jsp">굿즈</a>
+        <a href="food.jsp"><h3>Food</h3></a>
+        <a href="clothes.jsp"><h3>Clothes</h3></a>
+        <a href="toy.jsp"><h3>Toy</h3></a>
+        <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
 
     <div class="productdetail">
@@ -210,7 +226,8 @@
                                         수량
                                     </td>
                                     <td>
-                                     <input type="number" min="1" max="9999" name="count" >
+                                    	<form action="bucketCon" method="post">
+                                     <input type="number" min="1" max="9999" name="cnt" id="quantity" value="1">
                                     </td>
                                 
                                 </tr>
@@ -223,17 +240,21 @@
        
             <div class="productdetail-description-sum" >
                 <h3>총금액</h3>
-                <h3>0원</h3>
+                
+                <h3><span id="totalPrice"><%=vo.getProd_price()%> 원</span></h3>
             </div>  
             <div class="productdetail-description-buy" >
-                <button type="submit" class="pd-btn cart">장바구니</button>
-                
-                <button type="submit" class="pd-btn buy">구매하기</button>
+               
+            
+            	  <input hidden name="prod_num" value="<%=vo.getProd_num()%>">
+            	  <button type="submit" class="pd-btn cart">장바구니</button>
+            	</form>
+          
+                <a href="#"><button class="pd-btn buy">구매하기</button></a>
             </div> 
             </div>
             
-            
-         
+
         </div>
     
       
@@ -243,7 +264,9 @@
             
         
     </div>
-
+    
+	<div class="footer">
+    </div>
     <script src="./JS/productdetail.js"></script>
             
 </body>

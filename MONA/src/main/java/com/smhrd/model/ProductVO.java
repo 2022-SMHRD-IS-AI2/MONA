@@ -34,6 +34,7 @@ public class ProductVO {
     @NonNull private String seller_id;
     @NonNull private String shop_name;
     private String shop_check;
+    private int cnt;
 }
 
 

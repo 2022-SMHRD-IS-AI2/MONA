@@ -23,6 +23,7 @@
 
 	
 	System.out.println(vo.size());
+	
 
 	
 	
@@ -30,47 +31,51 @@
 	
 
 <body>
-  <div class="header">   
+  <div class="header">
         <div class="header-logo">
-            <a href="index.html">MonA</a>
-        </div>
-        <div class="header-serch" >
+   
+            <a href="main.jsp"><h2>MonA</h2></a>
+    <div class="header-serch" >
             <input type="text" name="" id="">
-            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            
         </div>
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    
         <div class="header-menu" >
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
-            	<%
-			if(loginUser == null){%>
-					<!--로그인 안했을 경우  -->
-				<a href="login.jsp"></a>
-			<% }else {%>
-				<% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
-				if(loginUser.equals("admin")){%>
-					  <a href="adminMypage.jsp">마이페이지</a>	
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+            
+               <%
+         if(loginUser == null){%>
+               <!--로그인 안했을 경우  -->
+            <a href="login.jsp"></a>
+         <% }else {%>
+            <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
+            if(loginUser.equals("admin")){%>
+                 <a href="adminMypage.jsp">마이페이지</a>   
             <%}else {%>
                         <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
-				 <a href="Mypage.jsp">마이페이지</a>
+             <a href="Mypage.jsp">마이페이지</a>
             <%}%> 
-			<%} %>
+         <%} %>
             <a href="boardMain.jsp">게시판</a>
             <a href="login.jsp">로그인</a>
             <a href="join.jsp">회원가입</a>            
         </div>
     </div>
     <div class="header2">   
-        <a href="food.jsp">식품</a>
-        <a href="clothes.jsp">의류</a>
-        <a href="toy.jsp">장난감</a>
-        <a href="goods.jsp">굿즈</a>
+        <a href="food.jsp"><h3>Food</h3></a>
+        <a href="clothes.jsp"><h3>Clothes</h3></a>
+        <a href="toy.jsp"><h3>Toy</h3></a>
+        <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
-    <div class="banner">
+    <div class="banner2">
     
     
     </div>
 
-   <div class="head-title" >
-    <h1>의류</h1>
+   <div class="head-title1" >
+    <h1>Clothes</h1>
    </div>
    
        <div class="contents">

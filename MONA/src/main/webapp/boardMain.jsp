@@ -11,27 +11,53 @@
 <head>
 <link rel="stylesheet" href="./CSS/css.css">
 <link rel="stylesheet" href="./CSS/main.css">
+<link rel="stylesheet" href="./CSS/style.css">
+<link rel="stylesheet" href="./login/style.css">
 </head>
 <body>
+ <%String loginUser = (String) session.getAttribute("loginUser_id");
+ 
+%>
 
    <div class="header">
-      <div class="header-logo">
-         <a href="main.jsp">MonA</a>
-      </div>
-      <div class="header-serch">
-         <input type="text" name="" id=""> <a href=""><i
-            class="fa-solid fa-magnifying-glass"></i></a>
-      </div>
-      <div class="header-menu">
-         <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> <a
-            href="/boad.html">마이페이지</a> <a href="#">게시판</a> <a href="#">로그인</a>
-         <a href="#">회원가입</a>
-      </div>
-   </div>
-   <div class="header2">
-      <a href="">ALL</a> <a href="">식품</a> <a href="">의류</a> <a href="">장난감</a>
-      <a href="">굿즈</a>
-   </div>
+        <div class="header-logo">
+   
+            <a href="main.jsp"><h2>MonA</h2></a>
+    <div class="header-serch" >
+            <input type="text" name="" id="">
+            
+        </div>
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    
+        <div class="header-menu" >
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
+       
+            
+               <%
+         if(loginUser == null){%>
+               <!--로그인 안했을 경우  -->
+            <a href="login.jsp"></a>
+         <% }else {%>
+            <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
+            if(loginUser.equals("admin")){%>
+                 <a href="adminMypage.jsp">마이페이지</a>   
+            <%}else {%>
+                        <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
+             <a href="Mypage.jsp">마이페이지</a>
+            <%}%> 
+         <%} %>
+            <a href="boardMain.jsp">게시판</a>
+            <a href="login.jsp">로그인</a>
+            <a href="join.jsp">회원가입</a>            
+        </div>
+    </div>
+    <div class="header2">   
+        <a href="food.jsp"><h3>Food</h3></a>
+        <a href="clothes.jsp"><h3>Clothes</h3></a>
+        <a href="toy.jsp"><h3>Toy</h3></a>
+        <a href="goods.jsp"><h3>Goods</h3></a>
+    </div>
 
    <div class="board_wrap">
       <div class="board_title">
@@ -64,10 +90,15 @@
          <div class="bt_wrap">
             <a href="main.jsp" clss="on">홈으로가기</a>
             <a href="boardWrite2.jsp" class="on">등록</a>
+            
+            <br>
+		<br>
+		<br>
+            
             <!--<a href="#">수정</a>-->
          </div>
-   
-
-
+   		 <div class="footer">
+    	</div>
+		
 </body>
 </html>

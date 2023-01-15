@@ -9,14 +9,18 @@
     display: flex;
     justify-content: space-around;
     height: 160px;
-    background-color: antiquewhite;
     margin-top: 50px;
+    border: 1px solid black;
+    font-size: 1.3rem;
 }
+
+
 .logininfo-order-h2{
     display: flex;
     padding: 20px;
     font-size: larger;
     margin-top: 15px;
+    
 }
 .logininfo-order-number{
     margin: 40px;
@@ -24,8 +28,11 @@
 .logininfo-order-review{
     margin: 40px;
 }
+
+
 .button {
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-left:250px;
 }
 
 .button button{
@@ -47,7 +54,9 @@
     width: 100%;
     height: 30px;
     border-top: 1px solid whitesmoke;
-    background-color: rgb(128, 128, 128,0.3);
+    background-color:rgb(247, 246, 244); 
+    color:  rgb(19, 19, 79);
+
 }
 .ordercontents-list{
     display: flex;
@@ -104,4 +113,6 @@
     
 
 }
+
+
 

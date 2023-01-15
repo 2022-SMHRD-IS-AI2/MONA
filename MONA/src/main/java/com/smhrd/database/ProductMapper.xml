@@ -32,6 +32,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from TB_PRODUCT where prod_num=#{prod_num}
 	</select>
 	
+	<!-- 로그인한 유저의 장바구니에 상품정보 전체조회  -->
+  	 <select id = "showBk" resultType="com.smhrd.model.ProductVO" parameterType = "String">
+		select T1.*, T.CNT from TB_PRODUCT T1
+		JOIN TB_BUCKET T
+		ON T1.PROD_NUM = T.PROD_NUM
+		AND T.U_ID = #{U_id}
+  	 </select>
+	
 
 	
 </mapper>
