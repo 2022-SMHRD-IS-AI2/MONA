@@ -26,6 +26,7 @@
             <input type="text" name="" id="">
             
         </div>
+
         <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
         </div>
     
@@ -49,6 +50,7 @@
             <a href="login.jsp">로그인</a>
             <a href="join.jsp">회원가입</a>            
         </div>
+
     </div>
     <div class="header2">   
         <a href="food.jsp"><h3>Food</h3></a>
