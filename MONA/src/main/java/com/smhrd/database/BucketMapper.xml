@@ -10,6 +10,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into tb_bucket values(
 		tb_bucket_SEQ.nextval,#{prod_num},sysdate,#{U_id},#{cnt})
 	</insert>
+	
+	<delete id="Bdelete" parameterType="String">
+		delete from tb_bucket where u_id=#{loginUser}
+	</delete>
 
 
 

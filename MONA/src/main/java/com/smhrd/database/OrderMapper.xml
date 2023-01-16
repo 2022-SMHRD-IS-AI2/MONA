@@ -14,5 +14,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="pay" resultType="com.smhrd.model.OrderVO">
 		select * from TB_order where order_status='N'
 	</select>
+	
+	<!--결제완료시 주문상태 주문완료로 바꾸기 N->Y -->
+	<update id="orderCheck" parameterType="String" >
+		update TB_order set order_status='Y' where u_id=#{loginUser}
+	</update>
    
    </mapper>

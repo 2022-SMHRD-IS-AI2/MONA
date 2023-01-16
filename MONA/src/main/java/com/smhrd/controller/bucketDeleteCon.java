@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.BucketDAO;
-import com.smhrd.model.OrderDAO;
 
 
-public class orderSuccessCon extends HttpServlet {
+public class bucketDeleteCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -19,25 +18,19 @@ public class orderSuccessCon extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		HttpSession session = request.getSession();
-		String loginUser = (String) session.getAttribute("loginUser_id");
+		String loginUser = request.getParameter("loginUSer");
 		System.out.println(loginUser);
 		
 		int B_cnt = new BucketDAO().Bdelete(loginUser);
-		int O_cnt = new OrderDAO().orderCheck(loginUser);
 		
-		System.out.println(B_cnt);
-		System.out.println(O_cnt);
-		
-		if(O_cnt>0 && B_cnt>0) {
-			System.out.println("주문완료");
-			response.sendRedirect("mypage.jsp");
+		if(B_cnt>0) {
+			System.out.println("장바구니 상품 삭제 성공");
+			response.sendRedirect("Bucket.jsp");
 		}else {
-			System.out.println("주문실패");
+			System.out.println("장바구니 상품 삭제 실패");
+			response.sendRedirect("Bucket.jsp");
 			
 		}
-	
-		
 	}
 
 }
