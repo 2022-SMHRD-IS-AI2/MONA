@@ -26,14 +26,7 @@
             <input type="text" name="" id="">
             
         </div>
-<<<<<<< HEAD
-        <ul class="header-sign">
-            <li><a href="login.html">로그인</a></li>
-            <li><a href="#">회원가입</a></li>
 
-        </ul>
-
-=======
         <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
         </div>
     
@@ -57,7 +50,7 @@
             <a href="login.jsp">로그인</a>
             <a href="join.jsp">회원가입</a>            
         </div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI2/MONA.git
+
     </div>
     <div class="header2">   
         <a href="food.jsp"><h3>Food</h3></a>
