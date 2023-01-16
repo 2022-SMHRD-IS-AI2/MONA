@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <link rel="stylesheet" href="./CSS/main.css">
+   <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="./CSS/mypage.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
@@ -108,9 +108,9 @@
 
         </div>
         <div class="button">
-            <a href=""><button>주문내역</button></a>
-            <a href=""><button>상품등록 요청 내역</button></a>
-            <a href=""><button>판매내역</button></a> 
+            <a href="mypage.jsp"><button>주문내역</button></a>
+            <a href="requestMypage.jsp"><button>상품등록 요청 내역</button></a>
+            <a href="productMypage.jsp"><button>등록한상품내역</button></a> 
         </div>
         
         <!-- 반복문 시작 -->  
@@ -133,6 +133,7 @@
             </div>
             <div class="ordercontents-list-state">
                 <span >주문상태</span>
+                <button type="submit">결제확인</button>
             </div>
             
             <div class="ordercontents-list-reveiw">
@@ -159,6 +160,7 @@
             </div>
             <div class="ordercontents-list-state">
                 <span >주문상태</span>
+                <button type="submit">결제확인</button>
             </div>
             
             <div class="ordercontents-list-reveiw">
