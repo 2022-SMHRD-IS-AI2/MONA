@@ -15,7 +15,7 @@
             <a href="/index.html">MonA</a>
         </div>
         <ul class="header-sign">
-            <li><a href="/login.html">로그인</a></li>
+            <li><a href="login.html">로그인</a></li>
             <li><a href="#">회원가입</a></li>
 
         </ul>
