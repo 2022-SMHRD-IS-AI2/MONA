@@ -22,14 +22,20 @@
 .input2{
     width: 368px;
     height: auto;
-    margin-top: 24px;
+    
 
 }
 .input2 span{
     display: block;
     width: 120px;
     height: 42px;
-    margin-top: 20px;
+    
+}
+#resultCheck{
+    display: block;
+    width: 60px;
+    height: 42px;
+    
 }
 .inputs{width: 368px;height: 42px; display: flex; justify-content: center;}
 .inputs input{width: 368px;height: 42px;background-color: white;border: solid 2px whitesmoke;}
