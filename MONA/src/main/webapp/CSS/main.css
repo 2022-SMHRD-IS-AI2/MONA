@@ -6,6 +6,9 @@
 @import "shopping.css";
 @import "media.css";
 
+html {
+    font-size: 12px;
+}
 
 .header{
 
