@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.ProductDAO"%>
+<%@page import="com.smhrd.model.ProductVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,22 +8,64 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- <title>MonA Login</title>
+
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="./CSS/login.css">
 </head>
 <body>
-<div class="header">
+<%String loginUser = (String) session.getAttribute("loginUser_id");
+
+
+
+%>
+ <div class="header">
         <div class="header-logo">
-            <a href="/index.html">MonA</a>
+   
+            <a href="main.jsp"><h2>MonA</h2></a>
+    <div class="header-serch" >
+            <input type="text" name="" id="">
+            
         </div>
+<<<<<<< HEAD
         <ul class="header-sign">
             <li><a href="login.html">로그인</a></li>
             <li><a href="#">회원가입</a></li>
 
         </ul>
 
+=======
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    
+        <div class="header-menu" >
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
+              
+               <%
+         if(loginUser == null){%>
+               <!--로그인 안했을 경우  -->
+            <a href="login.jsp"></a>
+         <% }else {%>
+            <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
+            if(loginUser.equals("admin")){%>
+                 <a href="adminMypage.jsp">마이페이지</a>   
+            <%}else {%>
+                        <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
+             <a href="Mypage.jsp">마이페이지</a>
+            <%}%> 
+         <%} %>
+            <a href="boardMain.jsp">게시판</a>
+            <a href="login.jsp">로그인</a>
+            <a href="join.jsp">회원가입</a>            
+        </div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI2/MONA.git
     </div>
+    <div class="header2">   
+        <a href="food.jsp"><h3>Food</h3></a>
+        <a href="clothes.jsp"><h3>Clothes</h3></a>
+        <a href="toy.jsp"><h3>Toy</h3></a>
+        <a href="goods.jsp"><h3>Goods</h3></a>
+    </div>
+    
     <main class="loginform">  
         <div class="loginform-con">
             <h2>Login</h2>
@@ -57,7 +102,9 @@
                 </div>
             </div>
         </div>
-    </main>   
-
+    </main>  
+     
+		 <div class="footer">
+    	</div>
 </body>
 </html>

@@ -1,42 +1,53 @@
-@import "product.css";
+@import "boad.css";
 @import "reset.css";
-@import "css.css";
+
+
+@import "product.css";
 @import "productDetail.css";
-@import "bucket.css";
+@import "join.css";
+@import "shopping.css";
+@import "media.css";
 
 
 .header{
-width: 80%;
+
 display: flex;
 margin:  0 auto;
 justify-content: space-around;
 height: 60px;
 align-items: center;
+background-color:rgb(255, 200, 2);
+  
 
 }
 .header-logo {
-    padding: 20px 60px;
+    width: 400px;
+ 
     color: black;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 5px;
+   
+  
 
 }
 .header-logo a{
     font-size: xx-large;
-    
 }
 
 .header-serch{
-    padding: 10px 50px;
-    
+    padding: 10px 20px;  
     position: relative;
+   
+  
 }
 .header-serch>input{
     width: 250px;
     height: 40px;
     border-radius: 5px;
-    border:1px solid whitesmoke
+    border:1px solid grey;
+    background-color: whitesmoke
 
 }
 .header-serch .fa-solid.fa-magnifying-glass{
@@ -47,28 +58,35 @@ align-items: center;
 }
 .header-menu{
     padding: 15px;
-    color: #666666;
+    color: bl
+     
+  
 }
 .header-menu a{
     margin-left: 20px;
-    font-size: 1.5rem;
 }
 .header2{
-    width: 80%;
+ 
     display: flex;
     height: 60px;
-    margin-left: 100px;
+    margin: 0 auto;
     justify-content: flex-start;
     align-items: center;
     border-bottom: 1px solid whitesmoke;
+    font-size: 1.2rem;
+    padding-left: 150px;
+    color:  white;
+    background-color:rgb(19, 19, 79)
 
+    
 }
+
+
 .header2 a{
-    margin: 50px;
-    font-size: 1.5rem;
+    margin: 80px;
 }
 .header2 a:first-child{
-    margin-left: 500px;
+    margin-left: 280px;
 }
 #index_01{
     width: 1900px;
@@ -107,15 +125,56 @@ align-items: center;
     justify-content: center;
     border-bottom: 1px solid whitesmoke;
     width: 100%;
-    height: 600px;
-    background-image:url(./test용.gif);
-    background-size: cover; 
+    height: 700px;
+    background-image: url(./test용.gif);
+    background-size: cover;
+}
+
+.banner1{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid whitesmoke;
+    width: 100%;
+    height: 800px;
+    background-image: url(./식품.gif);
+    background-size: cover;
+}
+
+.banner2{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid whitesmoke;
+    width: 100%;
+    height: 800px;
+    background-image: url(./의류.gif);
+    background-size: cover;
+  
+}
+
+.banner3{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid whitesmoke;
+    width: 100%;
+    height: 800px;
+    background-image: url(./장난감.gif);
+    background-size: cover;
+}
+
+.banner4{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid whitesmoke;
+    width: 100%;
+    height: 800px;
+    background-image: url(./굿즈.gif);
+    background-size: cover;
 }
 
 
 .contents{
     display: grid;
-    width: 80%;
+    
     height: auto;    
     margin: 30px auto;
     grid-template-columns: repeat(4, 250px);
@@ -126,18 +185,41 @@ align-items: center;
     
 }
 .head-title{
-    margin: 30px auto;
-    width:65%;
+  
     height: 60px;
     
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid whitesmoke;
+     padding-left:700px;
+    color:  white;
+    background-color:rgb(19, 19, 79)
+
+                
+   
 }
+
+.head-title1{
+  
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid whitesmoke;
+     padding-left:800px;
+    color:  white;
+    background-color:rgb(19, 19, 79)
+  
+}
+
 .head-title-Enrollment{
     display: flex;
     align-items: flex-end;
     padding-bottom: 10px;
+    padding-left: 1350px;
+    padding-top:20px;
+
+  	
+ 
 }
 .contents-child{
     border: 1px solid whitesmoke;
@@ -191,11 +273,25 @@ align-items: center;
 }
 .footer{
     width: 100%;
-    height: 300px;
+    height: 400px;
+    margin-top:200px;
    border-top: 1px solid bisque;
+   background-color:rgb(19, 19, 79)
+ 
     
 }
 
+#b{
+	 color:rgb(19, 19, 79);
+	 background-color:  white;
+    min-width: 100px; 
+    border: 1px solid black;
+	height:40px;
+    font-size: 1.2rem;
+}
 
-
-
+#p{
+	width:200px;
+	height:40px;
+	
+}

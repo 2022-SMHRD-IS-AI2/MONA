@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.model.RequestDAO">
+	
+	<!-- 상품 댓글입력 -->
+	<insert id="insertRequest" parameterType = "com.smhrd.model.RequestVO">
+	insert into tb_request values(TB_request_seq.nextval, #{PROD_NUM}, #{REQ_CONTENT}, sysdate, #{U_Id})
+	</insert>
+
+	<!-- 상품 댓글조회 -->
+	<select id="showRequest" resultType="com.smhrd.model.RequestVO" parameterType = "com.smhrd.model.RequestVO">
+	select * from tb_request where PROD_NUM=${PROD_NUM}
+	order by req_regdt asc
+	</select>
+
+</mapper>

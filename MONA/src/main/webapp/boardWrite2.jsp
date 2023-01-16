@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.ProductVO"%>
+<%@page import="com.smhrd.model.ProductDAO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,32 +15,47 @@
    <% String loginUser = (String) session.getAttribute("loginUser_id");
 	  if(loginUser != null){
 	  System.out.print(loginUser);}
+	  
+
 	%>
       
-      
-         
-        <div class="header">   
+    <div class="header">
         <div class="header-logo">
-            <a href="main.jsp">MonA</a>
-        </div>
-        <div class="header-serch" >
+   
+            <a href="main.jsp"><h2>MonA</h2></a>
+    <div class="header-serch" >
             <input type="text" name="" id="">
-            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            
         </div>
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    
         <div class="header-menu" >
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
-            <a href="/boad.html">마이페이지</a>
-            <a href="#">게시판</a>
-            <a href="#">로그인</a>
-            <a href="#">회원가입</a>
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
+          
+               <%
+         if(loginUser == null){%>
+               <!--로그인 안했을 경우  -->
+            <a href="login.jsp"></a>
+         <% }else {%>
+            <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
+            if(loginUser.equals("admin")){%>
+                 <a href="adminMypage.jsp">마이페이지</a>   
+            <%}else {%>
+                        <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
+             <a href="Mypage.jsp">마이페이지</a>
+            <%}%> 
+         <%} %>
+            <a href="boardMain.jsp">게시판</a>
+            <a href="login.jsp">로그인</a>
+            <a href="join.jsp">회원가입</a>            
         </div>
     </div>
     <div class="header2">   
-        <a href="">ALL</a>
-        <a href="">식품</a>
-        <a href="">의류</a>
-        <a href="">장난감</a>
-        <a href="">굿즈</a>
+        <a href="food.jsp"><h3>Food</h3></a>
+        <a href="clothes.jsp"><h3>Clothes</h3></a>
+        <a href="toy.jsp"><h3>Toy</h3></a>
+        <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
 	
     <div class="board_wrap">
@@ -75,6 +93,12 @@
                 <a href="boardMain.jsp">취소</a>
             </div>
             </form>
+             </div>
+            </div>
+         
+            
+             <div class="footer">
+   			</div>
         
          <!-- Scripts -->
          <script src="assets/js/jquery.min.js"></script>

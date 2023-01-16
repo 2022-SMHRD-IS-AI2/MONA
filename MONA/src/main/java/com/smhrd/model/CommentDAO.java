@@ -12,7 +12,7 @@ public class CommentDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-	// 댓글달기
+	// 게시판 댓글달기
 	public int insertCmt(CommentVO vo) {
 
 		int cnt = sqlSession.insert("com.smhrd.model.CommentDAO.insertCmt", vo);
@@ -21,7 +21,7 @@ public class CommentDAO {
 		return cnt;
 	}
 
-	// 댓글조회
+	// 게시판 댓글조회
 	public List<CommentVO> showCmt(CommentVO vo) {
 
 		List<CommentVO> lvo = sqlSession.selectList("com.smhrd.model.CommentDAO.showCmt",vo);
