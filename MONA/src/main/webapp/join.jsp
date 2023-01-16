@@ -72,7 +72,7 @@
                 <div class="inputs id">
                 <input type="text" placeholder="아이디" id="dcid" name="id">
                 <h4 id="resultCheck"></h4>
-            <button type="button" id= "inputE" >id체크</button>
+            	<button type="button" id= "inputE" >id체크</button>
             </div>
                 <span>비밀번호</span>
                 <div class="inputs pw">
