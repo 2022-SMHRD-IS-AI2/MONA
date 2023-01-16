@@ -203,9 +203,9 @@ background-color:rgb(255, 200, 2);
   
     height: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     border-bottom: 1px solid whitesmoke;
-     padding-left:800px;
+     align-items: center;
     color:  white;
     background-color:rgb(19, 19, 79)
   
