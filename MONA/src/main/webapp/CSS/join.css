@@ -29,18 +29,14 @@
     display: block;
     width: 120px;
     height: 42px;
-    
+    magin-top:20px;
 }
-#resultCheck{
-    display: block;
-    width: 60px;
-    height: 42px;
-    
-}
+
+
 .inputs{width: 368px;height: 42px; display: flex; justify-content: center;}
 .inputs input{width: 368px;height: 42px;background-color: white;border: solid 2px whitesmoke;}
 .inputs.id{display: flex; justify-content: flex-start;}
-.inputs.id input{width: 300px;height: 42px;}
+.inputs.id input{width: 200px;height: 42px;}
 .inputs.id button{width: 60px;height: 42px;margin-left: 6px;border-radius: 5px;margin-top: 3px;}
 .inputs.id button:active{outline:1px solid rgb(47, 46, 46);}
 .inputs signUp{margin-top: 15px;}

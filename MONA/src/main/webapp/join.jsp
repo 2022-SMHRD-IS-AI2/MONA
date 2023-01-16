@@ -71,7 +71,7 @@
                 <span>아이디</span>
                 <div class="inputs id">
                 <input type="text" placeholder="아이디" id="dcid" name="id">
-                <span id="resultCheck"></span>
+                <h4 id="resultCheck"></h4>
             <button type="button" id= "inputE" >id체크</button>
             </div>
                 <span>비밀번호</span>
