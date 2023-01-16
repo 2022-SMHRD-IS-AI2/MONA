@@ -23,8 +23,27 @@
 
 	%>
 	
-	<% List<ProductVO> vo = (new ProductDAO()).showProduct(); 
-    List<ProductVO> vo1 = (new ProductDAO()).showCate();%>
+	<%
+    List<ProductVO> vo2 = (new ProductDAO()).showProdRequest();
+    %>
+    
+    <%
+    int allcnt = 0;
+    for(int i =0; i<vo2.size(); i++){
+    		if(loginUser.equals(vo2.get(i).getSeller_id())){
+    			allcnt = allcnt+1;
+    		}
+    	}
+    %>
+    
+    <%
+    int ycnt = 0;
+    for(int i =0; i<vo2.size(); i++){
+    		if(loginUser.equals(vo2.get(i).getSeller_id())&&vo2.get(i).getShop_check().equals("Y")){
+    			ycnt = ycnt+1;
+    		}
+    	}
+    %>
     
     <div class="header">   
         <div class="header-logo">
@@ -35,7 +54,7 @@
             <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
         </div>
         <div class="header-menu" >
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
             <a href="/boad.html">마이페이지</a>
             <a href="#">게시판</a>
             <a href="#">로그인</a>
@@ -53,18 +72,17 @@
         <div class="logininfo">
             <div class="logininfo-order">
                 <div class="logininfo-order-h2">
-                    <span><%= loginUser%></span>
-                    <span> 님 환영합니다</span>
+                    <span><%= loginUser%>님 환영합니다</span>
                 </div>
                 
                 <div class="logininfo-order-product" >
                     <span>상품등록 요청은 총 </span>
-                    <span>0</span>
+                    <span><%=allcnt%></span>
                     <span>건입니다</span>
                 </div>
                 <div class="logininfo-order-written">
                     <span>승인된 상품은 총 </span>
-                    <span>0</span> 
+                    <span><%=ycnt%></span> 
                     <span>건입니다</span>
                 </div>
                 
@@ -75,7 +93,7 @@
                     <i class="fa-solid fa-chevron-right fa-xs"></i>
                 </div>
                 <div class="logininfo-order-number">
-                    <span>0</span>
+                    <span><%=allcnt%></span>
                     <span>건</span>
                 </div>
             </div>
@@ -85,7 +103,7 @@
                     <i class="fa-solid fa-chevron-right fa-xs"></i>
                 </div>
                 <div class="logininfo-order-review">
-                    <span>0</span>
+                    <span><%=ycnt%></span>
                     <span>건</span>
                 </div>
             </div>
@@ -97,24 +115,37 @@
             <a href="productMypage.jsp"><button>등록한상품내역</button></a> 
         </div>
         
+        <%for(int i =0; i<vo2.size(); i++){
+            
+        	if(loginUser.equals(vo2.get(i).getSeller_id())){
+        	%>
+            
         <div class="ordercontents-date">
-            <span>2023-01-10            </span>
+            <span><%=vo2.get(i).getProd_regdt()%></span>
         </div>
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
-                <img width="200px" height="150px" src="/img/반려동물식품/[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.jpg" alt="">
+                <img width="200px" height="150px" src="./prod/<%=vo2.get(i).getProd_thumb()%>">
             </div>    
             <div class="ordercontents-list-title">
-                <span>title</span>
-                <span>[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.</span>
+                <span><%=vo2.get(i).getShop_name()%></span>
+                <span><%=vo2.get(i).getProd_name()%></span>
             </div>       
             <div class="requestcontents-list-state">
-                <span >주문상태</span> 
+                <%if(vo2.get(i).getShop_check().equals("Y")){
+                %>
+                <span>승인</span>
+                
+                <%}else if(vo2.get(i).getShop_check().equals("N")){%>
+                <span>심사중</span>
+                
+                <%} %> 
             </div>
-       
         </div>
-  
+       <%}%>
+       <%}%>
     </div>        
+  
 </div>
 
 </body>

@@ -116,6 +116,12 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.ProdRequestCon</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>requestMypageCon</servlet-name>
+		<display-name>requestMypageCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.requestMypageCon</servlet-class>
+	</servlet>
 	
 	
 	
@@ -192,6 +198,10 @@
 	<servlet-mapping>
 		<servlet-name>ProdRequestCon</servlet-name>
 		<url-pattern>/ProdRequestCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>requestMypageCon</servlet-name>
+		<url-pattern>/requestMypageCon</url-pattern>
 	</servlet-mapping>
 	
 	
