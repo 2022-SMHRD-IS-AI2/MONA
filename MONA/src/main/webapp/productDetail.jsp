@@ -32,7 +32,6 @@
    
    <%
    RequestVO rvo = new RequestVO(prod_num);
-   System.out.print(rvo);
    List<RequestVO> lvo = new RequestDAO().showRequest(rvo);
    %>
    
@@ -141,16 +140,10 @@
                <p><%=lvo.get(j).getREQ_REGDT()%></p>
             </div>
             
-            <%
-         }
-         %>
+            <%}%>
          </div>
 
-         <%
-         }
-         %>
-            
-            
+         <%}%>
             
             <div class="comment2">
                 <div class="comment-input">
