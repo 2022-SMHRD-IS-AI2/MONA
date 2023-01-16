@@ -45,6 +45,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		AND T.U_ID = #{U_id}
   	 </select>
 	
+	<!-- 로그인한 유저의 상품 판매 요청정보 조회 -->
+	<select id="showProdRequest" resultType="com.smhrd.model.ProductVO" parameterType="int">
+		select * from TB_PRODUCT where SELLER_ID=#{SELLER_ID}
+	</select>
 
 	
 </mapper>

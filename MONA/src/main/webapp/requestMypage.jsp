@@ -1,3 +1,7 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.ProductDAO"%>
+<%@page import="com.smhrd.model.ProductVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,9 +14,21 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+    <%
+  	String loginUser = (String) session.getAttribute("loginUser_id");
+	
+	if(loginUser != null){
+		System.out.print(loginUser);
+	}	
+
+	%>
+	
+	<% List<ProductVO> vo = (new ProductDAO()).showProduct(); 
+    List<ProductVO> vo1 = (new ProductDAO()).showCate();%>
+    
     <div class="header">   
         <div class="header-logo">
-            <a href="index.html">MonA</a>
+            <a href="main.jsp">MonA</a>
         </div>
         <div class="header-serch" >
             <input type="text" name="" id="">
@@ -23,7 +39,7 @@
             <a href="/boad.html">마이페이지</a>
             <a href="#">게시판</a>
             <a href="#">로그인</a>
-            <a href="#">회원가입</a>            
+            <a href="#">회원가입</a>
         </div>
     </div>
     <div class="header2">   
@@ -37,7 +53,7 @@
         <div class="logininfo">
             <div class="logininfo-order">
                 <div class="logininfo-order-h2">
-                    <span>김준연</span>
+                    <span><%= loginUser%></span>
                     <span> 님 환영합니다</span>
                 </div>
                 
