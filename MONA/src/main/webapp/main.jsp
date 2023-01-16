@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.ProductDAO"%>
+<%@page import="com.smhrd.model.ProductVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,49 +12,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <%
-  	String loginUser = (String) session.getAttribute("loginUser_id");
-	
-	if(loginUser != null){
-		System.out.print(loginUser);
-	}
-	
-	%>
+     String loginUser = (String) session.getAttribute("loginUser_id");
+   
+   if(loginUser != null){
+      System.out.print(loginUser);
+   }
+   
+
+   %>
 
 <body>
   <div class="header">
         <div class="header-logo">
-            <a href="main.jsp">MonA</a>
-
-        </div>
-        <div class="header-serch" >
+   
+            <a href="main.jsp"><h2>MonA</h2></a>
+    <div class="header-serch" >
             <input type="text" name="" id="">
-            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            
         </div>
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    
         <div class="header-menu" >
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
-            	<%
-			if(loginUser == null){%>
-					<!--로그인 안했을 경우  -->
-				<a href="login.jsp"></a>
-			<% }else {%>
-				<% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
-				if(loginUser.equals("admin")){%>
-					  <a href="adminMypage.jsp">마이페이지</a>	
-            <%}else {%>
-                        <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
-				 <a href="Mypage.jsp">마이페이지</a>
-            <%}%> 
-			<%} %>
-            <a href="boardMain.jsp">게시판</a>
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
+       			 
+               
+         <%if(loginUser == null){%>
+               <!--로그인 안했을 경우  -->
+             <a href="join.jsp">회원가입</a>  
             <a href="login.jsp">로그인</a>
-            <a href="join.jsp">회원가입</a>            
+        
+         <% }else {%>
+            <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
+            if(loginUser.equals("admin")){%>
+                 <a href="adminMypage.jsp">마이페이지</a>
+            <%}else {%>
+             <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
+             <a href="mypage.jsp">마이페이지</a>
+            <%}%> 
+            
+             <a href="boardMain.jsp">게시판</a>
+             <a href="LogoutCon">로그아웃</a>
+             <a href="#"><%=loginUser%>님  환영합니다</a>   
+         <%} %>
+            
+                     
         </div>
     </div>
     <div class="header2">   
-        <a href="food.jsp">식품</a>
-        <a href="clothes.jsp">의류</a>
-        <a href="toy.jsp">장난감</a>
-        <a href="goods.jsp">굿즈</a>
+        <a href="food.jsp"><h3>Food</h3></a>
+        <a href="clothes.jsp"><h3>Clothes</h3></a>
+        <a href="toy.jsp"><h3>Toy</h3></a>
+        <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
     <div class="banner">
     
@@ -59,11 +71,12 @@
     </div>
 
    <div class="head-title" >
-    <h1>인기제품</h1>
-    <div class="head-title-Enrollment"> 
-        <a href="product.jsp">상품등록</a>
-    </div>
+    <h1>popular product</h1>
    </div>
+   
+       <div class="head-title-Enrollment"> 
+       <button id="b"><a href="product.jsp"><h3>상품등록</h3></a></button> 
+    </div>
 
     <div class="contents">
         <div class="contents-child">
@@ -81,10 +94,10 @@
 
             <div class="contents-child-star">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
+                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
+                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
+                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
+                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 
             </div>
          

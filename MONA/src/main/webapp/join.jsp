@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.ProductDAO"%>
+<%@page import="com.smhrd.model.ProductVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,28 +16,50 @@
   <script src = 'https://code.jquery.com/jquery-3.6.1.min.js'></script>
 </head>
 <body>
-  <div class="header">   
+
+<%String loginUser = (String) session.getAttribute("loginUser_id"); 
+
+
+
+%>
+
+  <div class="header">
         <div class="header-logo">
-            <a href="main.jsp">MonA</a>
-        </div>
-        <div class="header-serch" >
+   
+            <a href="main.jsp"><h2>MonA</h2></a>
+    <div class="header-serch" >
             <input type="text" name="" id="">
-            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            
         </div>
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    
         <div class="header-menu" >
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
-            <a href="#">마이페이지</a>
-            <a href="#">게시판</a>
-            <a href="#">로그인</a>
-            <a href="#">회원가입</a>            
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
+          
+               <%
+         if(loginUser == null){%>
+               <!--로그인 안했을 경우  -->
+            <a href="login.jsp"></a>
+         <% }else {%>
+            <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
+            if(loginUser.equals("admin")){%>
+                 <a href="adminMypage.jsp">마이페이지</a>   
+            <%}else {%>
+                        <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
+             <a href="Mypage.jsp">마이페이지</a>
+            <%}%> 
+         <%} %>
+            <a href="boardMain.jsp">게시판</a>
+            <a href="login.jsp">로그인</a>
+            <a href="join.jsp">회원가입</a>            
         </div>
     </div>
     <div class="header2">   
-        <a href="">ALL</a>
-        <a href="">식품</a>
-        <a href="">의류</a>
-        <a href="">장난감</a>
-        <a href="">굿즈</a>
+        <a href="food.jsp"><h3>Food</h3></a>
+        <a href="clothes.jsp"><h3>Clothes</h3></a>
+        <a href="toy.jsp"><h3>Toy</h3></a>
+        <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
 
     <main class="signform">  
@@ -78,6 +103,9 @@
             </form>
         </div>
     </main> 
+    
+     <div class="footer">
+    </div>
        <script>
        let button = document.querySelector("#inputE");
        console.log("버튼제대로눌림")

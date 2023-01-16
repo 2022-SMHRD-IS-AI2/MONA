@@ -29,6 +29,7 @@ public class ProductDAO {
 		
 		List<ProductVO> vo = sqlSession.selectList("com.smhrd.model.ProductDAO.showProduct");
 		sqlSession.close();
+		System.out.println("jsp" + vo);
 	
 		return vo;
 	}
@@ -68,7 +69,27 @@ public class ProductDAO {
 	
 		return cate;
 	}
+	
+	// 각 가테고리 별 세부 상품정보 조회
+	public ProductVO showProdDetail(int prod_num) {
 		
+		ProductVO vo = sqlSession.selectOne("com.smhrd.model.ProductDAO.showProdDetail",prod_num);
+		sqlSession.close();
+		
+		return vo;
+	}
+	
+	
+     // 로그인한 사람의 장바구니 조회
+	public List<ProductVO> showBk(String U_id) {
+
+		List<ProductVO> Bvo = sqlSession.selectList("com.smhrd.model.ProductDAO.showBk", U_id);
+		sqlSession.close();
+		
+		System.out.println("mmmmmmmmmmmmmmmmmm"+Bvo);
+
+		return Bvo;
+	}
 
 	
  }

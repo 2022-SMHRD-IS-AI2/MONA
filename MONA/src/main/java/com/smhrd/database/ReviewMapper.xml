@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.model.ReviewDAO">
+	
+	<insert id="reviewUpload" parameterType = "com.smhrd.model.ReviewVO">
+	insert into TB_REVIEW values(TB_REVIEW_SEQ.nextval, #{PROD_NUM}, #{REVIEW_CONTENT}, sysdate, #{id}, #{REVIEW_RATINGS})	
+	</insert>
+
+	<select id="showReview" resultType="com.smhrd.model.ReviewVO">
+		select * from TB_REVIEW where PROD_NUM=${PROD_NUM}
+		order by cmt_regdt desc
+	</select>
+
+</mapper>

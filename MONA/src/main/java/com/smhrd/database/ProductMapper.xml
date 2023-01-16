@@ -19,13 +19,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!--관리자 승인여부 업데이트(관리자가 승인 버튼 클릭시 승인여부 'N'->'Y'로 변경 -->
 	<update id="updateAdminCheck" parameterType="int" >
-		update TB_PRODUCT set shop_check='Y' where prod_num=#{shop_check}
+		update TB_PRODUCT set shop_check='Y' where prod_num=#{prod_num}
 	</update>
 	
-	 <!--상품 등록 요청건 관리자마이페이지에 보내기  -->
+	 <!--관리자가 승인한 상품만 카테고리별로 등록하기  -->
 	<select id="showCate" resultType="com.smhrd.model.ProductVO">
 		select * from TB_PRODUCT where shop_check='Y' 
 	</select>
+	
+     <!--특정상품 클릭시 선택한 상품 상세정보페이지 띄우기-->
+	<select id="showProdDetail" resultType="com.smhrd.model.ProductVO" parameterType="int">
+		select * from TB_PRODUCT where prod_num=#{prod_num}
+	</select>
+	
+	<!-- 로그인한 유저의 장바구니에 상품정보 전체조회  -->
+  	 <select id = "showBk" resultType="com.smhrd.model.ProductVO" parameterType = "String">
+		select T1.*, T.CNT from TB_PRODUCT T1
+		JOIN TB_BUCKET T
+		ON T1.PROD_NUM = T.PROD_NUM
+		AND T.U_ID = #{U_id}
+  	 </select>
 	
 
 	

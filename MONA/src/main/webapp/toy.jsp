@@ -16,71 +16,82 @@
   	String loginUser = (String) session.getAttribute("loginUser_id");
 	
 	if(loginUser != null){
-		System.out.print(loginUser);
+		//System.out.print(loginUser);
 	}
 	
 	List<ProductVO> vo = (new ProductDAO()).showCate();
+
+	
+	System.out.println(vo.size());
+
+	
 	%>  
 	
 
 <body>
-  <div class="header">   
+  <div class="header">
         <div class="header-logo">
-            <a href="index.html">MonA</a>
-        </div>
-        <div class="header-serch" >
+   
+            <a href="main.jsp"><h2>MonA</h2></a>
+    <div class="header-serch" >
             <input type="text" name="" id="">
-            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            
         </div>
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+    
         <div class="header-menu" >
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a> 
-            	<%
-			if(loginUser == null){%>
-					<!--로그인 안했을 경우  -->
-				<a href="login.jsp"></a>
-			<% }else {%>
-				<% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
-				if(loginUser.equals("admin")){%>
-					  <a href="adminMypage.jsp">마이페이지</a>	
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
+         
+               <%
+         if(loginUser == null){%>
+               <!--로그인 안했을 경우  -->
+            <a href="login.jsp"></a>
+         <% }else {%>
+            <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
+            if(loginUser.equals("admin")){%>
+                 <a href="adminMypage.jsp">마이페이지</a>   
             <%}else {%>
                         <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
-				 <a href="Mypage.jsp">마이페이지</a>
+             <a href="Mypage.jsp">마이페이지</a>
             <%}%> 
-			<%} %>
+         <%} %>
             <a href="boardMain.jsp">게시판</a>
             <a href="login.jsp">로그인</a>
             <a href="join.jsp">회원가입</a>            
         </div>
     </div>
     <div class="header2">   
-        <a href="food.jsp">식품</a>
-        <a href="clothes.jsp">의류</a>
-        <a href="toy.jsp">장난감</a>
-        <a href="goods.jsp">굿즈</a>
+        <a href="food.jsp"><h3>Food</h3></a>
+        <a href="clothes.jsp"><h3>Clothes</h3></a>
+        <a href="toy.jsp"><h3>Toy</h3></a>
+        <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
-    <div class="banner">
+    <div class="banner3">
     
     
     </div>
 
-   <div class="head-title" >
-    <h1>장난감</h1>
+   <div class="head-title1" >
+    <h1>Toy</h1>
    </div>
-   <%for(int i=0; i<vo.size(); i++){%>
-   
-   <%if(vo.get(i).getProd_cate().equals("장난감")){%>
    
        <div class="contents">
+       
+    <%for(int i=0; i<vo.size(); i++){%>  
+    
+    
+    <%if(vo.get(i).getProd_cate().equals("장난감")) { %>    
         <div class="contents-child">
             <div class="contents-child-img">
-                <a href="#">
+               <a href="productDetail.jsp?prod_num=<%=vo.get(i).getProd_num()%>">
                     <img src="./prod/<%=vo.get(i).getProd_thumb()%>" alt="">
                 </a>
             </div>
             <div class="contents-child-title" >
                 <span><%=vo.get(i).getShop_name()%></span>
                 <a href="#"><span><%=vo.get(i).getProd_name()%></span></a>
-                 <span>가격    <%=vo.get(i).getProd_price()%>   원</span>
+                  <span>가격    <%=vo.get(i).getProd_price()%>   원</span>
             </div>
             <div class="contents-child-star">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
@@ -89,16 +100,21 @@
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
             
+        	</div>
         </div>
-   <%}%>
+
+   			<%}%>
+      <%}%>
+
+
+    </div>
+
    
-   <%}%>
+
 
        
             
-        </div>
 
-    </div>
 
     <div class="footer">
     </div>
