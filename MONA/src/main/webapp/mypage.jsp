@@ -109,7 +109,7 @@
         </div>
         <div class="button">
             <a href=""><button>주문내역</button></a>
-            <a href=""><button>상품등록 요청 내역</button></a>
+            <a href="requestMypage.jsp"><button>상품등록 요청 내역</button></a>
             <a href=""><button>판매내역</button></a> 
         </div>
         
