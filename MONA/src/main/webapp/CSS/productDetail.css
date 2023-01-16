@@ -252,8 +252,7 @@
 }
 .comment2{
     width: 560px;
-    height: 40px;
-    border-top: 1px solid  grey;
+    height: 40px;   
     margin-top: 20px;
     padding: 10px 0px;
     display: flex;
@@ -276,9 +275,11 @@
     width: 40px;
     height: 30px;
 }
-.comment-btn button{
-    width: 40px;
-    height: 25px;
-    background-color: rgb(128, 128, 128,0.5);
+.comment-btn input{
+    width: 60px;
+    height: 30px;
+    color: #333;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    
 }
