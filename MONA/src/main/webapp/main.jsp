@@ -252,8 +252,9 @@
         </div>
 
     </div>
-
+	
     <div class="footer">
+    김준연
     </div>
 </body>
 </html>
