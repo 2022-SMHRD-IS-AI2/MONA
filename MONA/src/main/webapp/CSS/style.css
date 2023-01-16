@@ -328,7 +328,7 @@ img { display: block; margin: 20px auto; }
 
 
 .board_view_commform{
-	display: flex;
+	display: inline-block;
 	width:620px;
 	height:64px;
 	align-items: center;

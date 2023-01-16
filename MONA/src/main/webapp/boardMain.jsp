@@ -44,7 +44,7 @@
                  <a href="adminMypage.jsp">마이페이지</a>   
             <%}else {%>
                         <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
-             <a href="Mypage.jsp">마이페이지</a>
+             <a href="mypage.jsp">마이페이지</a>
             <%}%> 
          <%} %>
             <a href="boardMain.jsp">게시판</a>

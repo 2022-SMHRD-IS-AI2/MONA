@@ -108,9 +108,11 @@
 
         </div>
         <div class="button">
+
             <a href="mypage.jsp"><button>주문내역</button></a>
             <a href="requestMypage.jsp"><button>상품등록 요청 내역</button></a>
             <a href="productMypage.jsp"><button>등록한상품내역</button></a> 
+
         </div>
         
         <!-- 반복문 시작 -->  

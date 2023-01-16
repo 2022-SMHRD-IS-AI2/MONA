@@ -110,6 +110,7 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.admincheckConX</servlet-class>
 	</servlet>
+
 		<servlet>
 			<servlet-name>orderSuccessCon</servlet-name>
 			<display-name>orderSuccessCon</display-name>
@@ -122,6 +123,26 @@
 			<description></description>
 			<servlet-class>com.smhrd.controller.bucketDelete</servlet-class>
 		</servlet>
+
+	<servlet>
+		<servlet-name>showProdRequest</servlet-name>
+		<display-name>showProdRequest</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.showProdRequest</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProdRequestCon</servlet-name>
+		<display-name>ProdRequestCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.ProdRequestCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>requestMypageCon</servlet-name>
+		<display-name>requestMypageCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.requestMypageCon</servlet-class>
+	</servlet>
+
 	
 	
 	
@@ -196,12 +217,27 @@
 		<url-pattern>/admincheckConX</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
+
 		<servlet-name>orderSuccessCon</servlet-name>
 		<url-pattern>/orderSuccessCon</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>bucketDeleteCon</servlet-name>
 		<url-pattern>/bucketDeleteCon</url-pattern>
+		</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>showProdRequest</servlet-name>
+		<url-pattern>/showProdRequest</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ProdRequestCon</servlet-name>
+		<url-pattern>/ProdRequestCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>requestMypageCon</servlet-name>
+		<url-pattern>/requestMypageCon</url-pattern>
 	</servlet-mapping>
 	
 	
