@@ -98,6 +98,12 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.LogoutCon</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>admincheckConX</servlet-name>
+		<display-name>admincheckConX</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.admincheckConX</servlet-class>
+	</servlet>
 	
 	
 	
@@ -162,6 +168,10 @@
 	<servlet-mapping>
 		<servlet-name>LogoutCon</servlet-name>
 		<url-pattern>/LogoutCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>admincheckConX</servlet-name>
+		<url-pattern>/admincheckConX</url-pattern>
 	</servlet-mapping>
 	
 	

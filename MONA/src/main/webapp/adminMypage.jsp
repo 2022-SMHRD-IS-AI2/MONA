@@ -136,7 +136,8 @@
                   <input type="submit" value="승인">
                   </form>     
    
-                  <form action="#">
+                  <form action="admincheckConX">
+                   <input hidden name="adminCheck2" value="<%=vo.get(i).getProd_num()%>">
                   <input type="submit" value="거부">
                   </form> 
                    

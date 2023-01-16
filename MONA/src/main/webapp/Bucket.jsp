@@ -180,14 +180,12 @@
   
     
         <div class="shoppingBag-bottom">
-        <from action="orderCon">
-         <input hidden name="price" value="<%=sum+a%>">
-          <input hidden name="prod_num" value="<%=vo.get(0).getProd_name()%>">
-            <button class="shoppingBag-bottom-btn" type="submit"  >
+       <a href = "pay.jsp">      <button class="shoppingBag-bottom-btn" type="submit"  >
                     주문하기
-                </button>
+                </button></a>
+      
         </div>
-		</from>
+	
     </div>
 	
 
