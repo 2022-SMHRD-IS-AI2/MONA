@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.OrderVO"%>
 <%@page import="com.smhrd.model.OrderDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -13,19 +14,21 @@
   <%
   String loginUser = (String) session.getAttribute("loginUser_id");
   
-  OrderVO vo = new OrderDAO().pay();
+  
+  List<OrderVO> vo = new OrderDAO().pay();
   
   String prod_name=null;
   int cnt=0;
   int price=0;
   int a=0;
   
-  if(loginUser.equals(vo.getU_id())){
-	  prod_name=vo.getProd_name();
-	  cnt=vo.getCnt()-1;
-	  price=vo.getPaid_amount();
+  for(int i=0; i<vo.size(); i++){
+  if(loginUser.equals(vo.get(i).getU_id())){
+	  prod_name=vo.get(i).getProd_name();
+	  cnt=vo.get(i).getCnt()-1;
+	  price=vo.get(i).getPaid_amount();
   }
-  
+  }
   //System.out.println(prod_name);
   //System.out.println(cnt);
   //System.out.println(price);

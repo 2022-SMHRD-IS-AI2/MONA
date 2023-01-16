@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -22,9 +24,9 @@ public class OrderDAO {
 		}
 		
 		//결제할 주문내역 가져오기
-		public OrderVO pay() {
+		public List<OrderVO> pay() {
 			
-			OrderVO vo = sqlSession.selectOne("com.smhrd.model.OrderDAO.pay");
+			List<OrderVO> vo = sqlSession.selectList("com.smhrd.model.OrderDAO.pay");
 			sqlSession.close();
 			
 			return vo;
