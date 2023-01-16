@@ -37,14 +37,12 @@
     height: 60px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-   
+    cursor: pointer;
     border: 1px solid rgb(245, 245, 245,2.0);
   
     
 }
-.button>a:first-child button{
-    
-}
+
 
 .ordercontents-date{
     margin-top:10px;
@@ -92,6 +90,7 @@
 }
 .ordercontents-list-state{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 250px;
@@ -99,14 +98,45 @@
     text-align: center;
     border: 1px solid whitesmoke;
 }
+.ordercontents-list-state button{
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(19, 19, 79);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .ordercontents-list-reveiw{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 250px;
     height: 200px;
-    
-
 }
+/* requestMypage */
+.requestcontents-list-state{
+    display: flex;
+    width: 400px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    
+}
+/* productMypage */
+.productcontents-list-state{
+    display: flex;
+    width: 400px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;    
+}
+.productcontents-list-state span{
+    margin-right: 15px;
+    font-size: large;
+}
+
 
 
