@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,24 +25,37 @@ public class bucketCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		HttpSession session = request.getSession();
-        String loginUser = (String) session.getAttribute("loginUser_id");
+        String U_id = (String) session.getAttribute("loginUser_id");
         
-        System.out.println(loginUser);
+     
 		
-		//String Prod_num = request.getParameter("PROD_NUM");
-		//System.out.println(Prod_num);
+	    String Prod_num = request.getParameter("prod_num");
+	    int prod_num=Integer.parseInt(Prod_num);
+	    
+	    String Cnt= request.getParameter("cnt");
+	    int cnt =Integer.parseInt(Cnt);
+	    System.out.println("여기"+cnt);
 		
-		//BucketVO vo = new BucketVO(Prod_num,U_ID);	
+		BucketVO vo = new BucketVO(prod_num,U_id,cnt);	
+		int cnt1 = new BucketDAO().Bupload(vo);
 		
-		//List<BucketVO> cnt = new BucketDAO().showBk(vo);
 		
-		//if (cnt.size() > 0) {
-		//	System.out.println("장바구니 내역이 없습니다");
-		//}else {
-		//	System.out.println("장바구니 내역 성공");
-		//}
-	
-		//response.sendRedirect("Bucket.jsp");
+		
+		if (cnt1> 0) {
+			System.out.println("장바구니 업로드 성공");
+		}else {
+		System.out.println("장바구니 업로드 실패");
+		}
+		
+//		 String test = "/productDetail.jsp?prod_num="+prod_num;
+//
+//		 RequestDispatcher rd;
+//		 rd = getServletContext().getRequestDispatcher(test);
+//		
+//		 rd.forward(request, response);
+		
+		response.sendRedirect("productDetail.jsp?prod_num="+prod_num);
+		
 	}
 
 	

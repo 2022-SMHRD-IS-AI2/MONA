@@ -20,13 +20,13 @@ public class adminCheckCon extends HttpServlet {
 	
     request.setCharacterEncoding("UTF-8");
     
-	int shop_check = Integer.parseInt(request.getParameter("adminCheck"));
+	int prod_num = Integer.parseInt(request.getParameter("adminCheck"));
 
-	System.out.println(shop_check);
+	System.out.println(prod_num);
 
 
 	ProductDAO dao = new ProductDAO();
-	int cnt =dao.updateAdminCheck(shop_check);
+	int cnt =dao.updateAdminCheck(prod_num);
 	
 	
 	if(cnt>0) {     

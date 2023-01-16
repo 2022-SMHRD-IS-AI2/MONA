@@ -22,10 +22,11 @@ public class BucketVO {
 	
 	private BigDecimal BUCKET_NUM;
 	@NonNull
-	private String PROD_NUM;
-	
+	private int prod_num;
 	private Timestamp BUCKET_REGDT;
 	@NonNull
-	private String U_ID;
+	private String U_id;
+	@NonNull
+	private int cnt;
 
 }

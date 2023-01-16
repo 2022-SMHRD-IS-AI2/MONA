@@ -29,6 +29,7 @@ public class ProductDAO {
 		
 		List<ProductVO> vo = sqlSession.selectList("com.smhrd.model.ProductDAO.showProduct");
 		sqlSession.close();
+		System.out.println("jsp" + vo);
 	
 		return vo;
 	}
@@ -77,7 +78,18 @@ public class ProductDAO {
 		
 		return vo;
 	}
+	
+	
+     // 로그인한 사람의 장바구니 조회
+	public List<ProductVO> showBk(String U_id) {
+
+		List<ProductVO> Bvo = sqlSession.selectList("com.smhrd.model.ProductDAO.showBk", U_id);
+		sqlSession.close();
 		
+		System.out.println("mmmmmmmmmmmmmmmmmm"+Bvo);
+
+		return Bvo;
+	}
 
 	
  }
