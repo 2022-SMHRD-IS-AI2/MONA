@@ -10,4 +10,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        insert into TB_order values(TB_order_seq.nextval,sysdate, #{u_id}, #{paid_amount}, 'N', #{cnt},#{prod_name})
    </insert>
    
+   	<!--결제할 주문내역 가져오기 -->
+	<select id="pay" resultType="com.smhrd.model.OrderVO">
+		select * from TB_order where order_status='N'
+	</select>
+   
    </mapper>

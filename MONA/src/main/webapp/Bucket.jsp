@@ -185,7 +185,7 @@
          <input hidden name="price" value="<%=sum+a%>">
           <input hidden name="prod_name" value="<%=vo.get(0).getProd_name()%>">
            <input hidden name="b" value="<%=b%>">
-            <button class="shoppingBag-bottom-btn" type="submit"  >
+            <button class="shoppingBag-bottom-btn" type="submit">결제하기</button>
 		</form>
 		  </div>
         </div>

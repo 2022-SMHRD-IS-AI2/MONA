@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.OrderVO"%>
+<%@page import="com.smhrd.model.OrderDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,12 +7,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+
 <body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- jQuery -->
+
+  <%
+  String loginUser = (String) session.getAttribute("loginUser_id");
+  
+  OrderVO vo = new OrderDAO().pay();
+  
+  String prod_name=null;
+  int cnt=0;
+  int price=0;
+  int a=0;
+  
+  if(loginUser.equals(vo.getU_id())){
+	  prod_name=vo.getProd_name();
+	  cnt=vo.getCnt()-1;
+	  price=vo.getPaid_amount();
+  }
+  
+  //System.out.println(prod_name);
+  //System.out.println(cnt);
+  //System.out.println(price);
+  %>
+
+	<!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
     <!-- iamport.payment.js -->
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
@@ -31,8 +52,8 @@
                 pg : 'html5_inicis.INIpayTest',
                 pay_method : 'card',
                 merchant_uid: "IMP"+makeMerchantUid, 
-                name : '당근 10kg',
-                amount : 1004,
+                name : '<%=prod_name%>외<%=cnt%>개',
+                amount : <%=price%>,
                 buyer_email : 'Iamport@chai.finance',
                 buyer_name : '아임포트 기술지원팀',
                 buyer_tel : '010-1234-5678',
@@ -40,20 +61,17 @@
                 buyer_postcode : '123-456'
             }, function (rsp) { // callback
                 if (rsp.success) {
-                    console.log(rsp);
+                  <% a=0;%>
                 } else {
-                    console.log(rsp);
+                    <%a=1;%>
                 }
             });
         }
-    </script>
-    <meta charset="UTF-8">
-    <title>Sample Payment</title>
+        
+        requestPay();
+        </script>
+        
+        
 </head>
-<body>
-    <button onclick="requestPay()">결제하기</button> <!-- 결제하기 버튼 생성 -->
-  
-</body>
-</html>
 </body>
 </html>

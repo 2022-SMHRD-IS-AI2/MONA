@@ -20,4 +20,13 @@ public class OrderDAO {
 			
 			return o_cnt;
 		}
+		
+		//결제할 주문내역 가져오기
+		public OrderVO pay() {
+			
+			OrderVO vo = sqlSession.selectOne("com.smhrd.model.OrderDAO.pay");
+			sqlSession.close();
+			
+			return vo;
+		}
 }
