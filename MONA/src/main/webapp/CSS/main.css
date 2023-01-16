@@ -252,10 +252,14 @@ background-color:rgb(255, 200, 2);
 .contents-child-star img{
     margin-top: 5px;
     width: 20px;
+    height: 15px;
+    
 }
 .contents-child-star{
+	display: flex;
     height: 30px;
     background-color: whitesmoke;
+    
     
 }
 .contents-child-comment{
