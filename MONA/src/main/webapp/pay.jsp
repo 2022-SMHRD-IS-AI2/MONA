@@ -53,7 +53,7 @@
                 pay_method : 'card',
                 merchant_uid: "IMP"+makeMerchantUid, 
                 name : '<%=prod_name%>외<%=cnt%>개',
-                amount : <%=price%>,
+                amount : 100,
                 buyer_email : 'Iamport@chai.finance',
                 buyer_name : '아임포트 기술지원팀',
                 buyer_tel : '010-1234-5678',
@@ -61,9 +61,9 @@
                 buyer_postcode : '123-456'
             }, function (rsp) { // callback
                 if (rsp.success) {
-                  <% a=0;%>
+                  location.href = 'orderSuccessCon';
                 } else {
-                    <%a=1;%>
+                   location.href = 'pay.jsp';
                 }
             });
         }
