@@ -180,14 +180,15 @@
   
     
         <div class="shoppingBag-bottom">
-        <from action="orderCon">
+        <form action="orderCon">
          <input hidden name="price" value="<%=sum+a%>">
-          <input hidden name="prod_num" value="<%=vo.get(0).getProd_name()%>">
+          <input hidden name="prod_name" value="<%=vo.get(0).getProd_name()%>">
+           <input hidden name="prod_num" value="<%=b %>">
             <button class="shoppingBag-bottom-btn" type="submit"  >
                     주문하기
                 </button>
-        </div>
-		</from>
+		</form>
+		  </div>
     </div>
 	
 
