@@ -75,13 +75,13 @@
                 
                 <div class="logininfo-order-product" >
                     <span>주문한 상품은 총 </span>
-                    <span>0</span>
-                    <span>건입니다</span>
+                    <span>0건</span>
+                    <span>입니다</span>
                 </div>
                 <div class="logininfo-order-written">
-                    <span>작성한 상품은 총 </span>
-                    <span>0</span> 
-                    <span>건입니다</span>
+                    <span>작성한 리뷰는 총 </span>
+                    <span>0건</span> 
+                    <span>입니다</span>
                 </div>
                 
             </div>
@@ -108,21 +108,23 @@
 
         </div>
         <div class="button">
-            <a href="/mypage.html"><button>주문내역</button></a>
+            <a href=""><button>주문내역</button></a>
             <a href=""><button>상품등록 요청 내역</button></a>
-            <a href=""><button>등록한 상품 내역</button></a> 
+            <a href=""><button>판매내역</button></a> 
         </div>
         
+        <!-- 반복문 시작 -->  
         <div class="ordercontents-date">
-            <span>2023-01-10</span>
+            <span><h4>2023-01-10</h4></span>
         </div>
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
-                <img width="200px" height="150px" src="/img/반려동물식품/[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.jpg" alt="">
+                <img width="250px" height="150px" src="/img/반려동물식품/[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.jpg" alt="">
             </div>    
             <div class="ordercontents-list-title">
                 <span>title</span>
                 <span>[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.</span>
+                 <span>가격</span>
             </div>       
             
             <div class="ordercontents-list-quantity">
@@ -138,16 +140,17 @@
             </div>
         </div>
   
-     <div class="ordercontents-date">
-            <span>2023-01-10</span>
+    <div class="ordercontents-date">
+            <span><h4>2023-01-10</h4></span>
         </div>
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
-                <img width="200px" height="150px" src="/img/반려동물식품/[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.jpg" alt="">
+                <img width="250px" height="150px" src="/img/반려동물식품/[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.jpg" alt="">
             </div>    
             <div class="ordercontents-list-title">
                 <span>title</span>
                 <span>[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.</span>
+                 <span>가격</span>
             </div>       
             
             <div class="ordercontents-list-quantity">
@@ -164,13 +167,9 @@
         </div>
     
     
-    		    <div class="footer">
     </div>
-    
-    
-    
-    </div>
-        
+     <div class="footer">
+    </div> 
     
 
 </div>

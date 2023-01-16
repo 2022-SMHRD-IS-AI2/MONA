@@ -165,6 +165,7 @@
             <!-- <a href="edit.html">수정</a> -->
          </div>
       </div>
+      </div>
       
        <div class="footer">
    	 </div>

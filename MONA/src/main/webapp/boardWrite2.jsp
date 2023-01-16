@@ -93,6 +93,9 @@
                 <a href="boardMain.jsp">취소</a>
             </div>
             </form>
+             </div>
+            </div>
+         
             
              <div class="footer">
    			</div>

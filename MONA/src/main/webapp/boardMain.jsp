@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="./CSS/css.css">
 <link rel="stylesheet" href="./CSS/main.css">
 <link rel="stylesheet" href="./CSS/style.css">
-<link rel="stylesheet" href="./login/style.css">
+
 </head>
 <body>
  <%String loginUser = (String) session.getAttribute("loginUser_id");
@@ -94,11 +94,16 @@
             <br>
 		<br>
 		<br>
+	
             
             <!--<a href="#">수정</a>-->
          </div>
-   		 <div class="footer">
+        </div>
+        </div>
+        </div>
+        	 <div class="footer">
     	</div>
+   		
 		
 </body>
 </html>

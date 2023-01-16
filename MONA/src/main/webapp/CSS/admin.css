@@ -12,17 +12,17 @@
 }
 
 .managercontents-list-title span:first-child{
-    font-weight: 700;
-    font-size: 1.5rem;
+ 
+    font-size: 1.2rem;
 }
 .managercontents-list-title span:nth-child(2){
-    font-weight: 600;
-    font-size: 2rem;
+   
+    font-size: 1.5rem;
     padding-top:30px;
 }
 .managercontents-list-title span:last-child{
-    font-weight: 700;
-    font-size: 1.5rem;
+    
+    font-size: 1.2rem;
 }
 .accept{
     width: 70px;
@@ -136,7 +136,7 @@
     
     display: flex;
     flex-direction: column;
-    width: 600px;
+
     height: 200px;
   
     

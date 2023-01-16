@@ -79,13 +79,13 @@
                 
                 <div class="logininfo-order-product" >
                     <span>상품등록 요청은 총 </span>
-                    <span><%=vo.size()+vo1.size()%></span>
-                    <span>건입니다</span>
+                    <span><%=vo.size()+vo1.size()%>건</span>
+                    <span>입니다</span>
                 </div>
                 <div class="logininfo-order-written">
                     <span>승인된 요청은 총 </span>
-                    <span><%=vo1.size()%></span> 
-                    <span>건입니다</span>
+                    <span><%=vo1.size()%>건</span> 
+                    <span>입니다</span>
                 </div>
                 
             </div>
@@ -95,8 +95,8 @@
                     <i class="fa-solid fa-chevron-right fa-xs"></i>
                 </div>
                 <div class="logininfo-order-number">
-                    <span><%=vo.size()+vo1.size()%></span>
-                    <span>건</span>
+                    <span><%=vo.size()+vo1.size()%>건</span>
+                  
                 </div>
             </div>
             <div class="logininfo-order">
@@ -105,8 +105,8 @@
                     <i class="fa-solid fa-chevron-right fa-xs"></i>
                 </div>
                 <div class="logininfo-order-review">
-                   <span><%=vo1.size()%></span> 
-                    <span>건</span>
+                   <span><%=vo1.size()%>건</span> 
+                   
                 </div>
             </div>
 
