@@ -258,11 +258,7 @@
     </div>
 	
     <div class="footer">
-<<<<<<< HEAD
-    김준연
-=======
-    
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI2/MONA.git
+
     </div>
 </body>
 </html>

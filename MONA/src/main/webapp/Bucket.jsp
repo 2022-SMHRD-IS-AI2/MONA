@@ -77,14 +77,29 @@
    
     <div class="shoppingBag">
         <div class="cartBag">
-         <% if(vo.size()!=0){%>
+       
             <div class="cartBag-header">
                 <h2>장바구니</h2>
             </div>
         </div>
         
+         <% if(vo.size()==0){%>
+         <div class="noshopping-item">
+            <div class="noshopping">
+                <i class="fa-solid fa-cart-shopping fa-6x"></i>
+                
+            </div>
+            <p class="noshopping-p">
+                장바구니가 비었습니다.
+                <br>작가님들의 다양한 작품을 담아보세요.
+            </p>
+            <button>
+                <a href="/index.html">상품 구경하러 가기</a>     
+            </button>
+        </div>
+		<%}else {%>
         
-   
+        
        <% int sum=0;
         
         for(int i=0; i<vo.size(); i++) {%>
@@ -137,8 +152,7 @@
             </div>
     </div>
     
- 
-    
+ 	
       <%} %>
     
   
@@ -179,10 +193,9 @@
                 </div>
             </div>
         </div>
-
-    
-        <div class="shoppingBag-bottom">
-
+  		<div class="shoppingBag-bottom">
+    	
+    	
         <form action="orderCon" action="post">
          <input hidden name="price" value="<%=sum+a%>">
           <input hidden name="prod_name" value="<%=vo.get(0).getProd_name()%>">

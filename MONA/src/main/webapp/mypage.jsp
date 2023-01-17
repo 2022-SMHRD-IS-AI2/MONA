@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.ProductVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.ProductDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,11 +14,9 @@
 
 <%
      String loginUser = (String) session.getAttribute("loginUser_id");
+     String U_id = (String) session.getAttribute("loginUser_id");
    
-   if(loginUser != null){
-      System.out.print(loginUser);
-   }
-   
+     List<ProductVO> vo = new ProductDAO().showOrder(U_id);   
 
    %>
 </head>
@@ -69,13 +70,13 @@
         <div class="logininfo">
             <div class="logininfo-order">
                 <div class="logininfo-order-h2">
-                    <span>김준연</span>
+                    <span><%=loginUser%></span>
                     <span> 님 환영합니다</span>
                 </div>
                 
                 <div class="logininfo-order-product" >
                     <span>주문한 상품은 총 </span>
-                    <span>0건</span>
+                    <span><%=vo.size()%>건</span>
                     <span>입니다</span>
                 </div>
                 <div class="logininfo-order-written">
@@ -91,7 +92,7 @@
                     <i class="fa-solid fa-chevron-right fa-xs"></i>
                 </div>
                 <div class="logininfo-order-number">
-                    <span>0</span>
+                    <span><%=vo.size()%></span>
                     <span>건</span>
                 </div>
             </div>
@@ -116,60 +117,37 @@
         </div>
         
         <!-- 반복문 시작 -->  
-        
+       
+       <%for(int i=0; i<vo.size(); i++) {%>
         <div class="ordercontents-date">
-            <span><h4>2023-01-10</h4></span>
+            <span><h4><%=vo.get(i).getProd_regdt()%></h4></span>
         </div>
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
-                <img width="250px" height="150px" src="/img/반려동물식품/[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.jpg" alt="">
+                 <img width="250px" height="200px" src="./prod/<%=vo.get(i).getProd_thumb()%>">     
             </div>    
             <div class="ordercontents-list-title">
-                <span>title</span>
-                <span>[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.</span>
-                 <span>가격</span>
+                <span><%=vo.get(i).getShop_name()%></span>
+                <span><%=vo.get(i).getProd_name()%></span>
+                 <span><%=vo.get(i).getProd_price()%></span>
             </div>       
             
             <div class="ordercontents-list-quantity">
                 <span>수량:</span>
-                <span>0</span>
+                <span><%=vo.get(i).getCnt() %></span>
             </div>
             <div class="ordercontents-list-state">
                 <span >주문상태</span>
-                <button type="submit">결제확인</button>
+                <button type="submit">결제확정</button>
             </div>
             
             <div class="ordercontents-list-reveiw">
                 <a href=""><span >리뷰작성하기</span></a>
             </div>
         </div>
+  	<%} %>
   
-    <div class="ordercontents-date">
-            <span><h4>2023-01-10</h4></span>
-        </div>
-        <div class="ordercontents-list">
-            <div class="ordercontents-list-img">
-                <img width="250px" height="150px" src="/img/반려동물식품/[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.jpg" alt="">
-            </div>    
-            <div class="ordercontents-list-title">
-                <span>title</span>
-                <span>[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.</span>
-                 <span>가격</span>
-            </div>       
-            
-            <div class="ordercontents-list-quantity">
-                <span>수량:</span>
-                <span>0</span>
-            </div>
-            <div class="ordercontents-list-state">
-                <span >주문상태</span>
-                <button type="submit">결제확인</button>
-            </div>
-            
-            <div class="ordercontents-list-reveiw">
-                <a href=""><span >리뷰작성하기</span></a>
-            </div>
-        </div>
+   
     
     
     </div>
