@@ -92,7 +92,7 @@
                     <i class="fa-solid fa-chevron-right fa-xs"></i>
                 </div>
                 <div class="logininfo-order-number">
-                    <span>0</span>
+                    <span><%=vo.size()%></span>
                     <span>건</span>
                 </div>
             </div>
