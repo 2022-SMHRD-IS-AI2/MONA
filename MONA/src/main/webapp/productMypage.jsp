@@ -38,19 +38,7 @@
     	}
     %>
     
-    <%-- <!-- 총 판매수량 -->
-    <%
-    int completeCnt = 0;
-    for(int i =0; i<vo.size(); i++){
-		if(){
-			completeCnt = completeCnt + 1;
-		}
-	}
-    %> --%>
     
-    
-    
-	
     <div class="header">   
         <div class="header-logo">
             <a href="main.jsp">MonA</a>
