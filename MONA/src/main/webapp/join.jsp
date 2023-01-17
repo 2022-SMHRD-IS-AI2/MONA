@@ -69,8 +69,7 @@
             <form class="input2" action="JoinCon" method="post">
                 <span>아이디</span>
                 <div class="inputs id">
-                <input type="text" placeholder="아이디" id="dcid" name="id">
-                
+                <input type="text" placeholder="아이디" id="dcid" name="id">        
             	<button type="button" id= "inputE" >id체크</button>
             	</div>
             	<h4 id="resultCheck"></h4>

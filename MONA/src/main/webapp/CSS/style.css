@@ -74,7 +74,7 @@ a {
     border: 1px solid lightgray;
     border-radius: 2px;
     font-size: 1.4rem;
-    background: rgba(255, 153, 0);
+    background-color: rgb(19, 19, 79);
     
 }
 
@@ -84,8 +84,8 @@ a {
 }
 
 .bt_wrap a.on {
-    background: rgb(255, 153, 0);
-    color: black;
+     background-color: rgb(19, 19, 79);
+    color: white;
 }
 
 .board_list {
