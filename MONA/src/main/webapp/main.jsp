@@ -70,7 +70,7 @@
     
     </div>
 
-   <div class="head-title" >
+   <div class="head-title1" >
     <h1>popular product</h1>
    </div>
    
@@ -256,9 +256,13 @@
         </div>
 
     </div>
-
+	
     <div class="footer">
+<<<<<<< HEAD
+    김준연
+=======
     
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI2/MONA.git
     </div>
 </body>
 </html>

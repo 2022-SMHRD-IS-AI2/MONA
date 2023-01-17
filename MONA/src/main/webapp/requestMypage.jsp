@@ -55,7 +55,7 @@
         </div>
         <div class="header-menu" >
             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="/boad.html">마이페이지</a>
+            <a href="mypage.jsp">마이페이지</a>
             <a href="#">게시판</a>
             <a href="#">로그인</a>
             <a href="#">회원가입</a>
@@ -132,12 +132,14 @@
                 <span><%=vo2.get(i).getProd_name()%></span>
             </div>       
             <div class="requestcontents-list-state">
-                <%if(vo2.get(i).getShop_check().equals("Y")){
-                %>
+                <%if(vo2.get(i).getShop_check().equals("Y")){%>
                 <span>승인</span>
                 
                 <%}else if(vo2.get(i).getShop_check().equals("N")){%>
                 <span>심사중</span>
+                
+                <%}else if(vo2.get(i).getShop_check().equals("X")){%>
+                <span>거부</span>
                 
                 <%} %> 
             </div>
