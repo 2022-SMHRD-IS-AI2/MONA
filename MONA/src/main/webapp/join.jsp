@@ -69,10 +69,10 @@
             <form class="input2" action="JoinCon" method="post">
                 <span>아이디</span>
                 <div class="inputs id">
-                <input type="text" placeholder="아이디" id="dcid" name="id">
-                <h4 id="resultCheck"></h4>
+                <input type="text" placeholder="아이디" id="dcid" name="id">        
             	<button type="button" id= "inputE" >id체크</button>
-            </div>
+            	</div>
+            	<h4 id="resultCheck"></h4>
                 <span>비밀번호</span>
                 <div class="inputs pw">
                     <input type="password" placeholder="비밀번호" name="pw">

@@ -70,7 +70,7 @@
     
     </div>
 
-   <div class="head-title" >
+   <div class="head-title1" >
     <h1>popular product</h1>
    </div>
    
@@ -256,9 +256,9 @@
         </div>
 
     </div>
-
+	
     <div class="footer">
-    
+
     </div>
 </body>
 </html>
