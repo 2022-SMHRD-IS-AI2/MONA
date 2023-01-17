@@ -110,7 +110,6 @@ public class ProductDAO {
 		List<ProductVO> Bvo = sqlSession.selectList("com.smhrd.model.ProductDAO.showBk", U_id);
 		sqlSession.close();
 		
-		System.out.println("mmmmmmmmmmmmmmmmmm"+Bvo);
 
 		return Bvo;
 	}
@@ -124,6 +123,16 @@ public class ProductDAO {
 
 		return pvo;
 	
+		}
+	
+	   // 로그인한 사람의 장바구니 조회
+		public List<ProductVO> showOrder(String U_id) {
+
+			List<ProductVO> vo = sqlSession.selectList("com.smhrd.model.ProductDAO.showOrder", U_id);
+			sqlSession.close();
+			
+
+			return vo;
 		}
 	
  }

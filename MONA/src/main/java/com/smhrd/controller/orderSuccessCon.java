@@ -23,7 +23,7 @@ public class orderSuccessCon extends HttpServlet {
 		String loginUser = (String) session.getAttribute("loginUser_id");
 		System.out.println(loginUser);
 		
-		int B_cnt = new BucketDAO().Bdelete(loginUser);
+		int B_cnt = new BucketDAO().B_Check(loginUser);
 		int O_cnt = new OrderDAO().orderCheck(loginUser);
 		
 		System.out.println(B_cnt);

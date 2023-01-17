@@ -28,5 +28,7 @@ public class BucketVO {
 	private String U_id;
 	@NonNull
 	private int cnt;
+	private String b_check;
+
 
 }

@@ -303,6 +303,44 @@
     padding-right:20px;
 }
 
+.noshopping-item{
+    width: 800px;
+    height: 430px;  
+    background: #fff;   
+    padding:  50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.noshopping{
+    width: 800px;
+    height: 126px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+.noshopping i{
+    color: #ccc;
+}
+.noshopping-p{
+    width: 800px;
+    height: 46px;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 16px;
+    color: #666;
+}
+.noshopping-item button{
+    width: 246px;
+    height: 48px;
+    margin-top: 36px;
+    color: white;
+    background-color: rgb(19, 19, 79);
+    border-radius: 5px;
+    font-size: 16px;
+}
 
 
