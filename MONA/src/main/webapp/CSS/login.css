@@ -41,13 +41,13 @@ html {
 .inputlogin input{
 font-size: 16px;
 width: 360px;
-height: 24px;
+height: 48px;
 }
 
 
 .inputspan{
     display: flex;
-    justify-content: flex-end;
+    
 
 }
 .inputspan span{

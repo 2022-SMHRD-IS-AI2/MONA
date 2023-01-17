@@ -46,13 +46,15 @@ background-color:rgb(255, 200, 2);
     height: 40px;
     border-radius: 5px;
     border:1px solid grey;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    
 
 }
 .header-serch .fa-solid.fa-magnifying-glass{
     position: absolute;
-    margin-top: 13px;
-    margin-left: -20px;
+    
+    right:28px;
+    top:25px;
 
 }
 .header-menu{
