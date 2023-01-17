@@ -45,11 +45,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		AND T.U_ID = #{U_id}
   	 </select>
 	
-	<!-- 로그인한 유저의 상품 판매 요청정보 조회 -->
+	<!-- 상품 판매 요청정보 조회 -->
 	<select id="showProdRequest" resultType="com.smhrd.model.ProductVO" >
 		select * from TB_PRODUCT
 		order by PROD_REGDT desc
 	</select>
 
-	
+	<!-- 버킷, 상품테이블 조인 후 결제완료 상품 조회 -->
+  	 <select id = "completePay" resultType="com.smhrd.model.ProductVO" >
+		select T1.*, T.CNT from TB_PRODUCT T1
+  		JOIN TB_BUCKET T
+    	ON T1.PROD_NUM = T.PROD_NUM
+   		AND T.b_check='Y'
+  	 </select>
+  	 
 </mapper>
