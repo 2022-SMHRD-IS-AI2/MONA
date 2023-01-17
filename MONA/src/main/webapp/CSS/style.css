@@ -3,18 +3,16 @@
     padding: 0;
 }
 
-html {
-    font-size: 10px;
+.board_list a{
+	 font-size: 16px;
 }
-
+.num{
+	font-size: 20px;
+}
 ul, li {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
 
 .board_wrap {
     width: 1000px;
@@ -26,7 +24,7 @@ a {
 }
 
 .board_title strong {
-    font-size: 25px
+    font-size: 25px;
 }
 
 .board_title p {

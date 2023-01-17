@@ -1,7 +1,6 @@
-@import "boad.css";
+
 @import "reset.css";
-
-
+@import "login.css";
 @import "product.css";
 @import "productDetail.css";
 @import "join.css";
