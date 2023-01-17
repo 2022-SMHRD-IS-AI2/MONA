@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html {
+    font-size: 12px;
+}
+
 .shoppingBag{
     width: 100%;
     display: flex;

@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html {
+    font-size: 12px;
+}
+
 .managercontents-list-title{
     display: flex;
     flex-direction: column;
