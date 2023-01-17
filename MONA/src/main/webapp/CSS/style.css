@@ -253,7 +253,7 @@ a {
 }
 
 .board_view_comminput input{
-    width:530px;
+    width:520px;
     height:30px;
     letter-spacing: 2px;
     display: flex;
@@ -272,6 +272,7 @@ a {
     width: 60px;
     height: 30px;
     align-items: center;
+    padding-left: 50px;
 }
 .board_view_commsubmit input{
     width: 60px;
@@ -331,11 +332,12 @@ a {
 
 
 .board_view_commform{
-	display: inline-block;
-	width:620px;
+	display: flex;
+	width:700px;
 	height:64px;
 	align-items: center;
 	justify-content: space-between;
+	margin-left:25px;
 }
 
 
