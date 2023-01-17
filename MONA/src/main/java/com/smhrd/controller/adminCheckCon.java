@@ -11,33 +11,29 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.model.ProductDAO;
 import com.smhrd.model.ProductVO;
 
-
 public class adminCheckCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-    request.setCharacterEncoding("UTF-8");
-    
-	int prod_num = Integer.parseInt(request.getParameter("adminCheck"));
+		request.setCharacterEncoding("UTF-8");
 
-	System.out.println(prod_num);
+		int prod_num = Integer.parseInt(request.getParameter("adminCheck"));
 
+		System.out.println(prod_num);
 
-	ProductDAO dao = new ProductDAO();
-	int cnt =dao.updateAdminCheck(prod_num);
-	
-	
-	if(cnt>0) {     
-		System.out.println("승인여부 업데이트 성공");
-		response.sendRedirect("adminMypage.jsp");
-	}else {
-		System.out.println("승인여부 업데이트 실패");
-		response.sendRedirect("adminMypage.jsp");
-	}
-		
-	
+		ProductDAO dao = new ProductDAO();
+		int cnt = dao.updateAdminCheck(prod_num);
+
+		if (cnt > 0) {
+			System.out.println("승인여부 업데이트 성공");
+			response.sendRedirect("adminMypage.jsp");
+		} else {
+			System.out.println("승인여부 업데이트 실패");
+			response.sendRedirect("adminMypage.jsp");
+		}
+
 	}
 
 }

@@ -60,6 +60,30 @@ public class ProductDAO {
 		return cnt;
 	}
 	
+	public int updateAdminCheck2(int check) {
+		
+		int cnt=0;
+		
+		try {//만약 sql문이 잘못되었거나, url이 잘못되었다면 세션이 잘 생성이 안될수 있음
+			
+			//insert("실행할 sql 경로 정의",넘겨줄 값)
+			cnt=sqlSession.update("com.smhrd.model.ProductDAO.updateAdminCheck2", check);
+			
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	
 	
 	// 각 카테고리 별 상품 등록
 	public List<ProductVO> showCate() {
@@ -90,6 +114,16 @@ public class ProductDAO {
 
 		return Bvo;
 	}
+	
+	// 로그인한 사람의 판매요청 상태 조회
+	
+	public List<ProductVO> showProdRequest() {
 
+		List<ProductVO> pvo = sqlSession.selectList("com.smhrd.model.ProductDAO.showProdRequest");
+		sqlSession.close();
+
+		return pvo;
+	
+		}
 	
  }

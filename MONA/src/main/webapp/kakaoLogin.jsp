@@ -23,20 +23,20 @@
                         success: (res) => {
                             const kakao_account = res.kakao_account;
                             console.log(kakao_account)
+                            alert("로그인에 성공하셨습니다")
+                     //window.location.href='main.jsp' //리다이렉트 되는 코드
                         }
+                        
                     });
-                    // window.location.href='/ex/kakao_login.html' //리다이렉트 되는 코드
                 },
                 fail: function(error) {
                     console.log(error);
+                    
                 }
             });
         }
     </script>
 </body>
 
-</body>
-</html>
-   </script>
-</body>
+
 </html>

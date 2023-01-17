@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.model.OrderDAO">
+
+   <!-- 주문내역 업로드  -->
+   <insert id="orderUpload" parameterType="com.smhrd.model.OrderVO">
+       insert into TB_order values(TB_order_seq.nextval,sysdate, #{u_id}, #{paid_amount}, 'N', #{cnt},#{prod_name})
+   </insert>
+   
+   	<!--결제할 주문내역 가져오기 -->
+	<select id="pay" resultType="com.smhrd.model.OrderVO">
+		select * from TB_order where order_status='N'
+	</select>
+	
+	<!--결제완료시 주문상태 주문완료로 바꾸기 N->Y -->
+	<update id="orderCheck" parameterType="String" >
+		update TB_order set order_status='Y' where u_id=#{loginUser}
+	</update>
+   
+   </mapper>

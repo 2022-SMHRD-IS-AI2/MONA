@@ -74,17 +74,18 @@
         <a href="toy.jsp"><h3>Toy</h3></a>
         <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
-    
+   
     <div class="shoppingBag">
         <div class="cartBag">
+         <% if(vo.size()!=0){%>
             <div class="cartBag-header">
                 <h2>장바구니</h2>
             </div>
         </div>
         
         
-        <%
-        int sum=0;
+   
+       <% int sum=0;
         
         for(int i=0; i<vo.size(); i++) {%>
         <div class="cartBag-item">
@@ -112,11 +113,13 @@
                              <%=vo.get(i).getProd_price()%>원
                              수량<%=vo.get(i).getCnt() %>개
                         </div>
-                        
                         <div class="cartBag-itemlist-optionlist-btn">
-                            <button class="cartBag-itemlist-optionlist-btn">
+                        <form action="bucketDeleteCon" action="post">
+                           <input hidden name="loginUser" value="<%=loginUser%>">
+                            <button class="cartBag-itemlist-optionlist-btn" type="submit">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
+                         </form>
                         </div>
                     </div>
                
@@ -176,20 +179,21 @@
                 </div>
             </div>
         </div>
-    
-  
+
     
         <div class="shoppingBag-bottom">
-        <from action="orderCon">
+
+        <form action="orderCon" action="post">
          <input hidden name="price" value="<%=sum+a%>">
-          <input hidden name="prod_num" value="<%=vo.get(0).getProd_name()%>">
-            <button class="shoppingBag-bottom-btn" type="submit"  >
-                    주문하기
-                </button>
+          <input hidden name="prod_name" value="<%=vo.get(0).getProd_name()%>">
+           <input hidden name="b" value="<%=b%>">
+            <button class="shoppingBag-bottom-btn" type="submit">결제하기</button>
+		</form>
+		  </div>
+	<% }%>
         </div>
-		</from>
-    </div>
 	
+    </div>
 
 	 <div class="footer">
     </div>

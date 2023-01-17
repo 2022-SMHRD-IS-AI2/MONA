@@ -5,11 +5,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.smhrd.model.BucketDAO">
 
-<!-- 장바구니에 선택한 상품번호/id 업로드 -->
-<insert id="Bupload" parameterType="com.smhrd.model.BucketVO">
-	insert into tb_bucket values(
-	tb_bucket_SEQ.nextval,#{prod_num},sysdate,#{U_id},#{cnt})	
+	<!-- 장바구니에 선택한 상품번호/id 업로드 -->
+	<insert id="Bupload" parameterType="com.smhrd.model.BucketVO">
+		insert into tb_bucket values(
+		tb_bucket_SEQ.nextval,#{prod_num},sysdate,#{U_id},#{cnt})
 	</insert>
+	
+	<delete id="Bdelete" parameterType="String">
+		delete from tb_bucket where u_id=#{loginUser}
+	</delete>
 
 
 

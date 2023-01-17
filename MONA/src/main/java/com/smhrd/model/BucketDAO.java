@@ -16,7 +16,7 @@ public class BucketDAO {
 	// true 넣으면 outo commit
 	SqlSession sqlSession = sqlSessionFactory.openSession(true);
 	
-	//장바구니 테이블 업로드
+	//이용자가 장바구니 담기 클릭 시 장바구니 테이블 업로드
 	public int Bupload(BucketVO vo) {
 		
 		int cnt = sqlSession.insert("Bupload",vo);
@@ -24,6 +24,31 @@ public class BucketDAO {
 		
 		return cnt;
 	}
+	
+	//이용자가 결제완료시 장바구니에 담은 상품 삭제
+	public int Bdelete(String loginUser) {
+		
+		int cnt=0;
+			
+			try {//만약 sql문이 잘못되었거나, url이 잘못되었다면 세션이 잘 생성이 안될수 있음
+				
+				//insert("실행할 sql 경로 정의",넘겨줄 값)
+				cnt=sqlSession.delete("com.smhrd.model.BucketDAO.Bdelete",loginUser);
+				
+				if(cnt>0) {
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+				
+			}finally {
+				sqlSession.close();
+			}
+			return cnt;
+		}
 	
 
 

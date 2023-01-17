@@ -88,7 +88,7 @@
             <div class="contents-child-title" >
                 <span>베어폼폼 패딩</span>
                 <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
-                <span>기여워용</span>
+                
             </div>
             
 
@@ -100,6 +100,10 @@
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 
             </div>
+             <div class="contents-child-comment">
+                <span>기여워용</span>
+            </div>
+            
          
             
         </div>
@@ -254,7 +258,11 @@
     </div>
 	
     <div class="footer">
+<<<<<<< HEAD
     김준연
+=======
+    
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI2/MONA.git
     </div>
 </body>
 </html>

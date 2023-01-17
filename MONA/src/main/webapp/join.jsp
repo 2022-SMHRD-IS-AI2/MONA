@@ -9,7 +9,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-    <link rel="stylesheet" href="./CSS/join.css">
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
@@ -71,8 +70,8 @@
                 <span>아이디</span>
                 <div class="inputs id">
                 <input type="text" placeholder="아이디" id="dcid" name="id">
-                <span id="resultCheck"></span>
-            <button type="button" id= "inputE" >id체크</button>
+                <h4 id="resultCheck"></h4>
+            	<button type="button" id= "inputE" >id체크</button>
             </div>
                 <span>비밀번호</span>
                 <div class="inputs pw">
