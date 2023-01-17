@@ -104,7 +104,7 @@ public class ProductDAO {
 	}
 	
 	
-     // 로그인한 사람의 장바구니 조회
+     // 로그인한 사람 장바구니 조회
 	public List<ProductVO> showBk(String U_id) {
 
 		List<ProductVO> Bvo = sqlSession.selectList("com.smhrd.model.ProductDAO.showBk", U_id);
@@ -114,7 +114,7 @@ public class ProductDAO {
 		return Bvo;
 	}
 	
-	// 로그인한 사람의 판매요청 상태 조회
+	// 로그인한 사람 판매요청 상태 조회
 	
 	public List<ProductVO> showProdRequest() {
 
@@ -123,7 +123,15 @@ public class ProductDAO {
 
 		return pvo;
 	
-		}
+	}
+	
+	public List<ProductVO> completePay() {
+		
+		List<ProductVO> cvo = sqlSession.selectList("com.smhrd.model.ProductDAO.completePay");
+		sqlSession.close();
+
+		return cvo;
+	}
 	
 	   // 로그인한 사람의 장바구니 조회
 		public List<ProductVO> showOrder(String U_id) {

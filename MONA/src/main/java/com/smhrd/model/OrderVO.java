@@ -25,5 +25,5 @@ public class OrderVO {
     private String order_status;
     @NonNull private int cnt;
     @NonNull private String prod_name;
-	
+    
 }

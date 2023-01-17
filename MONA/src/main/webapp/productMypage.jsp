@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.ProductDAO"%>
+<%@page import="com.smhrd.model.ProductVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,9 +13,35 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+	<!-- 세션에 저장된 로그인된 ID 가져오기 -->
+    <%
+  	String loginUser = (String) session.getAttribute("loginUser_id");
+	
+	if(loginUser != null){
+		System.out.print(loginUser);
+		}
+	%>
+	
+	<!-- 판매 상품 리스트에 저장하기 -->
+	<%
+    List<ProductVO> vo = new ProductDAO().showProdRequest();
+    List<ProductVO> cvo = new ProductDAO().completePay();
+    %>
+   
+	<!-- 승인된 상품 수 -->
+	<%
+    int ycnt = 0;
+    for(int i =0; i<vo.size(); i++){
+    		if(loginUser.equals(vo.get(i).getSeller_id()) && vo.get(i).getShop_check().equals("Y")){
+    			ycnt = ycnt+1;
+    		}
+    	}
+    %>
+    
+    
     <div class="header">   
         <div class="header-logo">
-            <a href="index.html">MonA</a>
+            <a href="main.jsp">MonA</a>
         </div>
         <div class="header-serch" >
             <input type="text" name="" id="">
@@ -37,13 +66,13 @@
         <div class="logininfo">
             <div class="logininfo-order">
                 <div class="logininfo-order-h2">
-                    <span>김준연</span>
+                    <span><%=loginUser%></span>
                     <span> 님 환영합니다</span>
                 </div>
                 
                 <div class="logininfo-order-product" >
                     <span>등록된 상품은 총 </span>
-                    <span>0</span>
+                    <span><%=ycnt%></span>
                     <span>건입니다</span>
                 </div>
                 <div class="logininfo-order-written">
@@ -59,7 +88,7 @@
                     <i class="fa-solid fa-chevron-right fa-xs"></i>
                 </div>
                 <div class="logininfo-order-number">
-                    <span>0</span>
+                    <span><%=ycnt%></span>
                     <span>건</span>
                 </div>
             </div>
@@ -81,27 +110,29 @@
             <a href="productMypage.jsp"><button>등록한상품내역</button></a>  
         </div>
         
+        <%for(int i =0; i<vo.size(); i++){
+            
+        	if(loginUser.equals(vo.get(i).getSeller_id()) && vo.get(i).getShop_check().equals("Y")){
+        	%>
+        
         <div class="ordercontents-date">
-            <span>2023-01-10            </span>
+            <span><%=vo.get(i).getProd_regdt()%></span>
         </div>
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
-                <img width="200px" height="150px" src="/img/반려동물식품/[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.jpg" alt="">
+                <img width="200px" height="150px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
             </div>    
             <div class="ordercontents-list-title">
-                <span>title</span>
-                <span>[천연껌]콜라겐가득 ☝🏻돼지귀슬라이스.</span>
+                <span><%=vo.get(i).getShop_name()%></span>
+                <span><%=vo.get(i).getProd_name()%></span>
             </div>       
             <div class="productcontents-list-state">
                 <span >판매된 수량</span> 
                 <span>0</span>
                 <span>개</span>
             </div>
-       
         </div>
-  
-    
-    </div>
+  		<%}}%>
     
 </div>
 

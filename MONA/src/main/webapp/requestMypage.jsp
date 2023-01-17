@@ -1,4 +1,3 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.ProductDAO"%>
 <%@page import="com.smhrd.model.ProductVO"%>
 <%@page import="java.util.List"%>
@@ -14,32 +13,35 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+	<!-- 세션에 저장된 로그인된 ID 가져오기 -->
     <%
   	String loginUser = (String) session.getAttribute("loginUser_id");
 	
 	if(loginUser != null){
 		System.out.print(loginUser);
-	}	
-
+		}	
 	%>
 	
+	<!-- 판매 상품 리스트에 저장하기 -->
 	<%
-    List<ProductVO> vo2 = (new ProductDAO()).showProdRequest();
+    List<ProductVO> vo = (new ProductDAO()).showProdRequest();
     %>
     
+    <!-- 등록상품 수 -->
     <%
     int allcnt = 0;
-    for(int i =0; i<vo2.size(); i++){
-    		if(loginUser.equals(vo2.get(i).getSeller_id())){
+    for(int i =0; i<vo.size(); i++){
+    		if(loginUser.equals(vo.get(i).getSeller_id())){
     			allcnt = allcnt+1;
     		}
     	}
     %>
     
+    <!-- 승인된 상품 수 -->
     <%
     int ycnt = 0;
-    for(int i =0; i<vo2.size(); i++){
-    		if(loginUser.equals(vo2.get(i).getSeller_id())&&vo2.get(i).getShop_check().equals("Y")){
+    for(int i =0; i<vo.size(); i++){
+    		if(loginUser.equals(vo.get(i).getSeller_id()) && vo.get(i).getShop_check().equals("Y")){
     			ycnt = ycnt+1;
     		}
     	}
@@ -72,7 +74,7 @@
         <div class="logininfo">
             <div class="logininfo-order">
                 <div class="logininfo-order-h2">
-                    <span><%= loginUser%>님 환영합니다</span>
+                    <span><%=loginUser%>님 환영합니다</span>
                 </div>
                 
                 <div class="logininfo-order-product" >
@@ -115,37 +117,36 @@
             <a href="productMypage.jsp"><button>등록한상품내역</button></a> 
         </div>
         
-        <%for(int i =0; i<vo2.size(); i++){
+        <%for(int i =0; i<vo.size(); i++){
             
-        	if(loginUser.equals(vo2.get(i).getSeller_id())){
+        	if(loginUser.equals(vo.get(i).getSeller_id())){
         	%>
             
         <div class="ordercontents-date">
-            <span><%=vo2.get(i).getProd_regdt()%></span>
+            <span><%=vo.get(i).getProd_regdt()%></span>
         </div>
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
-                <img width="200px" height="150px" src="./prod/<%=vo2.get(i).getProd_thumb()%>">
+                <img width="200px" height="150px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
             </div>    
             <div class="ordercontents-list-title">
-                <span><%=vo2.get(i).getShop_name()%></span>
-                <span><%=vo2.get(i).getProd_name()%></span>
+                <span><%=vo.get(i).getShop_name()%></span>
+                <span><%=vo.get(i).getProd_name()%></span>
             </div>       
             <div class="requestcontents-list-state">
-                <%if(vo2.get(i).getShop_check().equals("Y")){%>
+                <%if(vo.get(i).getShop_check().equals("Y")){%>
                 <span>승인</span>
                 
-                <%}else if(vo2.get(i).getShop_check().equals("N")){%>
+                <%}else if(vo.get(i).getShop_check().equals("N")){%>
                 <span>심사중</span>
                 
-                <%}else if(vo2.get(i).getShop_check().equals("X")){%>
+                <%}else if(vo.get(i).getShop_check().equals("X")){%>
                 <span>거부</span>
                 
                 <%} %> 
             </div>
         </div>
-       <%}%>
-       <%}%>
+       <%}}%>
     </div>        
   
 </div>
