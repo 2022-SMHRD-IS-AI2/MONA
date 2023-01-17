@@ -1,20 +1,34 @@
+
+
 * {
     margin: 0;
     padding: 0;
 }
 
+
+
+.board_list a{
+	 font-size: 16px;
+}
 html {
     font-size: 12px;
-}
 
+}
+.num{
+	font-size: 20px;
+}
 ul, li {
     list-style: none;
 }
+
+
 
 a {
     text-decoration: none;
     color: inherit;
 }
+
+
 
 .board_wrap {
     width: 1000px;
@@ -26,7 +40,7 @@ a {
 }
 
 .board_title strong {
-    font-size: 25px
+    font-size: 25px;
 }
 
 .board_title p {
@@ -60,7 +74,7 @@ a {
     border: 1px solid lightgray;
     border-radius: 2px;
     font-size: 1.4rem;
-    background: rgba(255, 153, 0);
+    background-color: rgb(19, 19, 79);
     
 }
 
@@ -70,8 +84,8 @@ a {
 }
 
 .bt_wrap a.on {
-    background: rgb(255, 153, 0);
-    color: black;
+     background-color: rgb(19, 19, 79);
+    color: white;
 }
 
 .board_list {
@@ -224,7 +238,7 @@ a {
     font-size: 14px;
 }
 
-img { display: block; margin: 20px auto; }
+
 
 .board_view_comment{
     width:100%;
@@ -251,7 +265,7 @@ img { display: block; margin: 20px auto; }
 }
 
 .board_view_comminput input{
-    width:530px;
+    width:520px;
     height:30px;
     letter-spacing: 2px;
     display: flex;
@@ -270,6 +284,7 @@ img { display: block; margin: 20px auto; }
     width: 60px;
     height: 30px;
     align-items: center;
+    padding-left: 50px;
 }
 .board_view_commsubmit input{
     width: 60px;
@@ -299,6 +314,7 @@ img { display: block; margin: 20px auto; }
     
 }
 .board_view_ripple{
+	margin-top:15px;
 	width: 560px;
     height: 60px;
     display: flex;
@@ -328,11 +344,12 @@ img { display: block; margin: 20px auto; }
 
 
 .board_view_commform{
-	display: inline-block;
-	width:620px;
+	display: flex;
+	width:700px;
 	height:64px;
 	align-items: center;
 	justify-content: space-between;
+	margin-left:25px;
 }
 
 
