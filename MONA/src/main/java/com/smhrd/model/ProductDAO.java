@@ -114,6 +114,16 @@ public class ProductDAO {
 
 		return Bvo;
 	}
+	
+	// 로그인한 사람의 판매요청 상태 조회
+	
+	public List<ProductVO> showProdRequest() {
 
+		List<ProductVO> pvo = sqlSession.selectList("com.smhrd.model.ProductDAO.showProdRequest");
+		sqlSession.close();
+
+		return pvo;
+	
+		}
 	
  }
