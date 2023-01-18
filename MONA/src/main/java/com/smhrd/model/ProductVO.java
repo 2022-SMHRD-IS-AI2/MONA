@@ -38,6 +38,7 @@ public class ProductVO {
     private Timestamp bucket_regdt;
     private String b_check;
     private String r_check;
+    private int total_cnt;
 }
 
 

@@ -75,8 +75,28 @@ public class BucketDAO {
 				return cnt;
 			}
 
-		
-	
+			// 구매 확정시 상품별 결제확정시 구매수량 누적시키기
+			public int cntUpdate(int prod_num) {
 
+				int cnt=0;
+					
+					try {
+						
+						cnt=sqlSession.update("com.smhrd.model.BucketDAO.cntUpdate", prod_num);
+						
+						if(cnt>0) {
+							sqlSession.commit();
+						}else {
+							sqlSession.rollback();
+						}
+						
+					}catch(Exception e) {
+						e.printStackTrace();
+						
+					}finally {
+						sqlSession.close();
+					}
+					return cnt;
+				}
 
 }
