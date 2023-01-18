@@ -41,7 +41,7 @@
         </div>
     
         <div class="header-menu" >
-            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> 
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping fa-1x"></i></a> 
             <%=b%>
        		
                

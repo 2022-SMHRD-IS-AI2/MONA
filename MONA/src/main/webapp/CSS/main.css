@@ -67,6 +67,10 @@ background-color:rgb(255, 200, 2);
      
   
 }
+.header-menu i{
+	margin-right:5px
+	
+	}
 .header-menu a{
     margin-left: 20px;
     font-size: 16px;
