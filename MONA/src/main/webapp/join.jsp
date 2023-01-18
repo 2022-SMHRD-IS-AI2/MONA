@@ -98,7 +98,6 @@
                 <div class="inputs signUp">
                     <input type="submit" value="회원가입">
                 </div>
-
             </form>
         </div>
     </main> 
@@ -129,10 +128,8 @@
                         },
                         error : function(){
                            alert("통신실패")
-                        }
-                        
-               })
-               
+                        }                    
+               })              
             }
             
             button.addEventListener('click',checkE)
