@@ -167,7 +167,7 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
 
          <div class="ordercontents-list-state">
             <%
-            if (vo.get(i).getB_check().equals("Y")) {
+            if (vo.get(i).getB_check().equals("Y")&&vo.get(i).getR_check().equals("N")) {
             %>
 
             <form action="orderUpdateCon">
@@ -175,7 +175,7 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
                <button type="submit">결제확정</button>
             </form>
             <%
-            } else if (vo.get(i).getB_check().equals("P")) {
+            } else if (vo.get(i).getB_check().equals("Y")&&vo.get(i).getR_check().equals("Y")) {
             %>
 
             <a href="review.jsp"><button>리뷰작성하기</button></a>
