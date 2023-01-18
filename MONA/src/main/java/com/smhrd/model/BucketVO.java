@@ -29,6 +29,7 @@ public class BucketVO {
 	@NonNull
 	private int cnt;
 	private String b_check;
+	private String r_check;
 	
 
 	

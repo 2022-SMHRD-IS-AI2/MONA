@@ -93,7 +93,7 @@
             <div>
                <div class="num"><%=i+1 %></div>
                <div class="title">
-                  <a href="boardDetail2.jsp?b_num=<%=vo.get(i).getNum() %>"><%=vo.get(i).getTitle() %></a>
+                <a href="boardDetail2.jsp?b_num=<%=vo.get(i).getNum() %>"><%=vo.get(i).getTitle() %></a>
                </div>
                <div class="writer"><%=vo.get(i).getId() %></div>
                <div class="date"><%=vo.get(i).getRegdt().toString() %></div>

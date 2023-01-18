@@ -30,6 +30,9 @@ public class orderUpdateCon extends HttpServlet {
 		BucketVO vo = new BucketVO(prod_num,u_id,c);
 		int cnt = new BucketDAO().orderUpdate(vo);
 		
+		
+		
+		
 		if(cnt>0) {
 			System.out.println("결제 확정 성공");
 			response.sendRedirect("mypage.jsp");

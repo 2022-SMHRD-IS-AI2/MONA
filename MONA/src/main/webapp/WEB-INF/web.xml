@@ -241,7 +241,4 @@
 		<url-pattern>/orderUpdateCon</url-pattern>
 	</servlet-mapping>
 
-	
-
-
 </web-app>

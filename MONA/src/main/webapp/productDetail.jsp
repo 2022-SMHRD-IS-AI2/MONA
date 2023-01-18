@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ReviewDAO"%>
+<%@page import="com.smhrd.model.ReviewVO"%>
 <%@page import="com.smhrd.model.CommentVO"%>
 <%@page import="com.smhrd.model.RequestDAO"%>
 <%@page import="com.smhrd.model.RequestVO"%>
@@ -36,11 +38,13 @@
 	<%
    int prod_num = Integer.parseInt(request.getParameter("prod_num"));
    ProductVO vo = new ProductDAO().showProdDetail(prod_num);
-   %>
    
-   <%
+ 
    RequestVO rvo = new RequestVO(prod_num);
    List<RequestVO> lvo = new RequestDAO().showRequest(rvo);
+ 
+   List<ReviewVO> r_vo = new ReviewDAO().showReview(prod_num);
+   
    %>
    
     <script>
@@ -116,8 +120,8 @@
             </div>
 
             <div class="feedback">
-                <h2>구매후기(3)</h2>
-                <a href="">구매후기 작성하기</a>
+                <h2>구매후기(<%=r_vo.size()%>)</h2>
+               
             </div>
             <a href="">
                 <div class="reviewer-info-header">

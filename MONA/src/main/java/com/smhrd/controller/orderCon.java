@@ -41,6 +41,7 @@ public class orderCon extends HttpServlet {
 		
 		int o_cnt = new OrderDAO().orderUpload(vo);
 		
+		
 		if(o_cnt>0) {
 			System.out.println("주문 내역 업로드 성공");
 			response.sendRedirect("pay.jsp");
