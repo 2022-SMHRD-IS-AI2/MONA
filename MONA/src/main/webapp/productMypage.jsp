@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.BucketDAO"%>
 <%@page import="com.smhrd.model.ProductDAO"%>
 <%@page import="com.smhrd.model.ProductVO"%>
 <%@page import="java.util.List"%>
@@ -30,7 +31,8 @@
 	<!-- 판매 상품 리스트에 저장하기 -->
 	<%
     List<ProductVO> vo = new ProductDAO().completePay();
-	List<ProductVO> cvo = (new ProductDAO()).showProdRequest();
+	List<ProductVO> cvo = new ProductDAO().showProdRequest();
+	
     %>
     
     <!-- 승인된 상품 수 -->

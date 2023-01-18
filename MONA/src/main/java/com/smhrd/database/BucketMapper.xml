@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 결제확정시 구매수량 누적시키기 -->
     <update id="cntUpdate" parameterType="com.smhrd.model.BucketVO">
-		update TB_PRODUCT set TOTAL_CNT = TOTAL_CNT + 1 where prod_num=#{prod_num}
+		update TB_PRODUCT set TOTAL_CNT = TOTAL_CNT + #{pcnt} where prod_num=#{prod_num}
 	</update>
 		
 </mapper>
