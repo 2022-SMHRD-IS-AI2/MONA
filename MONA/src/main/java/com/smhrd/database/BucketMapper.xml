@@ -24,8 +24,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="orderUpdate" parameterType="com.smhrd.model.BucketVO">
 		update TB_bucket set r_check='Y' where u_id=#{u_id} and prod_num=#{prod_num}
 	</update>
-	
-	
-
 
 </mapper> 
