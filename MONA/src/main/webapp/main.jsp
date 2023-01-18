@@ -264,6 +264,10 @@
         </div>
 
     </div>
+    <div class="btnArea">
+        <button type="button" id="upBtn"><img src="/img/icon/btn_up_light.png"></button>
+        <button type="button" id="downBtn"><img src="/img/icon/btn_down_light.png"></button>
+    </div>
 	
     <div class="footer">
 

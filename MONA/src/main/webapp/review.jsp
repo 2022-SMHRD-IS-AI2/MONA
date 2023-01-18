@@ -24,7 +24,7 @@ if(loginUser != null){
 	   b=vo2.size();
 }
    
-	int prod_num = Integer.parseInt(request.getParameter("prod_num"));
+    int prod_num = Integer.parseInt(request.getParameter("prod_num"));
 	ProductVO vo = new ProductDAO().showProdDetail(prod_num);	
 
    %>
@@ -112,8 +112,8 @@ if(loginUser != null){
     <input hidden name="prod_num" value="<%=prod_num%>">
     </div>
     <div class="bt_wraprv">
-        <input type="submit" value="등록">
-        </form>
+     <input type="submit" value="등록">
+      </form>
     </div>
 
 

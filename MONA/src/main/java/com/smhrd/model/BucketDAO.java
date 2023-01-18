@@ -74,6 +74,7 @@ public class BucketDAO {
 				}
 				return cnt;
 			}
+	
 
 			// 구매 확정시 상품별 결제확정시 구매수량 누적시키기
 			public int cntUpdate(int prod_num) {
