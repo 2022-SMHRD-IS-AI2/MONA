@@ -18,22 +18,29 @@ public class ReviewCon extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		String loginUser = (String) session.getAttribute("loginUser_id");
+		String u_id = (String) session.getAttribute("loginUser_id");
 
-		String content = request.getParameter("");
-		int reviewRating = Integer.parseInt(request.getParameter(""));
-
-		ReviewVO vo = new ReviewVO(content, loginUser, reviewRating);
-
-		int cnt = new ReviewDAO().reviewUpload(vo);
-
-		if (cnt > 0) {
-			System.out.println("업로드 성공");
-		} else {
-			System.out.println("업로드 실패");
-		}
+		String review_content = request.getParameter("r_content");
+		int reviewRating = Integer.parseInt(request.getParameter("rating"));
+		int prod_num = Integer.parseInt(request.getParameter("prod_num"));
 		
-		response.sendRedirect("상세페이지 경로");
+		System.out.println(u_id);
+		System.out.println(review_content);
+		System.out.println(reviewRating);
+		System.out.println(prod_num);
+
+		
+		  ReviewVO vo = new ReviewVO(prod_num,review_content, u_id, reviewRating);
+		  
+		  int cnt = new ReviewDAO().reviewUpload(vo);
+		  
+		  if (cnt > 0) {
+		  System.out.println("업로드 성공"); 
+		  }else {
+		  System.out.println("업로드 실패"); }
+		  
+		  response.sendRedirect("http://localhost:8081/MONA/productDetail.jsp?prod_num="+prod_num);
+		 
 	}
 
 }

@@ -154,8 +154,11 @@ if(loginUser != null){
                 </form>
                 <%}else if(vo.get(i).getB_check().equals("P")){%>
                 <span >결제완료</span>
-                  <a href="review.jsp"><button>리뷰작성하기</button></a>
-                       <%} %>
+                <form action="review.jsp">
+                 <input hidden name="prod_num" value="<%=vo.get(i).getProd_num()%>">
+                 <button type="submit">리뷰작성하기</button>
+                 </form>
+                  <%} %>
              </div>
          
            

@@ -24,6 +24,8 @@ if(loginUser != null){
 	   b=vo2.size();
 }
    
+	int prod_num = Integer.parseInt(request.getParameter("prod_num"));
+	ProductVO vo = new ProductDAO().showProdDetail(prod_num);	
 
    %>
 
@@ -79,17 +81,17 @@ if(loginUser != null){
         <p>좋은 리뷰써주세요.</p>
     </div>
 
+	
     <div class="midpart_image">
         <a href="#">
-            <img src="/img/반려동물식품/강아지 수제간식 소우신 우스틱 소떡심 폭스펫 피즐스틱.jpg" alt="">
-
+        <img src="./prod/<%=vo.getProd_thumb()%>" alt="">
          </a> 
         <div class="product-imfor">
-            <div class="product-imfor1">상호 :</div>
-            <div class="product-imfor1">상품명 :</div>
-             <div class="product-imfor1">가격 :</div>
+            <div class="product-imfor1">상호 :<%=vo.getShop_name() %> </div>
+            <div class="product-imfor1">상품명 : <%=vo.getProd_name()%></div>
+             <div class="product-imfor1">가격 :<%=vo.getProd_price()%></div>
              <div class="realstarstar">
-                <form name="myform" id="myform" method="post" action="./save">
+                <form name="myform" id="myform" method="post" action="ReviewCon">
                     <fieldset>
                         <legend>별점</legend>
                         <input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label>
@@ -98,7 +100,7 @@ if(loginUser != null){
                     <input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
                     <input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
                     </fieldset>
-                </form>
+               
             </div>    
         </div>  
     </div>
@@ -106,10 +108,12 @@ if(loginUser != null){
     <!-- 별점! ! ! -->
 
     <div class="contrv">
-    <textarea placeholder="리뷰 작성해주세요."></textarea>
+ 	<textarea placeholder="리뷰 작성해주세요." name="r_content"></textarea>
+    <input hidden name="prod_num" value="<%=prod_num%>">
     </div>
     <div class="bt_wraprv">
         <input type="submit" value="등록">
+        </form>
     </div>
 
 
