@@ -6,6 +6,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.ProductDAO"%>
 <%@page import="com.smhrd.model.ProductVO"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -37,21 +38,21 @@
 	
 	<%
    int prod_num = Integer.parseInt(request.getParameter("prod_num"));
-	
    ProductVO vo = new ProductDAO().showProdDetail(prod_num);
    
- 
    RequestVO rvo = new RequestVO(prod_num);
    List<RequestVO> lvo = new RequestDAO().showRequest(rvo);
+   %>
    
-   int prod_num2 = Integer.parseInt(request.getParameter("prodNum"));
-   List<ReviewVO> r_vo = new ReviewDAO().showReview(prod_num2);  
- 
    
+   <%
+   ReviewVO vvo = new ReviewVO(prod_num); 
+   List<ReviewVO> r_vo = new ReviewDAO().showReview(vvo);
+
    %>
    
     <script>
-      $( document ).ready( function() {
+      $( document ).ready( function() {     
         $( '#quantity' ).change( function() {
           let a = $( '#quantity' ).val();
           let ab = (a * <%=vo.getProd_price()%>) + " 원";
@@ -126,37 +127,28 @@
                 <h2>구매후기<%=r_vo.size()%></h2>
                
             </div>
+            <%for(int i=0; i<r_vo.size(); i++){ %>
             <a href="">
                 <div class="reviewer-info-header">
                     <div class="reviewer-info">
-                        <span class="reviewer-name">김준연</span>
-                        <span class="reviewer-date">2023년 1월 11일</span>
+                        <span class="reviewer-name"><%=r_vo.get(i).getU_ID() %></span>
+                        <span class="reviewer-date"><%=r_vo.get(i).getREVIEW_DT() %></span>
                     </div>
                     <div class="reviewer-grade" >
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <%for(int j=0; j<r_vo.get(i).getREVIEW_RATINGS(); j++){ %>
+                        <i class="fa-solid fa-star"></i>
+                    <%} %>
+                    <%=r_vo.get(i).getREVIEW_RATINGS()%>
                     </div>
                 </div>
                 <div class="review-body">
-                    <div class="review-contents">어떡해요... 너무 사이즈도 꼭맞고 이뻐서 심장마비 올거같아요 ㅠㅠㅠㅠㅠㅜㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
-                        이뿌게 해주셔서 감사합니다</div>
-                </div>
-            </a>
-            
-             <a href="">
-                <div class="reviewer-info-header">
-                    <div class="reviewer-info">
-                        <span class="reviewer-name">김준연</span>
-                        <span class="reviewer-date">2023년 1월 11일</span>
-                    </div>
-                    <div class="reviewer-grade" >
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="review-contents">
+                    <%=r_vo.get(i).getREVIEW_CONTENT() %>
                     </div>
                 </div>
-                <div class="review-body">
-                    <div class="review-contents">어떡해요... 너무 사이즈도 꼭맞고 이뻐서 심장마비 올거같아요 ㅠㅠㅠㅠㅠㅜㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
-                        이뿌게 해주셔서 감사합니다</div>
-                </div>
             </a>
+            <%}%>
+           
             <div class="comment1">
                 <h2>댓글</h2>
             </div>
