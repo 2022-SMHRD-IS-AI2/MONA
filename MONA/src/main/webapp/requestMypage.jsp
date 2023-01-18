@@ -160,6 +160,7 @@
             <div class="ordercontents-list-title">
                 <span><%=vo.get(i).getShop_name()%></span>
                 <span><%=vo.get(i).getProd_name()%></span>
+                <span><%=vo.get(i).getProd_price()%> 원</span>
             </div>       
             <div class="requestcontents-list-state">
                 <%if(vo.get(i).getShop_check().equals("Y")){%>

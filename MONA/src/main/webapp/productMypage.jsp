@@ -29,16 +29,26 @@
 	
 	<!-- 판매 상품 리스트에 저장하기 -->
 	<%
-    List<ProductVO> vo = new ProductDAO().showProdRequest();
-    List<ProductVO> cvo = new ProductDAO().completePay();
+    List<ProductVO> vo = new ProductDAO().completePay();
+	List<ProductVO> cvo = (new ProductDAO()).showProdRequest();
     %>
-   
-	<!-- 승인된 상품 수 -->
-	<%
+    
+    <!-- 승인된 상품 수 -->
+    <%
     int ycnt = 0;
     for(int i =0; i<vo.size(); i++){
     		if(loginUser.equals(vo.get(i).getSeller_id()) && vo.get(i).getShop_check().equals("Y")){
     			ycnt = ycnt+1;
+    		}
+    	}
+    %>
+   
+	<!-- 판매된 상품 수 -->
+	<%
+    int pcnt = 0;
+    for(int i =0; i<vo.size(); i++){
+    		if(loginUser.equals(vo.get(i).getSeller_id()) && vo.get(i).getB_check().equals("P")){
+    			pcnt = pcnt+1;
     		}
     	}
     %>
@@ -101,12 +111,12 @@
                 
                 <div class="logininfo-order-product" >
                     <span>등록된 상품은 총 </span>
-                    <span><%=ycnt%></span>
+                    <span><%=ycnt %></span>
                     <span>건입니다</span>
                 </div>
                 <div class="logininfo-order-written">
                     <span>판매된 수량은 총 </span>
-                    <span>0</span> 
+                    <span><%=pcnt%></span> 
                     <span>건입니다</span>
                 </div>
                 
@@ -117,7 +127,7 @@
                     <i class="fa-solid fa-chevron-right fa-xs"></i>
                 </div>
                 <div class="logininfo-order-number">
-                    <span><%=ycnt%></span>
+                    <span><%=ycnt %></span>
                     <span>건</span>
                 </div>
             </div>
@@ -127,7 +137,7 @@
                     <i class="fa-solid fa-chevron-right fa-xs"></i>
                 </div>
                 <div class="logininfo-order-review">
-                    <span>0</span>
+                    <span><%=pcnt%></span>
                     <span>건</span>
                 </div>
             </div>
@@ -136,12 +146,12 @@
         <div class="button">
             <a href="mypage.jsp"><button>주문내역</button></a>
             <a href="requestMypage.jsp"><button>상품등록 요청 내역</button></a>
-            <a href="productMypage.jsp"><button>등록한상품내역</button></a>  
+            <a href="productMypage.jsp"><button>등록한상품내역</button></a>
         </div>
         
         <%for(int i =0; i<vo.size(); i++){
             
-        	if(loginUser.equals(vo.get(i).getSeller_id()) && vo.get(i).getShop_check().equals("Y")){
+        	if(loginUser.equals(vo.get(i).getSeller_id()) && vo.get(i).getB_check().equals("P")){
         	%>
         
         <div class="ordercontents-date">
@@ -154,6 +164,7 @@
             <div class="ordercontents-list-title">
                 <span><%=vo.get(i).getShop_name()%></span>
                 <span><%=vo.get(i).getProd_name()%></span>
+                <span><%=vo.get(i).getProd_price()%> 원</span>
             </div>       
             <div class="productcontents-list-state">
                 <span >판매된 수량</span> 

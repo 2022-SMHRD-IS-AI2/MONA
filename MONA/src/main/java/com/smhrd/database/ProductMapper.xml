@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="upload" parameterType="com.smhrd.model.ProductVO">
 	insert into tb_product values(
 	tb_product_SEQ.nextval,#{prod_name},#{prod_cate},#{prod_price},#{prod_thumb},
-	#{prod_img},#{prod_desc},'0','0',sysdate,#{seller_id},#{shop_name},'N')	
+	#{prod_img},#{prod_desc},'0','0',sysdate,#{seller_id},#{shop_name},'N', '0')
 	</insert>
 	
 	<!--상품 등록 요청건 관리자마이페이지에 보내기  -->
@@ -61,10 +61,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 버킷, 상품테이블 조인 후 결제완료 상품 조회 -->
   	 <select id = "completePay" resultType="com.smhrd.model.ProductVO" >
-		select T1.*, T.CNT from TB_PRODUCT T1
+		select T1.*, T.B_CHECK from TB_PRODUCT T1
   		JOIN TB_BUCKET T
     	ON T1.PROD_NUM = T.PROD_NUM
-   		AND T.b_check='Y'
   	 </select>
   	 
 </mapper>
