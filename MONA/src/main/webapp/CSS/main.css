@@ -12,6 +12,7 @@
 
 html {
     font-size: 12px;
+    font-family: 'Noto Sans KR','Malgun Gothic','맑은 고딕','malgun',Apple-Gothic,애플고딕,Tahoma,dotum,돋움,gulim,굴림,sans-serif;
 }
 
 .header{
@@ -61,12 +62,20 @@ background-color:rgb(255, 200, 2);
 }
 .header-menu{
     padding: 15px;
-    color: bl
+    display: flex;
+    justify-content: center;
+    align-items: center;
      
   
 }
+.header-menu i{
+	margin-right:5px
+	
+	}
 .header-menu a{
     margin-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
 }
 .header2{
  

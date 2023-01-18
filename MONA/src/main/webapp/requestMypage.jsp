@@ -57,11 +57,11 @@
         <div class="header-logo">
    
             <a href="main.jsp"><h2>MonA</h2></a>
-    <div class="header-serch" >
+    <form class="header-serch" >
             <input type="text" name="" id="">
-            
-        </div>
-        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
+        </form>
+        
         </div>
     
         <div class="header-menu" >
@@ -153,6 +153,11 @@
         <div class="ordercontents-date">
             <span><%=vo.get(i).getProd_regdt()%></span>
         </div>
+        <div class="ordercontents-data">
+			<span>이미지</span> <span>샵이름</span> <span>상품정보</span> <span>판매가</span>
+			<span>심사결과</span>
+	
+		</div>
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
                 <img width="200px" height="150px" src="./prod/<%=vo.get(i).getProd_thumb()%>">

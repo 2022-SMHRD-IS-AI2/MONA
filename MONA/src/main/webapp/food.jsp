@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-%>
+
 </head>
 
 <% //로그인 된 상태인지 확인하기 위해 로그인 성공시 세션에 저장한 아이디 값 가져오기
@@ -38,11 +38,11 @@
         <div class="header-logo">
    
             <a href="main.jsp"><h2>MonA</h2></a>
-    <div class="header-serch" >
+   <form class="header-serch" >
             <input type="text" name="" id="">
-            
-        </div>
-        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
+        </form>
+        
         </div>
     
         <div class="header-menu" >
@@ -113,6 +113,9 @@
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
             
         	</div>
+        	<div class="contents-child-comment">
+                <span>기여워용</span>
+            </div>
         </div>
 
    			<%}%>
