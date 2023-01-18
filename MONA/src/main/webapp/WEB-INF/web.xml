@@ -137,6 +137,12 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.requestMypageCon</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>orderUpdateCon</servlet-name>
+		<display-name>orderUpdateCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.orderUpdateCon</servlet-class>
+	</servlet>
 
 	
 	
@@ -229,6 +235,10 @@
 	<servlet-mapping>
 		<servlet-name>requestMypageCon</servlet-name>
 		<url-pattern>/requestMypageCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>orderUpdateCon</servlet-name>
+		<url-pattern>/orderUpdateCon</url-pattern>
 	</servlet-mapping>
 
 	

@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-    <link rel="stylesheet" href="./CSS/main.css">
+<link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     
     <%
@@ -24,24 +24,18 @@ if(U_id != null){
 %>
 </head>
 
-<% //로그인 된 상태인지 확인하기 위해 로그인 성공시 세션에 저장한 아이디 값 가져오기
-  	String loginUser = (String) session.getAttribute("loginUser_id");
-	
-	if(loginUser != null){
-		//System.out.print(loginUser);
-	}
-	
-	List<ProductVO> vo = (new ProductDAO()).showCate();
+<%
+     String loginUser = (String) session.getAttribute("loginUser_id");
+   
+   if(loginUser != null){
+      System.out.print(loginUser);
+   }
+   
 
-	
-	System.out.println(vo.size());
-
-	
-	%>  
-	
+   %>
 
 <body>
-   <div class="header">
+  <div class="header">
         <div class="header-logo">
    
             <a href="main.jsp"><h2>MonA</h2></a>
@@ -85,55 +79,48 @@ if(U_id != null){
         <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
     
-    <div class="banner3">
-    
-    
+    <!--리뷰페이지 시작 -->
+    <div class="midpart">
+    <div class="midpart_title">
+        <strong>리뷰 작성</strong>
+        <p>좋은 리뷰써주세요.</p>
     </div>
 
-   <div class="head-title1" >
-    <h1>Toy</h1>
-   </div>
-   
-       <div class="contents">
-       
-    <%for(int i=0; i<vo.size(); i++){%>  
-    
-    
-    <%if(vo.get(i).getProd_cate().equals("장난감")) { %>    
-        <div class="contents-child">
-            <div class="contents-child-img">
-               <a href="productDetail.jsp?prod_num=<%=vo.get(i).getProd_num()%>">
-                    <img src="./prod/<%=vo.get(i).getProd_thumb()%>" alt="">
-                </a>
-            </div>
-            <div class="contents-child-title" >
-                <span><%=vo.get(i).getShop_name()%></span>
-                <a href="#"><span><%=vo.get(i).getProd_name()%></span></a>
-                  <span>가격    <%=vo.get(i).getProd_price()%>   원</span>
-            </div>
-            <div class="contents-child-star">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-            
-        	</div>
-        </div>
+    <div class="midpart_image">
+        <a href="#">
+            <img src="/img/반려동물식품/강아지 수제간식 소우신 우스틱 소떡심 폭스펫 피즐스틱.jpg" alt="">
 
-   			<%}%>
-      <%}%>
-
-
+         </a> 
+        <div class="product-imfor">
+            <div class="product-imfor1">상호 :</div>
+            <div class="product-imfor1">상품명 :</div>
+             <div class="product-imfor1">가격 :</div>
+             <div class="realstarstar">
+                <form name="myform" id="myform" method="post" action="./save">
+                    <fieldset>
+                        <legend>별점</legend>
+                        <input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label>
+                        <input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label>
+                    <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
+                    <input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
+                    <input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
+                    </fieldset>
+                </form>
+            </div>    
+        </div>  
     </div>
 
-   
+    <!-- 별점! ! ! -->
+
+    <div class="contrv">
+    <textarea placeholder="리뷰 작성해주세요."></textarea>
+    </div>
+    <div class="bt_wraprv">
+        <input type="submit" value="등록">
+    </div>
 
 
-       
-            
-
-
+</div>
     <div class="footer">
     </div>
 </body>

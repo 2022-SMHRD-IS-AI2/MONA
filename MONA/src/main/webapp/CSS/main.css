@@ -7,6 +7,8 @@
 @import "shopping.css";
 @import "media.css";
 @import "style.css";
+@import "review.css";
+@import "star.css";
 
 html {
     font-size: 12px;

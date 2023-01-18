@@ -19,18 +19,24 @@
 </style>
 <body>
  <% List<ProductVO> vo = (new ProductDAO()).showProduct(); 
-    List<ProductVO> vo1 = (new ProductDAO()).showCate();%>  
+    List<ProductVO> vo1 = (new ProductDAO()).showCate();
+%>  
        
    <%
   	String loginUser = (String) session.getAttribute("loginUser_id");
+  	String U_id= (String) session.getAttribute("loginUser_id");
 	
+    List<ProductVO> vo2 = new ProductDAO().showBk(U_id);
+    
+    int b=0;
+    
 	if(loginUser != null){
-		System.out.print(loginUser);
+		 b = vo2.size();
 	}	
 
 	%>
 	
- <div class="header">
+  <div class="header">
         <div class="header-logo">
    
             <a href="main.jsp"><h2>MonA</h2></a>
@@ -43,23 +49,28 @@
     
         <div class="header-menu" >
             <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
-     
-               <%
-         if(loginUser == null){%>
+       		<%=b %>
+               
+         <%if(loginUser == null){%>
                <!--로그인 안했을 경우  -->
-            <a href="login.jsp"></a>
+             <a href="join.jsp">회원가입</a>  
+            <a href="login.jsp">로그인</a>
+        
          <% }else {%>
             <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
             if(loginUser.equals("admin")){%>
-                 <a href="adminMypage.jsp">마이페이지</a>   
+                 <a href="adminMypage.jsp">마이페이지</a>
             <%}else {%>
-                        <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
-             <a href="Mypage.jsp">마이페이지</a>
+             <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
+             <a href="mypage.jsp">마이페이지</a>
             <%}%> 
+            
+             <a href="boardMain.jsp">게시판</a>
+             <a href="LogoutCon">로그아웃</a>
+             <a href="#"><%=loginUser%>님  환영합니다</a>   
          <%} %>
-            <a href="boardMain.jsp">게시판</a>
-            <a href="login.jsp">로그인</a>
-            <a href="join.jsp">회원가입</a>            
+            
+                     
         </div>
     </div>
     <div class="header2">   

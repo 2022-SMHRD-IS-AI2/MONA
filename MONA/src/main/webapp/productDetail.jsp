@@ -15,6 +15,18 @@
  <link rel="stylesheet" href="./CSS/main.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	<%
+String U_id= (String) session.getAttribute("loginUser_id");
+List<ProductVO> vo2 = new ProductDAO().showBk(U_id);
+
+int b =0; 
+
+if(U_id != null){
+ b=vo2.size();
+}
+
+%>
 
 </head>
 
@@ -49,7 +61,7 @@
       } );
     </script>
     
-    <div class="header">
+     <div class="header">
         <div class="header-logo">
    
             <a href="main.jsp"><h2>MonA</h2></a>
@@ -62,23 +74,28 @@
     
         <div class="header-menu" >
             <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
-           
-               <%
-         if(loginUser == null){%>
+       		<%=b %>
+               
+         <%if(loginUser == null){%>
                <!--로그인 안했을 경우  -->
-            <a href="login.jsp"></a>
+             <a href="join.jsp">회원가입</a>  
+            <a href="login.jsp">로그인</a>
+        
          <% }else {%>
             <% // 관리자가 로그인 했을 때 이용자(소비자,판매자)마이페이지가 아닌 관리자 마이페이지로 이동
             if(loginUser.equals("admin")){%>
-                 <a href="adminMypage.jsp">마이페이지</a>   
+                 <a href="adminMypage.jsp">마이페이지</a>
             <%}else {%>
-                        <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
-             <a href="Mypage.jsp">마이페이지</a>
+             <!--관리자가 아닌 유저(소비자,판매자)가 로그인 성공 시 이용자 전용 마이페이지로 이동 -->
+             <a href="mypage.jsp">마이페이지</a>
             <%}%> 
+            
+             <a href="boardMain.jsp">게시판</a>
+             <a href="LogoutCon">로그아웃</a>
+             <a href="#"><%=loginUser%>님  환영합니다</a>   
          <%} %>
-            <a href="boardMain.jsp">게시판</a>
-            <a href="login.jsp">로그인</a>
-            <a href="join.jsp">회원가입</a>            
+            
+                     
         </div>
     </div>
     <div class="header2">   
@@ -87,7 +104,8 @@
         <a href="toy.jsp"><h3>Toy</h3></a>
         <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
-
+    
+    
     <div class="productdetail">
         <div class="productdetail-content">
             <img src="./prod/<%=vo.getProd_thumb()%>" alt="">

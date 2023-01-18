@@ -35,6 +35,8 @@ public class ProductVO {
     @NonNull private String shop_name;
     private String shop_check;
     private int cnt;
+    private Timestamp bucket_regdt;
+    private String b_check;
 }
 
 
