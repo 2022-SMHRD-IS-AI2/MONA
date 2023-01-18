@@ -22,15 +22,15 @@ public class ReviewCon extends HttpServlet {
 
 		String review_content = request.getParameter("r_content");
 		int reviewRating = Integer.parseInt(request.getParameter("rating"));
-		int prod_num = Integer.parseInt(request.getParameter("prod_num"));
+		int prodNum = Integer.parseInt(request.getParameter("prod_num"));
 		
 		System.out.println(u_id);
 		System.out.println(review_content);
 		System.out.println(reviewRating);
-		System.out.println(prod_num);
+		System.out.println(prodNum);
 
 		
-		  ReviewVO vo = new ReviewVO(prod_num,review_content, u_id, reviewRating);
+		  ReviewVO vo = new ReviewVO(prodNum,review_content, u_id, reviewRating);
 		  
 		  int cnt = new ReviewDAO().reviewUpload(vo);
 		  
@@ -40,7 +40,7 @@ public class ReviewCon extends HttpServlet {
 		  System.out.println("업로드 실패"); 
 		  }
 		  
-		  response.sendRedirect("http://localhost:8081/MONA/productDetail.jsp?prod_num="+prod_num);
+		  response.sendRedirect("productDetail.jsp?prod_num="+prodNum);
 		 
 	}
 

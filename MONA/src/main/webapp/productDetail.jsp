@@ -37,13 +37,16 @@
 	
 	<%
    int prod_num = Integer.parseInt(request.getParameter("prod_num"));
+	
    ProductVO vo = new ProductDAO().showProdDetail(prod_num);
    
  
    RequestVO rvo = new RequestVO(prod_num);
    List<RequestVO> lvo = new RequestDAO().showRequest(rvo);
+   
+   int prod_num2 = Integer.parseInt(request.getParameter("prodNum"));
+   List<ReviewVO> r_vo = new ReviewDAO().showReview(prod_num2);  
  
-   List<ReviewVO> r_vo = new ReviewDAO().showReview(prod_num);
    
    %>
    
@@ -120,7 +123,7 @@
             </div>
 
             <div class="feedback">
-                <h2>구매후기(<%=r_vo.size()%>)</h2>
+                <h2>구매후기<%=r_vo.size()%></h2>
                
             </div>
             <a href="">
