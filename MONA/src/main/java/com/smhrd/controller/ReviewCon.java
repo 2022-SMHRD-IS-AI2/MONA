@@ -37,7 +37,8 @@ public class ReviewCon extends HttpServlet {
 		  if (cnt > 0) {
 		  System.out.println("업로드 성공"); 
 		  }else {
-		  System.out.println("업로드 실패"); }
+		  System.out.println("업로드 실패"); 
+		  }
 		  
 		  response.sendRedirect("http://localhost:8081/MONA/productDetail.jsp?prod_num="+prod_num);
 		 

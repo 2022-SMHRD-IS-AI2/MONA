@@ -21,9 +21,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<!--특정상품 결제확정시 특정상품에 대한 주문상태 결제완료로 바꾸기 Y->P -->
-	<update id="orderUpdate" parameterType="com.smhrd.model.BucketVO">
-		update TB_bucket set B_check='P' where u_id=#{u_id} and prod_num=#{prod_num}
+	<update id="orderUpdate" parameterType="String">
+		update TB_bucket set B_check='P' where u_id=#{u_id} 
 	</update>
+	
+	
 
 
 </mapper> 

@@ -6,12 +6,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.model.ReviewDAO">
 	
 	<insert id="reviewUpload" parameterType = "com.smhrd.model.ReviewVO">
-	insert into TB_REVIEW values(TB_REVIEW_SEQ.nextval, #{PROD_NUM}, #{REVIEW_CONTENT}, sysdate, #{u_id}, #{REVIEW_RATINGS})	
+	insert into TB_REVIEW values(TB_REVIEW_SEQ.nextval, #{PROD_NUM}, #{REVIEW_CONTENT}, sysdate, #{U_ID}, #{REVIEW_RATINGS})	
 	</insert>
 
-	<select id="showReview" resultType="com.smhrd.model.ReviewVO">
-		select * from TB_REVIEW where PROD_NUM=${PROD_NUM}
-		order by cmt_regdt desc
+	<select id="showReview" resultType="com.smhrd.model.ReviewVO" parameterType = "int">
+		select * from TB_REVIEW where PROD_NUM=#{PROD_NUM}
+		order by review_dt desc
 	</select> 
 
 </mapper>
