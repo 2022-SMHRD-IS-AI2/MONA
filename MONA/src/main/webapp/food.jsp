@@ -38,11 +38,11 @@
         <div class="header-logo">
    
             <a href="main.jsp"><h2>MonA</h2></a>
-    <div class="header-serch" >
+   <form class="header-serch" >
             <input type="text" name="" id="">
-            
-        </div>
-        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
+        </form>
+        
         </div>
     
         <div class="header-menu" >
