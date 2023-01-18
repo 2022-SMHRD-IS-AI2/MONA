@@ -21,7 +21,7 @@ import lombok.Setter;
 
 public class ProductVO {
 
-	private BigDecimal prod_num;
+   private BigDecimal prod_num;
     @NonNull private String prod_name;
     @NonNull private String prod_cate;
     @NonNull private int prod_price;
@@ -37,8 +37,7 @@ public class ProductVO {
     private int cnt;
     private Timestamp bucket_regdt;
     private String b_check;
-    private int Total_cnt;
+    private String r_check;
 }
-
 
 

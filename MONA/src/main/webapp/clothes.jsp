@@ -110,6 +110,9 @@
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
             
         	</div>
+        	<div class="contents-child-comment">
+                <span>기여워용</span>
+            </div>
         </div>
 
    			<%}%>

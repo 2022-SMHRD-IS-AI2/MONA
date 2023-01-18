@@ -1,38 +1,38 @@
 <%@page import="com.smhrd.model.ProductDAO"%>
 <%@page import="com.smhrd.model.ProductVO"%>
-<%@page import="com.smhrd.model.BoardVO"%>
-<%@page import="com.smhrd.model.BoardDAO"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-
-<link rel="stylesheet" href="./CSS/main.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    
 </head>
 <body>
- <%String loginUser = (String) session.getAttribute("loginUser_id");
- 
- int b =0; 
+<%  String loginUser = (String) session.getAttribute("loginUser_id"); 
 
- 
- if(loginUser != null){
+int b =0; 
+
+
+if(loginUser != null){
 	   String u_id= (String) session.getAttribute("loginUser_id");
 		List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
 	   b=vo2.size();
- }
- 
+}
+
 %>
+
 
     <div class="header">
         <div class="header-logo">
    
             <a href="main.jsp"><h2>MonA</h2></a>
-   <form class="header-serch" >
+    <form class="header-serch" >
             <input type="text" name="" id="">
             <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
         </form>
@@ -71,52 +71,41 @@
         <a href="toy.jsp"><h3>Toy</h3></a>
         <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
+    
+    
+    <div class="shoppingBag">
+        <div class="cartBag">
+            <div class="cartBag-header">
+                <h2>결제 완료</h2>
+                
+            </div>
+        
+        </div> 
+        <div class="noshopping-item">
+            <h1>
+                결제 완료 
+            </h1>
+  
+            <div class="noshopping">
+                <i class="fa-regular fa-circle-check fa-6x"></i>      
+            </div>
+            <p class="complete">
+                결제가 정상적으로 처리되었습니다.
+            </p>
+          
+            <button>
+                <a href="#">주문 내역 확인 하기</a>     
+            </button>
+  
+        </div>
 
-   <div class="board_wrap">
-      <div class="board_title">
-         <strong>게시판</strong>
-         <p>* 묻고 답하고 소통하는 공간 *</p>
-      </div>
-      <div class="board_list_wrap">
-         <div class="board_list">
-            <div class="top">
-               <div class="num">번호</div>
-               <div class="title">제목</div>
-               <div class="writer">작성자</div>
-               <div class="date">작성일</div>
-               <div class="count">조회</div>
-            </div>
-            
-            <% List<BoardVO> vo = (new BoardDAO()).showBoard(); %>
-            
-            <%for(int i =0; i< vo.size();i++){ %>
-            <div>
-               <div class="num"><%=i+1 %></div>
-               <div class="title">
-                <a href="boardDetail2.jsp?b_num=<%=vo.get(i).getNum() %>"><%=vo.get(i).getTitle() %></a>
-               </div>
-               <div class="writer"><%=vo.get(i).getId() %></div>
-               <div class="date"><%=vo.get(i).getRegdt().toString() %></div>
-            </div>
-            <%} %>
-         
-         <div class="bt_wrap">
-            <a href="main.jsp" clss="on">홈으로가기</a>
-            <a href="boardWrite2.jsp" class="on">등록</a>
-            
-            <br>
-		<br>
-		<br>
-	
-            
-            <!--<a href="#">수정</a>-->
-         </div>
-        </div>
-        </div>
-        </div>
-        	 <div class="footer">
-    	</div>
-   		
-		
+    </div>
+     <div class="footer">
+    
+    </div>
+    
+   
+
+    <script src="/js/shopping.js"></script>
 </body>
 </html>
