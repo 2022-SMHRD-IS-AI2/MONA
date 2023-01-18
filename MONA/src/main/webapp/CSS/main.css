@@ -311,3 +311,9 @@ background-color:rgb(255, 200, 2);
 	height:40px;
 	
 }
+.btnArea{
+	width:200px;
+	height:40px;
+	display: flex;
+	
+}

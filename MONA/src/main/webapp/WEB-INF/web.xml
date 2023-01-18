@@ -216,9 +216,9 @@
 	<servlet-mapping>
 		<servlet-name>admincheckConX</servlet-name>
 		<url-pattern>/admincheckConX</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping>	
+	
 	<servlet-mapping>
-
 		<servlet-name>orderSuccessCon</servlet-name>
 		<url-pattern>/orderSuccessCon</url-pattern>
 	</servlet-mapping>
