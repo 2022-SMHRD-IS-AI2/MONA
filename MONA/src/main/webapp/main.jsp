@@ -42,6 +42,7 @@
     
         <div class="header-menu" >
             <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
+            <%=b%>
        		
                
          <%if(loginUser == null){%>
