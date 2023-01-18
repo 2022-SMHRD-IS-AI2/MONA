@@ -124,10 +124,17 @@
             </div>
 
             <div class="feedback">
-                <h2>구매후기<%=r_vo.size()%></h2>
+                <h2>구매후기(<%=r_vo.size()%>)</h2>
                
             </div>
-            <%for(int i=0; i<r_vo.size(); i++){ %>
+            <%
+
+            int star = 0;
+            int t_star=0;
+            double t_star2 = 0;
+            double t_star3=0;
+            
+            for(int i=0; i<r_vo.size(); i++){ %>
             <a href="">
                 <div class="reviewer-info-header">
                     <div class="reviewer-info">
@@ -147,10 +154,21 @@
                     </div>
                 </div>
             </a>
-            <%}%>
+            <% 
+            star += r_vo.get(i).getREVIEW_RATINGS();
+            }
+            
+            if(r_vo.size()!=0){
+           		t_star = star/r_vo.size();
+          	 	t_star2= (double)star/r_vo.size();
+            	t_star3 = Math.round(t_star2 * 100) / 100.0;
+            }
+            %>
+           
+			           
            
             <div class="comment1">
-                <h2>댓글</h2>
+                <h2>댓글(<%=lvo.size()%>)</h2>
             </div>
             
                   <%
@@ -214,8 +232,11 @@
                                         구매후기
                                     </td>
                                     <td>
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    <%for(int i=0; i<t_star; i++){ %>
+                                        <i class="fa-solid fa-star"></i>
+                                       <%} %>  <%=t_star3%>
                                     </td>
+                                  
                                 </tr>
                             </table>
                         </div>

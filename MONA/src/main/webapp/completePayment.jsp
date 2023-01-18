@@ -94,7 +94,7 @@ if(loginUser != null){
             </p>
           
             <button>
-                <a href="#">주문 내역 확인 하기</a>     
+              <a href="mypage.jsp">주문 내역 확인 하기</a>     
             </button>
   
         </div>
