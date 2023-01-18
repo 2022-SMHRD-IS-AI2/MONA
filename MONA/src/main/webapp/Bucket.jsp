@@ -132,7 +132,7 @@
                              수량<%=vo.get(i).getCnt() %>개
                         </div>
                         <div class="cartBag-itemlist-optionlist-btn">
-                        <form action="bucketDeleteCon" action="post">
+                        <form action="bucketCon" action="post">
                            <input hidden name="loginUser" value="<%=loginUser%>">
                             <button class="cartBag-itemlist-optionlist-btn" type="submit">
                                 <i class="fa-solid fa-xmark"></i>
@@ -140,8 +140,6 @@
                          </form>
                         </div>
                     </div>
-               
-       
                 </div>
              
     
