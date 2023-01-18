@@ -61,12 +61,16 @@ background-color:rgb(255, 200, 2);
 }
 .header-menu{
     padding: 15px;
-    color: bl
+    display: flex;
+    justify-content: center;
+    align-items: center;
      
   
 }
 .header-menu a{
     margin-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
 }
 .header2{
  
