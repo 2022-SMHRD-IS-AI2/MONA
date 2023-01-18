@@ -131,16 +131,19 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
          <span><h4><%=vo.get(i).getBucket_regdt()%></h4></span>
       </div>
       <div class="ordercontents-data">
-         <span>이미지</span> <span>샵이름</span> <span>상품정보</span> <span>판매가</span>
-         <span>수량</span>
+         <span class="ordercontents-dataimg">이미지</span> 
+         <span class="ordercontents-datashop">샵이름</span> 
+         <span class="ordercontents-datainfo">상품정보</span> 
+         <span class="ordercontents-dataprice">판매가</span>
+         <span class="ordercontents-datacnt">수량</span>
          <%
          if (vo.get(i).getB_check().equals("Y")) {
          %>
-         <span>주문완료</span>
+         <span class="ordercontents-dataorder">주문완료</span>
          <%
          } else if (vo.get(i).getB_check().equals("P")) {
          %>
-         <span>결제완료</span>
+         <span class="ordercontents-dataorder">결제완료</span>
          <%
          }
          %>
@@ -154,16 +157,12 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
                src="./prod/<%=vo.get(i).getProd_thumb()%>">
          </div>
          <div class="ordercontents-list-title">
-            <span><%=vo.get(i).getShop_name()%></span> <span><%=vo.get(i).getProd_name()%></span>
-            <span><%=vo.get(i).getProd_price()%></span>
-
+            <span class="ordercontents-list-shop"><%=vo.get(i).getShop_name()%></span> 
+            <span class="ordercontents-list-info"><%=vo.get(i).getProd_name()%></span>
+            <span class="ordercontents-list-price"><%=vo.get(i).getProd_price()%></span>
+			<span class="ordercontents-list-cnt"><%=vo.get(i).getCnt()%></span>
+			
          </div>
-
-         <div class="ordercontents-list-quantity">
-
-            <span><%=vo.get(i).getCnt()%></span>
-         </div>
-
 
          <div class="ordercontents-list-state">
             <%
