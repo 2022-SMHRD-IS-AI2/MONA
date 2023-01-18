@@ -23,12 +23,12 @@ public class ReviewDAO {
 	  
 	  // 리뷰조회 
 	  
-	  public List<ReviewVO> showReview(int prod_num) {
+	  public List<ReviewVO> showReview(ReviewVO vo) {
 	  
-	  List<ReviewVO> vo = sqlSession.selectList("com.smhrd.model.ReviewDAO.showReview",prod_num);
+	  List<ReviewVO> r_vo = sqlSession.selectList("com.smhrd.model.ReviewDAO.showReview",vo);
 	  sqlSession.close();
 	  
-	  return vo; 
+	  return r_vo; 
 	  }
 	 
 

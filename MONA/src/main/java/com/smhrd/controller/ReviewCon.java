@@ -40,7 +40,7 @@ public class ReviewCon extends HttpServlet {
 		  System.out.println("업로드 실패"); 
 		  }
 		  
-		  response.sendRedirect("http://localhost:8081/MONA/productDetail.jsp?prod_num="+prod_num);
+		  response.sendRedirect("productDetail.jsp?prod_num="+prod_num);
 		 
 	}
 

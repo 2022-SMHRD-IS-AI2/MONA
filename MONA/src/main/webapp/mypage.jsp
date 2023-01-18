@@ -173,12 +173,14 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
             <form action="orderUpdateCon">
                <input hidden name="prod_num" value="<%=vo.get(i).getProd_num()%>">
                <button type="submit">결제확정</button>
-            </form>
+               </form>
             <%
             } else if (vo.get(i).getB_check().equals("Y")&&vo.get(i).getR_check().equals("Y")) {
             %>
-
-            <a href="review.jsp"><button>리뷰작성하기</button></a>
+			 <form action="review.jsp">
+            <input hidden name="prod_num" value="<%=vo.get(i).getProd_num()%>">
+            <button type="submit">리뷰작성하기</button>
+            </form>
             <%
             }
             %>

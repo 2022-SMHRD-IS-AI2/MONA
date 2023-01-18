@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	insert into TB_REVIEW values(TB_REVIEW_SEQ.nextval, #{PROD_NUM}, #{REVIEW_CONTENT}, sysdate, #{U_ID}, #{REVIEW_RATINGS})	
 	</insert>
 
-	<select id="showReview" resultType="com.smhrd.model.ReviewVO" parameterType = "int">
+	<select id="showReview" resultType="com.smhrd.model.ReviewVO" parameterType = "com.smhrd.model.ReviewVO">
 		select * from TB_REVIEW where PROD_NUM=#{PROD_NUM}
 		order by review_dt desc
 	</select> 
