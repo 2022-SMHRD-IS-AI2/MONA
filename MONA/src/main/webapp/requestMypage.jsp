@@ -162,10 +162,10 @@
             <div class="ordercontents-list-img">
                 <img width="200px" height="150px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
             </div>    
-            <div class="ordercontents-list-title">
-                <span><%=vo.get(i).getShop_name()%></span>
-                <span><%=vo.get(i).getProd_name()%></span>
-                <span><%=vo.get(i).getProd_price()%> 원</span>
+            <div class="requestcontents-list-title">
+             <span class="requestcontents-list-shop"><%=vo.get(i).getShop_name()%></span> 
+            <span class="requestcontents-list-info"><%=vo.get(i).getProd_name()%></span>
+            <span class="requestcontents-list-price"><%=vo.get(i).getProd_price()%></span>
             </div>       
             <div class="requestcontents-list-state">
                 <%if(vo.get(i).getShop_check().equals("Y")){%>
