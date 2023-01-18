@@ -22,16 +22,18 @@ public class orderUpdateCon extends HttpServlet {
 		String prodNum=request.getParameter("prod_num");
 		int prod_num=Integer.parseInt(prodNum);
 		
+		int pcnt = Integer.parseInt(request.getParameter("pcnt"));
+		System.out.println(pcnt);
+		
 		HttpSession session = request.getSession();
 		String u_id = (String)session.getAttribute("loginUser_id");
 		int c =0;
 		
-	
 		BucketVO vo = new BucketVO(prod_num,u_id,c);
 		int cnt = new BucketDAO().orderUpdate(vo);
 		
-		
-		
+		BucketVO pvo = new BucketVO(prod_num, pcnt);
+		int tcnt = new BucketDAO().cntUpdate(pvo);
 		
 		if(cnt>0) {
 			System.out.println("결제 확정 성공");
@@ -41,7 +43,11 @@ public class orderUpdateCon extends HttpServlet {
 			response.sendRedirect("mypage.jsp");
 		}
 	
-		
+		if (tcnt> 0) {
+			System.out.println("판매 누적 성공");
+		}else {
+		System.out.println("판매 누적 실패");
+		}
 		
 	}
 

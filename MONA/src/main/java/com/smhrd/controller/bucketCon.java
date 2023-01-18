@@ -39,13 +39,13 @@ public class bucketCon extends HttpServlet {
 		BucketVO vo = new BucketVO(prod_num,U_id,cnt);	
 		int cnt1 = new BucketDAO().Bupload(vo);
 		
-		
 		      
 		if (cnt1> 0) {
 			System.out.println("장바구니 업로드 성공");
 		}else {
 		System.out.println("장바구니 업로드 실패");
 		}
+		
 		
 //		 String test = "/productDetail.jsp?prod_num="+prod_num;
 //

@@ -30,10 +30,11 @@ public class BucketVO {
 	private int cnt;
 	private String b_check;
 	private String r_check;
+	private int pcnt;
 	
-
-	
-
-
+	public BucketVO(int prod_num, int pcnt) {
+		this.prod_num = prod_num;
+		this.pcnt = pcnt;
+	}
 
 }

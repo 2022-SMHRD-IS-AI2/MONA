@@ -109,15 +109,13 @@
         <div class="cartBag-item">
             <div class="cartBag-item-input">
              <%if(i==0){ %>
-                <input class="cartBag-input" type="checkbox">
+                
                <%} %>
             </div>
             <div class="cartBag-itemlist">
                 <div class="cartBag-itemlist-productInfo">
                     <div class="cartBag-itemlist-inputcheckbox-grup">
-                        <div class="cartBag-itemlist-inputcheckbox">
-                            <input type="checkbox">
-                        </div>
+                      
                         <img src="./prod/<%=vo.get(i).getProd_thumb()%>">          
                     </div>
                     <div class="cartBag-itemlist-productInfoTextGroup">

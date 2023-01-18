@@ -25,4 +25,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update TB_bucket set r_check='Y' where u_id=#{u_id} and prod_num=#{prod_num}
 	</update>
 
-</mapper> 
+	<!-- 결제확정시 구매수량 누적시키기 -->
+    <update id="cntUpdate" parameterType="com.smhrd.model.BucketVO">
+		update TB_PRODUCT set TOTAL_CNT = TOTAL_CNT + #{pcnt} where prod_num=#{prod_num}
+	</update>
+		
+</mapper>

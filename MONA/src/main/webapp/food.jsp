@@ -15,23 +15,23 @@
 </head>
 
 <% //로그인 된 상태인지 확인하기 위해 로그인 성공시 세션에 저장한 아이디 값 가져오기
-  	String loginUser = (String) session.getAttribute("loginUser_id");
-	
-	
-	List<ProductVO> vo = (new ProductDAO()).showCate();
+     String loginUser = (String) session.getAttribute("loginUser_id");
+   
+   
+   List<ProductVO> vo = (new ProductDAO()).showCate();
 
 
-	 int b =0; 
+    int b =0; 
 
-	   
-	   if(loginUser != null){
-		   String u_id= (String) session.getAttribute("loginUser_id");
-			List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
-		   b=vo2.size();
-	   }
-	
-	%>  
-	
+      
+      if(loginUser != null){
+         String u_id= (String) session.getAttribute("loginUser_id");
+         List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
+         b=vo2.size();
+      }
+   
+   %>  
+   
 
 <body>
   <div class="header">
@@ -40,14 +40,14 @@
             <a href="main.jsp"><h2>MonA</h2></a>
    <form class="header-serch" >
             <input type="text" name="" id="">
-            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>   
         </form>
         
         </div>
     
         <div class="header-menu" >
             <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
-       		<%=b %>
+             <%=b %>
                
          <%if(loginUser == null){%>
                <!--로그인 안했을 경우  -->
@@ -112,13 +112,13 @@
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
             
-        	</div>
-        	<div class="contents-child-comment">
+           </div>
+           <div class="contents-child-comment">
                 <span>기여워용</span>
             </div>
         </div>
 
-   			<%}%>
+            <%}%>
       <%}%>
 
 
