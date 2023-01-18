@@ -14,6 +14,10 @@ html {
     font-size: 12px;
     font-family: 'Noto Sans KR','Malgun Gothic','맑은 고딕','malgun',Apple-Gothic,애플고딕,Tahoma,dotum,돋움,gulim,굴림,sans-serif;
 }
+h3{
+	font-family: helvetica;
+	font-weight:100;
+}
 
 .header{
 
@@ -22,20 +26,20 @@ margin:  0 auto;
 justify-content: space-around;
 height: 60px;
 align-items: center;
-background-color:rgb(255, 200, 2);
+background-color:#FDE74C;
   
 
 }
 .header-logo {
     width: 400px;
-    color: black;
+    color: #5B7C99;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border-radius: 5px;
 }
 .header-logo a{
-    font-size: xx-large;
+    font-size: 21px;
 }
 
 .header-serch{
@@ -46,8 +50,8 @@ background-color:rgb(255, 200, 2);
 }
 .header-serch>input{
     width: 250px;
-    height: 40px;
-    border-radius: 5px;
+    height: 30px;
+    border-radius: 15px;
     border:1px solid grey;
     background-color: whitesmoke;
     
@@ -56,8 +60,10 @@ background-color:rgb(255, 200, 2);
 .header-serch .fa-solid.fa-magnifying-glass{
     position: absolute;
     
-    right:28px;
-    top:25px;
+    right:36px;
+    top:18px;
+    
+    
 
 }
 .header-menu{
@@ -87,8 +93,8 @@ background-color:rgb(255, 200, 2);
     border-bottom: 1px solid whitesmoke;
     font-size: 1.2rem;
     
-    color:  white;
-    background-color:rgb(19, 19, 79)
+    color:  #707070;
+    background-color:white;
 
     
 }
