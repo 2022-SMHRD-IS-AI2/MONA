@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-%>
 </head>
 
 <% //로그인 된 상태인지 확인하기 위해 로그인 성공시 세션에 저장한 아이디 값 가져오기
