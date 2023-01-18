@@ -32,7 +32,7 @@
   <div class="header">
         <div class="header-logo">
    
-            <a href="main.jsp"><h2>MonA</h2></a>
+            <a href="main.jsp"><h4>MonA</h4></a>
     	<form class="header-serch" >
             <input type="text" name="" id="">
             <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
