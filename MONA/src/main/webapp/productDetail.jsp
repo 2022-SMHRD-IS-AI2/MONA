@@ -15,28 +15,20 @@
  <link rel="stylesheet" href="./CSS/main.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-	
-	<%
-String U_id= (String) session.getAttribute("loginUser_id");
-List<ProductVO> vo2 = new ProductDAO().showBk(U_id);
-
-int b =0; 
-
-if(U_id != null){
- b=vo2.size();
-}
-
-%>
-
 </head>
 
 <body>
  <%
   	String loginUser = (String) session.getAttribute("loginUser_id");
 	
-	if(loginUser != null){
-		System.out.print(loginUser);
-	}
+ int b =0; 
+
+
+ if(loginUser != null){
+ 	   String u_id= (String) session.getAttribute("loginUser_id");
+ 		List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
+ 	   b=vo2.size();
+ }
 	
 
 	%>

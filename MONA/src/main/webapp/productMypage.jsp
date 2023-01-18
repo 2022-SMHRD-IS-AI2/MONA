@@ -11,27 +11,20 @@
 <link rel="stylesheet" href="./CSS/main.css">
 <link rel="stylesheet" href="./CSS/mypage.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-   
-   <%
-String U_id= (String) session.getAttribute("loginUser_id");
-List<ProductVO> vo2 = new ProductDAO().showBk(U_id);
-
-int b =0; 
-
-if(U_id != null){
- b=vo2.size();
-}
-
-%>
 </head>
 <body>
 	<!-- 세션에 저장된 로그인된 ID 가져오기 -->
     <%
   	String loginUser = (String) session.getAttribute("loginUser_id");
 	
-	if(loginUser != null){
-		System.out.print(loginUser);
-		}
+    int b =0; 
+
+
+    if(loginUser != null){
+    	   String u_id= (String) session.getAttribute("loginUser_id");
+    		List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
+    	   b=vo2.size();
+    }
 	%>
 	
 	<!-- 판매 상품 리스트에 저장하기 -->

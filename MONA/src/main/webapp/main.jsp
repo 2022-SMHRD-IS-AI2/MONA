@@ -10,17 +10,20 @@
 <title>Insert title here</title>
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
 </head>
 <%
      String loginUser = (String) session.getAttribute("loginUser_id");
 
-	String U_id= (String) session.getAttribute("loginUser_id");
-	List<ProductVO> vo2 = new ProductDAO().showBk(U_id);
+	
 
    int b =0; 
+
    
    if(loginUser != null){
-     b=vo2.size();
+	   String u_id= (String) session.getAttribute("loginUser_id");
+		List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
+	   b=vo2.size();
    }
    
 

@@ -10,33 +10,23 @@
 <title>Insert title here</title>
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    
-    <%
-String U_id= (String) session.getAttribute("loginUser_id");
-List<ProductVO> vo2 = new ProductDAO().showBk(U_id);
 
-int b =0; 
-
-if(U_id != null){
- b=vo2.size();
-}
-
-%>
 </head>
 
 <% //로그인 된 상태인지 확인하기 위해 로그인 성공시 세션에 저장한 아이디 값 가져오기
   	String loginUser = (String) session.getAttribute("loginUser_id");
 	
-	if(loginUser != null){
-		//System.out.print(loginUser);
-	}
 	
 	List<ProductVO> vo = (new ProductDAO()).showCate();
 
-	
-	System.out.println(vo.size());
-	
+	 int b =0; 
 
+	   
+	   if(loginUser != null){
+		   String u_id= (String) session.getAttribute("loginUser_id");
+			List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
+		   b=vo2.size();
+	   }
 	
 	
 	%>  

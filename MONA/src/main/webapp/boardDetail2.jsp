@@ -23,18 +23,6 @@
 <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
-<%
-String U_id= (String) session.getAttribute("loginUser_id");
-List<ProductVO> vo2 = new ProductDAO().showBk(U_id);
-
-int b =0; 
-
-if(U_id != null){
- b=vo2.size();
-}
-
-%>
-
 </head>
 <body>
 
@@ -48,6 +36,14 @@ if(U_id != null){
    List<CommentVO> lvo = new CommentDAO().showCmt(cvo);
    
    String loginUser = (String) session.getAttribute("loginUser_id");
+   
+   int b=0;
+
+   if(loginUser != null){
+   	   String u_id= (String) session.getAttribute("loginUser_id");
+   		List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
+   	   b=vo2.size();
+   }
    
 
    %>

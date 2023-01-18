@@ -24,15 +24,14 @@
        
    <%
   	String loginUser = (String) session.getAttribute("loginUser_id");
-  	String U_id= (String) session.getAttribute("loginUser_id");
-	
-    List<ProductVO> vo2 = new ProductDAO().showBk(U_id);
-    
+
     int b=0;
     
-	if(loginUser != null){
-		 b = vo2.size();
-	}	
+    if(loginUser != null){
+ 	   String u_id= (String) session.getAttribute("loginUser_id");
+ 		List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
+ 	   b=vo2.size();
+    }
 
 	%>
 	
