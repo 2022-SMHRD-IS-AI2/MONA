@@ -48,13 +48,15 @@ background-color:rgb(255, 200, 2);
     height: 40px;
     border-radius: 5px;
     border:1px solid grey;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    
 
 }
 .header-serch .fa-solid.fa-magnifying-glass{
     position: absolute;
-    margin-top: 13px;
-    margin-left: -20px;
+    
+    right:28px;
+    top:25px;
 
 }
 .header-menu{
@@ -71,11 +73,11 @@ background-color:rgb(255, 200, 2);
     display: flex;
     height: 60px;
     margin: 0 auto;
-    justify-content: flex-start;
+    justify-content:center ;
     align-items: center;
     border-bottom: 1px solid whitesmoke;
     font-size: 1.2rem;
-    padding-left: 200px;
+    
     color:  white;
     background-color:rgb(19, 19, 79)
 
@@ -86,9 +88,7 @@ background-color:rgb(255, 200, 2);
 .header2 a{
     margin: 80px;
 }
-.header2 a:first-child{
-    margin-left: 280px;
-}
+
 #index_01{
     width: 1900px;
     height: 400px;
@@ -288,12 +288,13 @@ background-color:rgb(255, 200, 2);
 }
 
 #b{
-	 color:rgb(19, 19, 79);
-	 background-color:  white;
+	 background-color:rgb(19, 19, 79);
+	 color:  white;
     min-width: 100px; 
     border: 1px solid black;
 	height:40px;
     font-size: 1.2rem;
+    margin-left:120px;
 }
 
 #p{

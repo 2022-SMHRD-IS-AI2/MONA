@@ -113,7 +113,6 @@ if(loginUser != null){
                 <div class="inputs signUp">
                     <input type="submit" value="회원가입">
                 </div>
-
             </form>
         </div>
     </main> 
@@ -144,13 +143,14 @@ if(loginUser != null){
                         },
                         error : function(){
                            alert("통신실패")
-                        }
-                        
-               })
-               
+                        }                    
+               })              
             }
             
             button.addEventListener('click',checkE)
+         </script>
+         <script>
+        // 563602ead0258684b91a1a7e7c53dcde
          </script>
 
 
