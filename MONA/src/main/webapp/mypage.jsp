@@ -32,14 +32,16 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
       <div class="header-logo">
 
          <a href="main.jsp"><h2>MonA</h2></a>
-         <form class="header-serch">
-            <input type="text" name="" id=""> <a href=""><i
-               class="fa-solid fa-magnifying-glass"></i></a>
-         </form>
+       
 
       </div>
 
       <div class="header-menu">
+        <form class="header-serch">
+            <input type="text" name="" id=""> <a href=""><i
+               class="fa-solid fa-magnifying-glass"></i></a>
+         </form>
+      
          <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
          <%=b%>
 

@@ -32,15 +32,16 @@
   <div class="header">
         <div class="header-logo">
    
-            <a href="main.jsp"><h4>MonA</h4></a>
-    	<form class="header-serch" >
-            <input type="text" name="" id="">
-            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
-        </form>
+            <a href="main.jsp"><h2>MonA</h2></a>
+    	
         
         </div>
     
         <div class="header-menu" >
+        <form class="header-serch" >
+            <input type="text" name="" id="">
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
+        </form>
             <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping fa-1x"></i></a> 
             <%=b%>
        		
@@ -83,7 +84,7 @@
    </div>
    
        <div class="head-title-Enrollment"> 
-       <button id="b"><a href="product.jsp"><h3>상품등록</h3></a></button> 
+       <button id="b"><a href="product.jsp"><p>상품등록</p></a></button> 
     </div>
 
     <div class="contents">
