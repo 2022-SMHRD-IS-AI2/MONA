@@ -277,9 +277,17 @@ background-color:#FDE74C;
 	display: flex;
     height: 30px;
     background-color: whitesmoke;
+    align-items: center;
     
     
 }
+.contents-child-star p{
+	font-size: 14px;
+	margin-left:20px;
+}
+
+
+
 .contents-child-comment{
     height: 40px;
     background-color: whitesmoke;

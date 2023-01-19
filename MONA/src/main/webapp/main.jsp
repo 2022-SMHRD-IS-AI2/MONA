@@ -136,8 +136,9 @@
                <% for(int j=0; j<t_star; j++){%>
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
                 <%} %>   
+                <p>
                 <%=t_star3%>
-                
+                </p>
                 <% star = 0;
     			   t_star=0;
     			   t_star2 = 0;

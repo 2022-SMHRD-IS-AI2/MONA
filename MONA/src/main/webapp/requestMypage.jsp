@@ -161,7 +161,7 @@
 		</div>
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
-                <img width="200px" height="150px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
+                <img width="100px" height="100px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
             </div>    
             <div class="requestcontents-list-title">
              <span class="requestcontents-list-shop"><%=vo.get(i).getShop_name()%></span> 

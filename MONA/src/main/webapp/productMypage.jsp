@@ -15,43 +15,43 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
-	<!-- 세션에 저장된 로그인된 ID 가져오기 -->
+   <!-- 세션에 저장된 로그인된 ID 가져오기 -->
     <%
-  	String loginUser = (String) session.getAttribute("loginUser_id");
-	
+     String loginUser = (String) session.getAttribute("loginUser_id");
+   
     int b =0; 
 
 
     if(loginUser != null){
-    	   String u_id= (String) session.getAttribute("loginUser_id");
-    		List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
-    	   b=vo2.size();
+          String u_id= (String) session.getAttribute("loginUser_id");
+          List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
+          b=vo2.size();
     }
-	%>
-	
-	<!-- 판매 상품 리스트에 저장하기 -->
-	<%
-	List<ProductVO> vo = new ProductDAO().completePay();
+   %>
+   
+   <!-- 판매 상품 리스트에 저장하기 -->
+   <%
+   List<ProductVO> vo = new ProductDAO().completePay();
     %>
     
     <!-- 판매된 상품 총개수 구하기 -->
     <%
-    int totalCnt = 0;	
+    int totalCnt = 0;   
     for(int i =0; i<vo.size(); i++){
-    	if(loginUser.equals(vo.get(i).getSeller_id())){
-    		totalCnt = 0 + vo.get(i).getTotal_cnt();
-    	}
+       if(loginUser.equals(vo.get(i).getSeller_id())){
+          totalCnt = 0 + vo.get(i).getTotal_cnt();
+       }
     }
     %>
     
     <!-- 판매된 상품 총개수 구하기 -->
     
     <%
-    int regCnt = 0;	
+    int regCnt = 0;   
     for(int i =0; i<vo.size(); i++){
-    	if(loginUser.equals(vo.get(i).getSeller_id())){
-    		regCnt += 1;
-    	}
+       if(loginUser.equals(vo.get(i).getSeller_id())){
+          regCnt += 1;
+       }
     }
     %>
     
@@ -59,17 +59,16 @@
         <div class="header-logo">
    
             <a href="main.jsp"><h2>MonA</h2></a>
-    
+    <form class="header-serch" >
+            <input type="text" name="" id="">
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>   
+        </form>
         
         </div>
     
         <div class="header-menu" >
-        <form class="header-serch" >
-            <input type="text" name="" id="">
-            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
-        </form>
             <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
-       		<%=b %>
+             <%=b %>
                
          <%if(loginUser == null){%>
                <!--로그인 안했을 경우  -->
@@ -153,28 +152,32 @@
         
         <%for(int i =0; i<vo.size(); i++){
             
-        	if(loginUser.equals(vo.get(i).getSeller_id())){
-        	%>
+           if(loginUser.equals(vo.get(i).getSeller_id())){
+           %>
         
         <div class="ordercontents-date">
             <span><%=vo.get(i).getProd_regdt()%></span>
         </div>
+         <div class="ordercontents-data">
+			<span>이미지</span> <span>샵이름</span> <span>상품정보</span> <span>판매가</span>
+			<span>판매된수량</span>
+	
+		</div>
         <div class="ordercontents-list">
             <div class="ordercontents-list-img">
-                <img width="200px" height="150px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
+                <img width="100px" height="100px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
             </div>    
-            <div class="ordercontents-list-title">
-                <span><%=vo.get(i).getShop_name()%></span>
-                <span><%=vo.get(i).getProd_name()%></span>
-                <span><%=vo.get(i).getProd_price()%> 원</span>
+            <div class="requestcontents-list-title">
+                <span class="requestcontents-list-shop"><%=vo.get(i).getShop_name()%></span>
+                <span class="requestcontents-list-info"><%=vo.get(i).getProd_name()%></span>
+                <span class="requestcontents-list-price"><%=vo.get(i).getProd_price()%> 원</span>
             </div>       
-            <div class="productcontents-list-state">
-                <span >판매된 수량</span> 
+            <div class="productcontents-list-state">     
                 <span><%=vo.get(i).getTotal_cnt()%></span>
                 <span>개</span>
             </div>
         </div>
-  		<%}}%>
+        <%}}%>
     
 </div>
  <div class="footer"></div>

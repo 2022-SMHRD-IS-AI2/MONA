@@ -85,7 +85,7 @@
                <div class="title">제목</div>
                <div class="writer">작성자</div>
                <div class="date">작성일</div>
-               <div class="count">조회</div>
+               
             </div>
             
             <% List<BoardVO> vo = (new BoardDAO()).showBoard(); %>
