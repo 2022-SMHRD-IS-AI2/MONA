@@ -273,7 +273,14 @@
             	  <button type="submit" class="pd-btn cart">장바구니</button>
             	</form>
           
-                <a href="#"><button class="pd-btn buy">구매하기</button></a>
+                
+                <form action="pay2.jsp" action="post">
+         		<input hidden name="price" value="<%=vo.getProd_price()%>">
+          		<input hidden name="prod_name" value="<%=vo.getProd_name()%>">
+           		
+            	<button class="pd-btn buy" type="submit">구매하기</button>
+				</form>
+                
             </div> 
             </div>
             
