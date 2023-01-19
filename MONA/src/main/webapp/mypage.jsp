@@ -173,6 +173,7 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
 
             <form action="orderUpdateCon">
                <input hidden name="prod_num" value="<%=vo.get(i).getProd_num()%>">
+               <input hidden name="pcnt" value="<%=vo.get(i).getCnt()%>"> 
                <button type="submit">결제확정</button>
                </form>
             <%
@@ -195,11 +196,11 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
       }
       %>
 
-
+  
    </div>
 
 
-   <div class="footer"></div>
+ <div class="footer"></div>
 
 
 </body>

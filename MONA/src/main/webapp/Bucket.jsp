@@ -30,7 +30,6 @@
 	if(loginUser != null){
 		 b = vo.size();
 	}
-	
 	%>
 	
     

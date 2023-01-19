@@ -13,5 +13,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from TB_REVIEW where PROD_NUM=#{PROD_NUM}
 		order by review_dt desc
 	</select> 
+	
+	<select id="showReview1" resultType="com.smhrd.model.ReviewVO" parameterType = "BigDecimal">
+		select * from TB_REVIEW where PROD_NUM=#{PROD_NUM1}
+		order by review_dt desc
+	</select> 
+	
 
 </mapper>

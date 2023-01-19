@@ -22,9 +22,14 @@ import lombok.RequiredArgsConstructor;
   private Timestamp REVIEW_DT;
   @NonNull private String U_ID;
   @NonNull private int REVIEW_RATINGS;
+  private BigDecimal PROD_NUM1;
   
 	public ReviewVO(int num) {
 		this.PROD_NUM = num;
+	}
+	
+	public ReviewVO(BigDecimal num) {
+		this.PROD_NUM1 = num;
 	}
   }
 

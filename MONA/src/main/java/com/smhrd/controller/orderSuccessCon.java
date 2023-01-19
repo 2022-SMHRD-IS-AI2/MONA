@@ -31,7 +31,7 @@ public class orderSuccessCon extends HttpServlet {
 		
 		if(O_cnt>0 && B_cnt>0) {
 			System.out.println("주문완료");
-			response.sendRedirect("mypage.jsp");
+			response.sendRedirect("completePayment.jsp");
 		}else {
 			System.out.println("주문실패");
 			

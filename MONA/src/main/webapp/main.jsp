@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ReviewDAO"%>
+<%@page import="com.smhrd.model.ReviewVO"%>
 <%@page import="com.smhrd.model.ProductDAO"%>
 <%@page import="com.smhrd.model.ProductVO"%>
 <%@page import="java.util.List"%>
@@ -24,6 +26,9 @@
 		List<ProductVO> vo2 = new ProductDAO().showBk(u_id);
 	   b=vo2.size();
    }
+   
+   
+   List<ProductVO> vo = (new ProductDAO()).popularProduct();
 
 
    %>
@@ -87,191 +92,72 @@
        <button id="b"><a href="product.jsp"><p>상품등록</p></a></button> 
     </div>
 
-    <div class="contents">
+        <div class="contents">
+       
+     
+     <%
+
+    int star = 0;
+    int t_star=0;
+    double t_star2 = 0;
+    double t_star3=0;
+    
+    
+    for(int i=0; i<12; i++){%>  
+    
         <div class="contents-child">
             <div class="contents-child-img">
-                <a href="#">
-                    <img src="./img/반려동물의류/[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지.jpg" alt="">
+                <a href="productDetail.jsp?prod_num=<%=vo.get(i).getProd_num()%>">
+                    <img src="./prod/<%=vo.get(i).getProd_thumb()%>" alt="">
                 </a>
             </div>
             <div class="contents-child-title" >
-                <span>베어폼폼 패딩</span>
-                <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
-                
+                <span><%=vo.get(i).getShop_name()%></span>
+                <a href="#"><span><%=vo.get(i).getProd_name()%></span></a>
+                  <span>가격    <%=vo.get(i).getProd_price()%>   원</span>
             </div>
-            
+  	 		<%
+   				 ReviewVO vvo = new ReviewVO(vo.get(i).getProd_num()); 
+  				 List<ReviewVO> r_vo = new ReviewDAO().showReview1(vvo);
+  				 
+			%>  		
+   			<div class="contents-child-star">
+  	 		 <% if(r_vo.size()!=0){
+   				for(int j=0; j<r_vo.size(); j++){
+                star += r_vo.get(j).getREVIEW_RATINGS();
+               } 
+             
+                
+                t_star = star/r_vo.size();
+          	 	t_star2= (double)star/r_vo.size();
+            	t_star3 = Math.round(t_star2 * 100) / 100.0;
+              %>
+                 
+               <% for(int j=0; j<t_star; j++){%>
+                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
+                <%} %>   
+                <%=t_star3%>
+                
+                <% star = 0;
+    			   t_star=0;
+    			   t_star2 = 0;
+    			   t_star3=0;
+                
+                 }%>
+                 </div>
+             
 
-            <div class="contents-child-star">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                
-            </div>
-             <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
-            
-         
-            
-        </div>
-        <div class="contents-child">
-            <div class="contents-child-img">
-                <img src="/img/반려동물의류/❤5색 왕리본 머리띠 ❤.jpg" alt="">
-            </div>
-            <div class="contents-child-title" >
-                <span>베어폼폼 패딩</span>
-                <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
-            </div>
-            <div class="contents-child-star">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                
-            </div>
-            <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
-            
-        </div>
-        <div class="contents-child">
-            <div class="contents-child-img">
-                <img src="/img/반려동물의류/강아지 고양이 방울 케이프.jpg" alt="">
-            </div>
-            <div class="contents-child-title" >
-                <span>베어폼폼 패딩</span>
-                <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
-            </div>
-            <div class="contents-child-star">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                
-            </div>
-            <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
-            
-        </div>
-        <div class="contents-child">
-            <div class="contents-child-img">
-                <img src="/img/반려동물의류/반려동물 원목 행거 1단1단XL1단더블형.jpg" alt="">
-            </div>
-            <div class="contents-child-title" >
-                <span>베어폼폼 패딩</span>
-                <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
-            </div>
-            <div class="contents-child-star">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                
-            </div>
-            <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
-            
-        </div>
-        <div class="contents-child">
-            <div class="contents-child-img">
-                <img src="/img/반려동물의류/블라썸 보닛스카프 세트.jpg" alt="">
-            </div>
-            <div class="contents-child-title" >
-                <span>베어폼폼 패딩</span>
-                <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
-            </div>
-            <div class="contents-child-star">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                
-            </div>
-            <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
-            
-        </div>
-        <div class="contents-child">
-            <div class="contents-child-img">
-                <img src="/img/반려동물의류/우리 강아지 사진으로 만든 커스텀 힙합 티셔츠맨투맨.jpg" alt="">
-            </div>
-            <div class="contents-child-title" >
-                <span>베어폼폼 패딩</span>
-                <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
-            </div>
-            <div class="contents-child-star">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                
-            </div>
-            <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
-            
-        </div>
-        <div class="contents-child">
-            <div class="contents-child-img">
-                <img src="/img/반려동물의류/촘촘 솜사탕 도토리 멍도리.jpg" alt="">
-            </div>
-            <div class="contents-child-title" >
-                <span>베어폼폼 패딩</span>
-                <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
-            </div>
-            <div class="contents-child-star">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                
-            </div>
-            <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
-            
-        </div>
-        <div class="contents-child">
-            <div class="contents-child-img">
-                <img src="/img/반려동물의류/🍊귤선생님 뀰 귀도리🍊.jpg" alt="">
-            </div>
-            <div class="contents-child-title" >
-                <span>베어폼폼 패딩</span>
-                <a href="#"><span>[맞춤가능] 베어폼폼 패딩  소형견부터 대형견까지</span></a>
-            </div>
-            <div class="contents-child-star">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="/img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                
-            </div>
-            <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
-            
         </div>
 
-    </div>
-    <div class="btnArea">
-        <button type="button" id="upBtn"><img src="/img/icon/btn_up_light.png"></button>
-        <button type="button" id="downBtn"><img src="/img/icon/btn_down_light.png"></button>
-    </div>
-	
+   		
+
+      <%}%>
+   		</div>
+   
+    
+
+
     <div class="footer">
-
     </div>
 </body>
 </html>

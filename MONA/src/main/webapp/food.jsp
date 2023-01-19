@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ReviewDAO"%>
+<%@page import="com.smhrd.model.ReviewVO"%>
 <%@page import="com.smhrd.model.ProductDAO"%>
 <%@page import="com.smhrd.model.ProductVO"%>
 <%@page import="java.util.List"%>
@@ -90,14 +92,21 @@
    
        <div class="contents">
        
-    <%for(int i=0; i<vo.size(); i++){%>  
+     
+     <%
+
+    int star = 0;
+    int t_star=0;
+    double t_star2 = 0;
+    double t_star3=0;
     
+    
+    for(int i=0; i<vo.size(); i++){%>  
     
     <%if(vo.get(i).getProd_cate().equals("식품")) { %>    
         <div class="contents-child">
             <div class="contents-child-img">
-            <a href="productDetail.jsp?prod_num=<%=vo.get(i).getProd_num()%>">
-          
+                <a href="productDetail.jsp?prod_num=<%=vo.get(i).getProd_num()%>">
                     <img src="./prod/<%=vo.get(i).getProd_thumb()%>" alt="">
                 </a>
             </div>
@@ -106,30 +115,46 @@
                 <a href="#"><span><%=vo.get(i).getProd_name()%></span></a>
                   <span>가격    <%=vo.get(i).getProd_price()%>   원</span>
             </div>
-            <div class="contents-child-star">
+  	 		<%
+   				 ReviewVO vvo = new ReviewVO(vo.get(i).getProd_num()); 
+  				 List<ReviewVO> r_vo = new ReviewDAO().showReview1(vvo);
+  				 
+			%>  		
+   			<div class="contents-child-star">
+  	 		 <% if(r_vo.size()!=0){
+   				for(int j=0; j<r_vo.size(); j++){
+                star += r_vo.get(j).getREVIEW_RATINGS();
+               } 
+             
+                
+                t_star = star/r_vo.size();
+          	 	t_star2= (double)star/r_vo.size();
+            	t_star3 = Math.round(t_star2 * 100) / 100.0;
+              %>
+                 
+               <% for(int j=0; j<t_star; j++){%>
                 <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-                <img src="./img/icon/KakaoTalk_20230105_164642873.png" alt="">
-            
-           </div>
-           <div class="contents-child-comment">
-                <span>기여워용</span>
-            </div>
+                <%} %>   
+                <%=t_star3%>
+                
+                  <% star = 0;
+    			   t_star=0;
+    			   t_star2 = 0;
+    			   t_star3=0;
+                
+                 }%>
+                 
+                 </div>
+             
+
         </div>
 
-            <%}%>
+   			<%}%>
+
       <%}%>
-
-
-    </div>
-
+   		</div>
    
-
-
-       
-            
+    
 
 
     <div class="footer">

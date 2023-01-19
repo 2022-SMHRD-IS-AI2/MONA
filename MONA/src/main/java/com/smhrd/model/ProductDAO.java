@@ -125,6 +125,7 @@ public class ProductDAO {
 	
 	}
 	
+	// 구매 확정 상품 조회
 	public List<ProductVO> completePay() {
 		
 		List<ProductVO> cvo = sqlSession.selectList("com.smhrd.model.ProductDAO.completePay");
@@ -140,6 +141,15 @@ public class ProductDAO {
 			sqlSession.close();
 			
 
+			return vo;
+		}
+		
+		// 각 카테고리 별 상품 등록
+		public List<ProductVO> popularProduct() {
+			
+			List<ProductVO> vo  = sqlSession.selectList("com.smhrd.model.ProductDAO.popularProduct");
+			sqlSession.close();
+		
 			return vo;
 		}
 	
