@@ -143,5 +143,14 @@ public class ProductDAO {
 
 			return vo;
 		}
+		
+		// 각 카테고리 별 상품 등록
+		public List<ProductVO> popularProduct() {
+			
+			List<ProductVO> vo  = sqlSession.selectList("com.smhrd.model.ProductDAO.popularProduct");
+			sqlSession.close();
+		
+			return vo;
+		}
 	
  }

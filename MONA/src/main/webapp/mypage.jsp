@@ -194,11 +194,11 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
       }
       %>
 
-
+  
    </div>
 
 
-   <div class="footer"></div>
+ <div class="footer"></div>
 
 
 </body>

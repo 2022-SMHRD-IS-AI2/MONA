@@ -93,13 +93,7 @@ if(loginUser != null){
                     <span>Login</span>
                 </button>
             </form>
-            <div class="kana">
-                <button>
-                    <a href="kakaoLogin.jsp">kakao Login</a>
-                </button>
-                <button>
-                    <a href="#">Naver Login</a>
-                </button>
+       
                 
                 <div class="signUp">
                     <p class="signUp-p">
@@ -107,7 +101,7 @@ if(loginUser != null){
                             Would you like to join. . .?</a>
                     </p>
                 </div>
-            </div>
+           
         </div>
     </main>  
      

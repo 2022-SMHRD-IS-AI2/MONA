@@ -24,6 +24,7 @@
                             const kakao_account = res.kakao_account;
                             console.log(kakao_account)
                             alert("로그인에 성공하셨습니다")
+                            location.href = 'LoginCon';
                      //window.location.href='main.jsp' //리다이렉트 되는 코드
                         }
                         

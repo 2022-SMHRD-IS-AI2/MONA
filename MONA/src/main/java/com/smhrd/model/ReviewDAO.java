@@ -30,6 +30,16 @@ public class ReviewDAO {
 	  
 	  return r_vo; 
 	  }
+	  
+ // 카테고리에서 특정상품 전체 리뷰 평점 조회
+	  
+	  public List<ReviewVO> showReview1(ReviewVO vo) {
+	  
+	  List<ReviewVO> r_vo = sqlSession.selectList("com.smhrd.model.ReviewDAO.showReview1",vo);
+	  sqlSession.close();
+	  
+	  return r_vo; 
+	  }
 	 
 
 }

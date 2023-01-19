@@ -64,4 +64,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from TB_PRODUCT where Total_cnt !=0
   	 </select>
   	 
+  	 <!--안기상품 매인페이지에 출력하기 (많이 팔린 순서대로) -->
+  	  <select id = "popularProduct" resultType="com.smhrd.model.ProductVO" >
+  	    select * from TB_PRODUCT where shop_check='Y' 
+        order by total_cnt desc
+        </select>
+  	 
+  	 
 </mapper>
