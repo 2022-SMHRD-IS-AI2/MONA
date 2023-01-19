@@ -14,8 +14,10 @@
   <%
   String loginUser = (String) session.getAttribute("loginUser_id");
 	
+  // 바로 구매시 상품이름 가격정보 받아오기 
   request.setCharacterEncoding("UTF-8");
   int price = Integer.parseInt(request.getParameter("price"));
+  int cnt = Integer.parseInt(request.getParameter("cnt"));
   String prod_name = request.getParameter("prod_name");
   
   %>
@@ -42,7 +44,7 @@
                 pay_method : 'card',
                 merchant_uid: "IMP"+makeMerchantUid, 
                 name : '<%=prod_name%>',
-                amount : '<%=price %>',
+                amount : '<%=price%>',
                 buyer_email : 'Iamport@chai.finance',
                 buyer_name : '아임포트 기술지원팀',
                 buyer_tel : '010-1234-5678',
