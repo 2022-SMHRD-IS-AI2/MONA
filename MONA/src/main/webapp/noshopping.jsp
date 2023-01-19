@@ -93,7 +93,7 @@ if(loginUser != null){
                 <br>작가님들의 다양한 작품을 담아보세요.
             </p>
             <button>
-                <a href="/index.html">상품 구경하러 가기</a>     
+                <a href="main.jsp"> 상품 구경하러 가기</a>     
             </button>
         
 

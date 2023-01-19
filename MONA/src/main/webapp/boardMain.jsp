@@ -103,7 +103,7 @@
          
          <div class="bt_wrap">
           <a href="boardWrite2.jsp" class="on">등록</a>
-            <a href="main.jsp" clss="on">홈으로가기</a>
+            <a href="main.jsp" class="on">홈으로가기</a>
             
             
             <br>

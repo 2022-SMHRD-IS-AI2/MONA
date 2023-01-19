@@ -130,7 +130,7 @@ List<ProductVO> vo = new ProductDAO().showOrder(U_id);
       for (int i = 0; i < vo.size(); i++) {
       %>
       <div class="ordercontents-date">
-         <span><h4><%=vo.get(i).getBucket_regdt()%></h4></span>
+         <span><%=vo.get(i).getBucket_regdt()%></span>
       </div>
       <div class="ordercontents-data">
          <span class="ordercontents-dataimg">이미지</span> 

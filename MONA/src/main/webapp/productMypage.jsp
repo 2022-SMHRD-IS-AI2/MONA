@@ -166,11 +166,11 @@
 			<span>판매된수량</span>
 	
 		</div>
-        <div class="ordercontents-list">
+        <div class="requestcontents-list">
             <div class="ordercontents-list-img">
                 <img width="100px" height="100px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
             </div>    
-            <div class="requestcontents-list-title">
+            <div class="requestcontents-list-title1">
                 <span class="requestcontents-list-shop"><%=vo.get(i).getShop_name()%></span>
                 <span class="requestcontents-list-info"><%=vo.get(i).getProd_name()%></span>
                 <span class="requestcontents-list-price"><%=vo.get(i).getProd_price()%> 원</span>
