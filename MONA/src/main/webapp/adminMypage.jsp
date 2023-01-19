@@ -129,9 +129,13 @@
         </div>
         
         <div class="ordercontents-list">
+            <a href="requestpage.jsp?prod_num=<%=vo.get(i).getProd_num()%>">
             <div class="ordercontents-list-img">
             <img  width="350px" height="200px" src="./prod/<%=vo.get(i).getProd_thumb()%>">
             </div>    
+            </a>
+            
+            
             
             <div class="managercontents-list-title">
             	
