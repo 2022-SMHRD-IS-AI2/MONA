@@ -62,6 +62,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 결제완료 상품 조회 -->
   	 <select id = "completePay" resultType="com.smhrd.model.ProductVO" >
 		select * from TB_PRODUCT where Total_cnt !=0
+		order by PROD_REGDT desc
   	 </select>
   	 
   	 <!--안기상품 매인페이지에 출력하기 (많이 팔린 순서대로) -->
