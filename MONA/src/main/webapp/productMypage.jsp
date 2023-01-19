@@ -40,15 +40,16 @@
     for(int i =0; i<vo.size(); i++){
 
      if(loginUser.equals(vo.get(i).getSeller_id())){
-          totalCnt = 0 + vo.get(i).getTotal_cnt();
+          totalCnt = totalCnt + vo.get(i).getTotal_cnt();
        }
-
+    }
     %>
     
     <!-- 판매된 상품 총개수 구하기 -->
     
     <%
     int regCnt = 0;   
+    
     for(int i =0; i<vo.size(); i++){
        if(loginUser.equals(vo.get(i).getSeller_id())){
           regCnt += 1;
@@ -179,8 +180,8 @@
                 <span>개</span>
             </div>
         </div>
-        <%}}%>
-    
+        <%}%>
+    <%}%>
 </div>
  <footer id = "footer" class="footer">
             <div class = "full-w">
