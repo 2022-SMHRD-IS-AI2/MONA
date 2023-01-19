@@ -86,7 +86,7 @@
     justify-content: center;
     font-size: 24px;
     font-weight: bold;
-    color: #ff7b30;
+    color: #5B7C99;
 }
 .cartList-content-item-value-highlight span:last-child{
     font-size: 16px;
@@ -107,7 +107,7 @@
     height: 48px;
     color: #FFFFFF;
     font-size: 16px;
-    background-color: #ff7b30;
+    background-color: #5B7C99;
     border-radius: 5px;
     padding: 0 24px;
     

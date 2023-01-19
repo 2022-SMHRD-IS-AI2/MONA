@@ -10,6 +10,7 @@
 @import "review.css";
 @import "star.css";
 
+
 html {
     font-size: 12px;
     font-family: 'Noto Sans KR','Malgun Gothic','맑은 고딕','malgun',Apple-Gothic,애플고딕,Tahoma,dotum,돋움,gulim,굴림,sans-serif;
@@ -60,7 +61,7 @@ background-color:#FDE74C;
 .header-serch .fa-solid.fa-magnifying-glass{
     position: absolute;
     
-    right:36px;
+    right:50px;
     top:18px;
     
     
@@ -235,7 +236,7 @@ background-color:#FDE74C;
  
 }
 .contents-child{
-    border: 1px solid whitesmoke;
+    border: 2px solid whitesmoke;
     
     
 }
@@ -247,7 +248,7 @@ background-color:#FDE74C;
 .contents-child-title{
     width: 250px;
     height: 101px;
-    background-color: whitesmoke;
+    
     border-bottom: 1px solid gray;
    
     color: rgba(0, 0, 0, 0.5);
@@ -276,7 +277,7 @@ background-color:#FDE74C;
 .contents-child-star{
 	display: flex;
     height: 30px;
-    background-color: whitesmoke;
+    
     align-items: center;
     
     
@@ -301,8 +302,9 @@ background-color:#FDE74C;
     height: 250px;
     margin-top:200px;
    border-top: 1px solid bisque;
-  background-color:#FDE74C;
+  background-color:#5B7C99;
    color: white;
+   font-size: 13px;
  
     
 }
@@ -330,4 +332,33 @@ background-color:#FDE74C;
 	height:40px;
 	display: flex;
 	
+}
+
+
+
+.full-w {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 22px;
+   margin-bottom : 27px;
+}
+
+.inner-w{
+    width: 1900px;
+    display:flex;
+    justify-content: center;
+    position: relative;  
+}
+
+
+.fl{
+    display:flex;
+    flex-direction:column;
+    margin-right:35px;
+}
+
+.f1{
+    display:flex;
+    flex-direction:column;
+    margin-right:35px;
 }

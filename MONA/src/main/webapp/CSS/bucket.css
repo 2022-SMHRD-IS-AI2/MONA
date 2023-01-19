@@ -110,9 +110,9 @@ html {
 .shoppingBag-bottom-btn{
     width: 768px;
     height: 48px;
-    color: black;
+    color: white;
     font-size: 16px;
-    background-color: rgb(19, 19, 79);
+    background-color: #5B7C99;
     border-radius: 5px;
     padding: 0 24px;
     

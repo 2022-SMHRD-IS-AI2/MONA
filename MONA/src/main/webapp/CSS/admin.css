@@ -42,12 +42,13 @@ html {
 .managercontents-list-reveiw input{
 	
 	font-size: 1rem;
-	border:1px solid black;  
+	border:1px solid #5B7C99; 
 	margin-right:30px; 
 	width: 100px;
 	height: 35px;
-	 background-color: white;
-	 color:rgb(19, 19, 79)
+	 background-color: #5B7C99;
+	 color:white;
+	 border-radius:15px;
 	}
 	
 .managercontents-list-reveiw{
@@ -112,9 +113,11 @@ html {
     width: 1200px;
     height: 25px;
     border-top: 1px solid whitesmoke;
-    background-color:rgb(19, 19, 79);
+    background-color:#F5F5F5;
     margin-left:250px;
-    color:white;
+    color:black;
+    line-height:2;
+    padding-left:10px;
     
     
 }

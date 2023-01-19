@@ -283,5 +283,89 @@
     color: #333;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+.requestpage{
+	width:80%;
+	margin:0 auto;
+	height:auto;
+	display: flex;
+	justify-content:center;
+}
+.requestpage-shop{
+	display:flex;
+	width:100%;
+	height:50px;
+	font-size:16px;
+	
+}
+.requestpage-prod{
+	display:flex;
+	width:100%;
+	height:50px;
+	font-size:16px;
+}
+
+
+.requestpage-price{
+	display:flex;
+	width:100%;
+	height:50px;
+	font-size:16px;
+}
+.requestpage-content span:first-child{
+	width:80px;
+	font-size:20px;
+	margin-right:50px;
+}
+.requestpage-content span:last-child{
+	width:400px;
+	font-size:20px;
+	margin-right:50px;
+}
+.requestpageDescription__textItem1{
+    width: 560px;
+    
+    font-size: 14px;
+    color: #333;
+    padding: 20px 10px;
+    display:flex;
+    flex-direction: column;
+   
+}
+.requestpageDescription__textItem1 span:first-child{
+	margin-bottom:50px;
+	font-size:20px;
+	width:100px;
+}
+.requestpageDescription__textItem1 span:last-child{
+	    width: 540px;
+    font-size: 16px;
     
 }
+
+.requestpage-content {
+    margin: 50px;
+    width: 580px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

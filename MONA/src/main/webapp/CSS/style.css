@@ -84,7 +84,7 @@ a {
 }
 
 .bt_wrap a.on {
-     background-color: rgb(19, 19, 79);
+     background-color: #5B7C99;
     color: white;
 }
 
@@ -133,7 +133,7 @@ a {
 }
 
 .board_list .date {
-    width: 10%;
+    width: 200px;
 }
 
 .board_list .count {

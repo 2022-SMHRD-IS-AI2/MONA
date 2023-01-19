@@ -106,26 +106,24 @@
     </div>
     
     
-    <div class="productdetail">
-    <td><%=vo.getShop_name()%></td></br>
-     <td><%=vo.getProd_name()%></td></br>
-      가격<td><%=vo.getProd_price()%></td>
-        <div class="productdetail-content">
+    <div class="requestpage">
+    	
+        <div class="requestpage-content">
+        	<div class="requestpage-shop"><span>상호명:</span><span><%=vo.getShop_name()%></span></div>
+     		<div class="requestpage-prod"><span>상품명:</span><span><%=vo.getProd_name()%></span></div>
+     	  <div class="requestpage-price"> <span>가격:</span><span><%=vo.getProd_price()%></span></div>
             <img src="./prod/<%=vo.getProd_thumb()%>" alt="">
            
-            상품설명
-            <div><img src="./prod/<%=vo.getProd_img()%>" alt=""></div>
+           
             
-            <div class="ProductDetailDescription__textItem1">
+            
+            <div class="requestpageDescription__textItem1">
+                <span>상품설명</span>
                 <span>
                 <%=vo.getProd_desc()%> 
                 </span>
             </div>
 
-            
-  
-            
-        
         </div>
         
      
@@ -133,8 +131,65 @@
      
     </div>
     
-	<div class="footer">
-    </div>
+	<footer id = "footer" class="footer">
+            <div class = "full-w">
+                <nav class="nav-links">
+                    <a class = "m-show" href="#">이용약관</a>
+                    <span class = "m-show">|</span>
+                    <a class = "m-show" href="#">
+                        <strong>개인정보 처리방침</strong>
+                    </a>
+                    <span class = "m-show">|</span>
+                    <a class="m-show" href="#">공지사항</a>
+                    <span class = "m-show">|</span>
+                    <a class="m-show" href="#">자주 묻는 질문</a>
+                    <span class = "m-show">|</span>
+                    <a class="m-show" href="#">이벤트</a>
+                    <span class = "m-show">|</span>
+                    <a class="m-show" href="#">입점문의</a>
+                    <span class = "m-show">|</span>
+                    <a class="m-show" href="#">About Mona</a>
+                    <span class = "m-show">|</span>
+                </nav>
+            </div> <br>
+            <div class="inner-w clf" data-has-inquire-btn="false">
+                <div class="text-box fl">
+                    <strong>(주) MonA</strong>
+                    <ul>
+                        <li>대표이사 : 모나랑</li>
+                        <li>서울특별시 마포구 동교로 19길 12</li>
+                        <li>"사업자 등록번호 : 107-98-83249 "</li>
+                        <li>통신판매업신고 : 2022-서울마포-0770</li>
+                        <li>호스팅서비스 제공자 : AWS WEB Service, Inc</li>
+                    </ul>
+                    <span class="mt-fix1">
+                        "MonA는 통신판매중개자이며 통신판매의 당사자가 아닙니다."  
+                    </span>
+                    <span class="copyright">Copyright © 2023 MonA All right reserved.</span>
+                </div>
+                <div class="text-box f1">
+                    <strong>고객센터</strong>
+                    <span style="display: inline-block; margin-top: 2px;">(평일 오전 10시 ~ 오후 6시)</span>
+                    <ul>
+                        <li>
+                            <span class="fix-w">대표번호</span>
+                            "1688-0821"
+                        </li>
+                        <li>
+                            <span class="fix-w">메일</span>
+                            "support@MonA.com"
+                        </li>
+                        <br>
+                  </div>
+                <div class="text-box f2">
+                        <li>아이디어스 이용 중 궁금하신 점이 있으신가요?</li>
+                        <li>메일 또는 플러스친구 `아이디어스`로 연락해주세요.</li>
+                        <li>최선을 다해 도와드리겠습니다.</li>
+                </div>
+                    </ul>
+                </div>
+            </div>
+        </footer>    
     <script src="./JS/productdetail.js"></script>
             
 </body>
