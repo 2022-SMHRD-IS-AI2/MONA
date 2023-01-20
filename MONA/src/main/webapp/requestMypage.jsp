@@ -99,52 +99,46 @@
     </div>
     
     
-    <div class="mypage-container">
-        <div class="logininfo">
-            <div class="logininfo-order">
-                <div class="logininfo-order-h2">
-                    <span><%=loginUser%></span><span> 님 환영합니다</span>
-                </div>
-                
-                <div class="logininfo-order-product" >
-                    <span>상품등록 요청은 총 </span>
-                    <span><%=allcnt%></span>
-                    <span>건입니다</span>
-                </div>
-                <div class="logininfo-order-written">
-                    <span>승인된 상품은 총 </span>
-                    <span><%=ycnt%></span> 
-                    <span>건입니다</span>
-                </div>
-                
-            </div>
-            <div class="logininfo-order">
-                <div class="logininfo-order-number">
-                    <span>상품등록 요청건수</span>
-                    <i class="fa-solid fa-chevron-right fa-xs"></i>
-                </div>
-                <div class="logininfo-order-number">
-                    <span><%=allcnt%></span>
-                    <span>건</span>
-                </div>
-            </div>
-            <div class="logininfo-order">
-                <div class="logininfo-order-review">
-                    <span>승인된 요청건수</span>
-                    <i class="fa-solid fa-chevron-right fa-xs"></i>
-                </div>
-                <div class="logininfo-order-review">
-                    <span><%=ycnt%></span>
-                    <span>건</span>
-                </div>
+     <div class="mypage-container">
+      <div class="logininfo">
+         <div class="logininfo-order">
+            <div class="logininfo-order-h2">
+               <span><%=loginUser%></span> <span> 님 환영합니다</span>
             </div>
 
-        </div>
-        <div class="button">
-            <a href="mypage.jsp"><button>주문내역</button></a>
-            <a href="requestMypage.jsp"><button>상품등록 요청 내역</button></a>
-            <a href="productMypage.jsp"><button>등록한상품내역</button></a> 
-        </div>
+            <div class="logininfo-order-product">
+               <span>상품등록 요청은 총 </span> <span><%=allcnt%>건</span> <span>입니다</span>
+            </div>
+            <div class="logininfo-order-written">
+               <span>승인된 상품은 총 </span> <span><%=ycnt%>건</span> <span>입니다</span>
+            </div>
+
+         </div>
+         <div class="logininfo-order">
+            <div class="logininfo-order-number">
+               <span>상품등록 요청건수</span> <i class="fa-solid fa-chevron-right fa-xs"></i>
+            </div>
+            <div class="logininfo-order-number">
+               <span><%=allcnt%></span> <span>건</span>
+            </div>
+         </div>
+         <div class="logininfo-order">
+            <div class="logininfo-order-review">
+               <span>승인된 요청건수</span> <i class="fa-solid fa-chevron-right fa-xs"></i>
+            </div>
+            <div class="logininfo-order-review">
+               <span><%=ycnt%></span> <span>건</span>
+            </div>
+         </div>
+
+      </div>
+      <div class="button">
+
+         <a href="mypage.jsp"><button>주문내역</button></a> <a
+            href="requestMypage.jsp"><button>상품등록 요청 내역</button></a> <a
+            href="productMypage.jsp"><button>등록한상품내역</button></a>
+
+      </div>
         
         <%for(int i =0; i<vo.size(); i++){
             

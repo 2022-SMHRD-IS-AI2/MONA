@@ -38,7 +38,7 @@
         <div class="header-logo">
    
             <a href="main.jsp"><h2>MonA</h2></a>
-    	
+    
         
         </div>
     
@@ -47,9 +47,8 @@
             <input type="text" name="" id="">
             <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>	
         </form>
-            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping fa-1x"></i></a> 
-            <%=b%>
-       		
+            <a href="Bucket.jsp"><i class="fa-solid fa-cart-shopping"></i></a> 
+       		<%=b %>
                
          <%if(loginUser == null){%>
                <!--로그인 안했을 경우  -->
