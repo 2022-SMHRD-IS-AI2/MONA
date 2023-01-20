@@ -80,7 +80,7 @@
         <a href="toy.jsp"><h3>Toy</h3></a>
         <a href="goods.jsp"><h3>Goods</h3></a>
     </div>
-    <div class="banner2">
+    <div class="banner4">
     
     
     </div>
